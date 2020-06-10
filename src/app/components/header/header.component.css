@@ -2,13 +2,14 @@
   background-color: gainsboro;
   height: auto;
 }
-h1{
+h3{
   color:black;
-  padding-left: 30px;
+  padding-left: 40px;
   text-shadow: black;
 }
 .search-f
 {
-  padding-left: 250px;
+  padding-left: 50px;
   padding-top: 20px;
+
 }

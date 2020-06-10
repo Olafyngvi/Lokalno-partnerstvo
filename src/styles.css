@@ -178,7 +178,7 @@ a:hover span { padding-bottom: 1px; }
 .sub_nav-r ul li a:hover { border-bottom: 1px solid #797777;}
 
 .title-subnav { text-decoration: none; margin: 0; font-family: Roboto Slab; font-size: 240%; padding: 10px 0 2px 0; letter-spacing: 2px; color: #236d9d; border-bottom: 1px solid transparent; }
-.title-subnav:hover { border-bottom: 1px solid #236d9d;}
+
 
 .p-subnav-right{ margin: 0; font-weight: bold; font-size:90%; padding: 58px 0 10px 0;}
 
