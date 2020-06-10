@@ -1,1 +1,412 @@
 /* You can add global styles to this file, and also import other style files */
+/*  ----------------------------  */
+/*         BASIC SETUP            */
+/*  ----------------------------  */
+
+* {margin: 0; padding: 0;box-sizing: border-box;}
+html { background-color: #fdfdfd; color:#555; font-family: 'Roboto Slab', serif; font-family: 'Roboto', sans-serif; font-weight: 300; font-size: 16px; color: #171717; text-rendering: optimizeLegibility; }
+
+/*  ----------------------------  */
+/*     REUSABLE COMPONENTS        */
+/*  ----------------------------  */
+/*  ----------------------------  */
+/*           Headings             */
+/*  ----------------------------  */
+
+h1 { margin-top: 0; margin-bottom: 20px; color: #fff; font-size: 280%; font-weight: 300; letter-spacing: 1px; word-spacing: 4px;}
+h2 { margin-top: 0; margin-bottom: 20px; color: #000; font-size: 200%; font-weight: 300; letter-spacing: 1px; word-spacing: 4px;}
+h3 { margin-top: 0; margin-bottom: 20px; font-size: 160%; font-weight: 300; letter-spacing: 1px; word-spacing: 4px;}
+h4 { padding: 20px 20px; margin-top: 0; margin-bottom: 20px; color: #000; font-size: 140%; font-weight: 300; letter-spacing: 1px; word-spacing: 4px;}
+h5 { padding: 20px 20px; margin-top: 0; color: #1c1c1c; font-size: 120%; font-weight: 300; letter-spacing: 1px; word-spacing: 1px; line-height: 130%; font-weight:200;}
+
+/*  ----------------------------  */
+/*          Paragraphs            */
+/*  ----------------------------  */
+
+.pg-1  { padding: 10px 20px; line-height: 145%; margin-bottom: 10px; font-size: 90%; font-weight: normal; }
+.pg-01a  { padding: 0px; padding-left: 20px; line-height: 145%; margin-bottom: 0px; font-size: 70%; font-weight: normal; }
+.pg-meni-01 {width: 500px; padding-top: 20px; line-height: 160%; text-align: justify; font-size: 90%; font-weight: normal; color: #236d9d}
+/*  ----------------------------  */
+/*         Section & Rows         */
+/*  ----------------------------  */
+
+.section { display: block; padding: 0px; margin: 0px; clear: both; }
+
+.row { max-width: auto; margin: 0 auto; }
+.row:before, .row:after { content:""; display:table; }
+.row:after { clear:both; }
+
+/*  ----------------------------  */
+/*               Box              */
+/*  ----------------------------  */
+
+.box { margin: 0; box-sizing: border-box; }
+.box-1, .box-2, .box-3, .box-4 { }
+.box75 { margin: 0; padding: 0; width: 75%; display: block; float:left; box-sizing: border-box; overflow:hidden; }
+.box50 { margin: 0; padding: 0; width: 50%; display: block; float:left; box-sizing: border-box; overflow:hidden; }
+.box25 { margin: 0; padding: 0; height: 500px; width: 25%; display: block; float:left; box-sizing: border-box; overflow:hidden; }
+.box20 { margin: 0; padding: 0; height: 100px; width: 20%; display: block; float:left; box-sizing: border-box; overflow:hidden; }
+
+/*  ----------------------------  */
+/*              img box           */
+/*  ----------------------------  */
+
+.box25 img { margin: 0; width: 100%; height: auto; box-sizing: border-box; }
+.image_box{ margin: 0; overflow: hidden;}
+
+/*  ----------------------------  */
+/*             Arrows             */
+/*  ----------------------------  */
+
+.link-arrow { padding: 20px 0px; text-decoration: none; font-size: 90%; color: darkblue; font-weight: normal; vertical-align: middle; float: left;}
+
+a span { text-decoration: none; font-size: 100%; color:darkblue; font-weight: normal; vertical-align: middle; }
+a:hover span { padding-bottom: 1px; }
+
+.arrow-div { margin-top: 5px; display: inline-block; float: left; }
+.arrow-div i {  margin-left: 20px; font-size: 150%; vertical-align: middle; color: red; float: left;}
+.arrow-div  a { margin-top: -17px; margin-left: 0px; clear: both;}
+
+/*  ----------------------------  */
+/*           Buttons              */
+/*  ----------------------------  */
+
+.btn:link, .btn:visited { display: inline-block; padding: 10px; font-weight: 300; text-decoration: none; border-radius: 200px; transition: background-color 0.2s, border 0.2s, color 0.2s; }
+.btn-full:link, .btn-full:visited { background-color: #2980b9; border: 1px solid #2980b9; margin-right: 15px; }
+.btn-ghost:link, .btn-ghost:visited {border: 1px solid #2980b9; color: #2980b9; }
+.btn:hover,.btn:active {background-color: #236d9d;}
+.btn-full:hover, .btn-full:active {border: 1px solid #2980b9; color: #fff;}
+.btn-ghost:hover, .btn-ghost:active {border: 1px solid #2980b9; color: #fff;}
+
+/*  ----------------------------  */
+/*           HEADER               */
+/*  ----------------------------  */
+
+.logo { height: 60px; width: auto; float: left; margin-top: 5px; margin-left: 20px; margin-bottom: 5px;}
+
+.header-title {width: 400px; margin: 0; padding: 0; display: inline; float: left;}
+.header-tit-tit {margin: 5px 0px 0px 10px; font-size: 200%; font-weight: 500; color: #409ed8;}
+.header-tit-subtit {margin: 2px 0px 0px 10px; font-size: 100%; color: #aaaaaa;}
+
+/*  ----------------------------  */
+/*        TOP NAVIGATION          */
+/*  ----------------------------  */
+
+.top-navigation { position: fixed; width: 100%; height: 100px; padding: 20px 0px 0px 20px; background: #fff; z-index: 4021}
+
+.top-navigation-bar img {margin-right: 20px;}
+.main_navigation_banner span {color: #000;}
+
+/*  ----------------------------  */
+/*         Language BTN           */
+/*  ----------------------------  */
+
+.lang { margin-right: 30px; }
+.lang li { padding-top: 15px; margin-right: 10px; font-size: 80%; display: inline-block; float: right;}
+.lang  a:link, .lang  a:visited { padding: 5px 0; text-decoration: none; color: #1c1c1c; border-bottom: 4px solid transparent; transition: border-bottom 0.2s;}
+.lang  a:hover, .lang  a:active { border-bottom: 4px solid #236d9d; }
+
+/*  ----------------------------  */
+/*         Login Button           */
+/*  ----------------------------  */
+
+#login-btn { color:  #000; font-size: 75%; padding-top: 15px; float: right; display: inline-block; margin-right: 10px; background-color:#fff; text-decoration: none; border: none; cursor: pointer}
+
+.pg-s { color:  #6a6969; font-size: 85%; padding-top: 15px; float: right; display: inline-block; margin-right: 10px; background-color:#fff; text-decoration: none; border: none; }
+
+.login-ui { display: none; position: absolute; top: 50px; right: 0px; width: 150px; height: 200px; background: #fafafa; z-index: 11;}
+.login-ui li { text-decoration: none; list-style: none; margin-top: 0px;}
+
+.login-ui a { text-decoration: none; color: #000; font-size: 80%; margin: 10px;}
+
+.login-ui i { color: #236d9d; margin-right: 10px;}
+
+.login-profile { margin-top: 20px; margin-left: 4px}
+.login-login {margin-top: 10px;}
+.login-logout {margin-top: 40px; padding-top: 5px; padding-bottom: 5px;  border-top: 1px solid #2980b9; }
+
+
+/*  ----------------------------  */
+/*    Main navigation banner      */
+/*  ----------------------------  */
+
+.main_navigation_banner { margin-left: 0px;  float: left; list-style: none; padding-top: 15px;}
+.main_navigation_banner li { margin-left:35px; display: inline-block; }
+.main_navigation_banner li a:link, .main_navigation_banner li a:visited { color:#1c1c1c; font-size: 90%; font-weight: normal; text-decoration: none; padding: 5px 0; border-bottom: 4px solid transparent; transition: border-bottom 0.2s; }
+.main_navigation_banner li a:hover, .main_navigation_banner li a:active { border-bottom: 4px solid #236d9d; }
+
+/*  ----------------------------  */
+/*        OVERLAY MENU            */
+/*  ----------------------------  */
+
+.overlay { background-color: rgba(0,0,0, 0.9); height: 0%; width: 100%; position: fixed; z-index: 1; top: 100px; left: 0; overflow-y: hidden; transition: 0.2s; }
+.overlay-content { width: 100%; position: relative; top: 25%; text-align: center; margin-top: 30px;}
+
+.overlay .closebtn{ width: 460px; height: 20px; position: absolute; top: 400px; text-align: left; padding-left: 100px; }
+
+.fa.fa-angle-down { margin-left: 10px; }
+
+.fa.fa-angle-up { font-size: 150%; }
+
+/*  ----------------------------  */
+/*      DINAMIC NAVIGATION        */
+/*  ----------------------------  */
+
+.navigation_container{ width: auto; margin: 0px auto; border-top: 1px solid rgba(255, 255, 255, 0.95) }
+
+/*  ----------------------------  */
+/*    Left Dinamic Navigation     */
+/* ----------------------------   */
+
+.sub_nav-l { width: 33%; height: 500px; background: rgba(253, 253, 253, 0.95); margin-left: auto; padding-top: 40px; padding-left: 150px; float: left; }
+.sub_nav-l  ul li { padding: 10px 0 10px 0; list-style: none;}
+.sub_nav-l  a { color: #818181; font-size: 120%; font-weight: 300; text-decoration: none; }
+.sub_nav-l  a:link { color: #236d9d; font-size: 120%; font-weight: 300; text-decoration: none; }
+.sub_nav-l  a:visited { }
+.sub_nav-l  a:hover, .sub_nav-l  a:active, .sub_nav-l  a:focus { color: #236d9d; font-weight: normal; }
+.sub_nav-l li:hover { background: #fff; }
+
+.p-subnav{ font-weight: bold; font-size:90%; margin: 0; padding: 10px 0 10px 0;}
+
+/*  ----------------------------  */
+/*   Right Dinamic Navigation     */
+/* ----------------------------   */
+
+.sub_nav-r{ margin-left: auto; padding-top: 20px; padding-left: 20px; float: left; width: 67%; height: 500px; background: #fff;}
+.sub_nav-r ul li { list-style: none; padding: 6px 0px 6px 0px; color: #000; }
+.sub_nav-r ul li a{ font-size: 90%; text-decoration: none; color: #000; }
+.sub_nav-r ul li a:hover { border-bottom: 1px solid #797777;}
+
+.title-subnav { text-decoration: none; margin: 0; font-family: Roboto Slab; font-size: 240%; padding: 10px 0 2px 0; letter-spacing: 2px; color: #236d9d; border-bottom: 1px solid transparent; }
+.title-subnav:hover { border-bottom: 1px solid #236d9d;}
+
+.p-subnav-right{ margin: 0; font-weight: bold; font-size:90%; padding: 58px 0 10px 0;}
+
+.sub_nav-image { position: absolute; top: 150px; left: 900px; width: 300px; height: auto;}
+
+/*  ----------------------------  */
+/*           Search Bar           */
+/* ----------------------------   */
+
+.search_bar { padding: 8px 15px; background: #fff; border: 0px solid #dbdbdb;}
+
+.search-f { width: 500px; margin: 12px auto; }
+
+.search-bar { font-size: 15px;}
+
+.btn-search {position: relative; padding: 6px 15px; left: 8px; border: 2px solid #207cca; background-color: #207cca; color: #fafafa;}
+.btn-search:hover { background-color: #1b6aad; color: #fff; }
+
+
+.search-bar i { background: none; border: none}
+
+.search-bar input { padding-top: 10px; padding-bottom: 10px;}
+
+.search-bar button { margin-left: -30px; background: none; border: none; }
+
+.search-bar .ion-ios-search {margin-top: 10px; font-size: 140%; background: none; border: none; text-decoration: none}
+
+/*  ----------------------------  */
+/*          MINI NAV              */
+/*  ----------------------------  */
+
+.responsive-menu-container { margin: 0; padding: 0; width: 360px; background: #fff; float: right; }
+.responsive-menu-container .row { margin-top: 40px; height: 40px;}
+.responsive-menu-container .row:hover { background: #2980b9; color: #fff;}
+
+.mobile-nav-icon {padding-top: 10px;padding-right: 8px;margin: 0;float: right;cursor: pointer; display: block;}
+
+.mobile-nav-icon i {font-size: 130%;color: #7b7b7b;}
+
+/*  ----------------------------  */
+/*    Mini nav funcionality       */
+/*  ----------------------------  */
+
+.expand {display: block !important; }
+
+.expand1 {display: none !important;}
+
+.responsive-menu{ display: none; height: auto; background: rgba(0, 0, 0, 0.29);   position: absolute; top: 0px; padding-top: 50px; margin: 0; width: 100%; z-index: 10; border-top: 1px solid #bcbbbb; font-size: 90%; }
+
+.box25-m1, .box25-m2, .box25-m3, .box25-m4 { margin: 0; padding: 0; margin-top: 10px; display: block; cursor: pointer; font-size: 110%; }
+
+.responsive-menu-container .row .box75 {list-style: none;width: 90%;}
+.responsive-menu-container .row .box75 li { margin-top: 10px; margin-bottom: 20px; margin-left: 20px; }
+.responsive-menu-container .row .box75 li a{ margin-top: 10px; list-style: none; text-decoration: none; color: #2e2e2e; font-weight: bold;}
+.responsive-menu-container .row .box75 li a:hover{ color: #fff;}
+
+.sub-menu{ margin: 0; display: block; width: 80%; list-style: none; text-decoration: none; }
+.sub-menu li{padding: 8px 0px 8px 0px;}
+.sub-menu a{margin-left: 40px; padding-bottom: 5px; color:#2e2e2e;text-decoration: none;}
+.sub-menu a:hover { border-bottom: 3px solid #236d9d; transition: 0.1s;}
+
+/*  ----------------------------  */
+/*           SECTIONS             */
+/*  ----------------------------  */
+
+/*  ----------------------------  */
+/*       SECTION 1 NOW            */
+/*  ----------------------------  */
+
+/* style front section */
+.header-video {height: 800px; overflow: hidden;}
+#myVideo {min-width: 100%;}
+
+.now {height: 800px; overflow:hidden;}
+.now img{min-width: 100%;}
+
+.content {position:relative; top: -800px; left: 100px; width: 30%;height: 200px; margin-top: 100px; margin-left: 200px; margin-bottom: 100px; padding: 20px; color: #f1f1f1; line-height: 120%;}
+.content a {text-decoration: none; }
+.content span {
+   color: aliceblue;
+    font-weight: 400;
+}
+.content span:hover {
+    color: #fff;
+    padding-right: 20px;
+    font-weight: 500;
+}
+.content i {
+    padding-top: 7px;
+    color: #d4d4d4;
+    font-size: 80%;
+}
+
+/*  ----------------------------  */
+/*    SECTION 2  TOP STORIES     */
+/*  ----------------------------  */
+
+.section-top_stories { max-width: auto; height: 500px; }
+.section-top_stories .box-1, .section-top_stories .box-3 { background: #fff; padding: 300px 20px 10px 40px;}
+.section-top_stories .box-1 p, .section-top_stories .box-3 p{ margin-bottom: 10px;font-weight: 500}
+.section-top_stories .box-1 h3, .section-top_stories .box-3 h3{ font-weight: 500}
+.section-top_stories .box-1:hover, .section-top_stories .box-3 p:hover{ color: #2e97db}
+.section-top_stories .box-1 h3, .section-top_stories .box-3 h3{ font-weight: 500}
+.section-top_stories .box-2, .section-top_stories .box-4 { background: rgba(243, 242, 244, 0.87); }
+.section-top_stories span { color: darkblue;}
+.section-top_stories  .link-arrow:hover span{ padding-bottom: 1px; border-bottom: 1px solid darkblue; }
+
+/*  ----------------------------  */
+/*       SECTION 3 URGENTNO       */
+/*  ----------------------------  */
+
+.section-urgentno { width: 100%; height: 680px; background-color:#fff;}
+
+.section-urgentno  .text {display: block; height: 600px; padding: 200px 0px 0px 200px;font-weight: 500; color: #2980b9;}
+
+.section-urgentno h3 {font-weight: 500; color: #2980b9;}
+.section-urgentno li {padding-bottom: 10px; list-style-type: none;}
+.section-urgentno a {text-decoration: none;cursor: pointer;color: #2980b9;}
+.section-urgentno img {width: 100%; height: auto;}
+
+/*  ----------------------------  */
+/*        SECTION 4 VIJESTI       */
+/*  ----------------------------  */
+
+.section-vijest{ max-width: auto; height: 600px; background-color:#236d9d;clear: both;}
+
+hr {margin-bottom: 40px;}
+
+.section-vijesti  .text {display: inline; height: 650px; padding: 50px 20px 20px 50px;font-weight: 500; color: #2980b9;}
+
+.section-vijesti h5 {font-weight: 500; color: #2980b9;}
+.section-vijesti li {padding-bottom: 10px; list-style-type: none;}
+.section-vijesti a {text-decoration: none;cursor: pointer;color: #2980b9;}
+.section-vijesti img {width: 100%; height: auto;}
+
+.s-vijesti {width: 90%; height: 150px; background-color: #fff; margin-bottom: 20px;}
+.s-vijesti-title h5:hover, .s-vijesti-title p:hover  {
+    color: #2980b9;
+}
+.s-vijesti img {display: inline; float: left; width: 15%; margin-right: 20px;}
+.s-vijesti-title {width: 75%; float: left; display: block;}
+.s-vijesti-title h5{margin: 0px 10px 10px 0px;padding: 0px;}
+.s-vijesti-title p{margin-bottom: 10px;font-size: 90%;line-height: 145%;color: #1c1c1c;}
+
+/*  ----------------------------  */
+/*    SECTION 5 SERVICE BOX       */
+/*  ----------------------------  */
+
+.services-box { width: auto; height: 500px; padding: 20px; display: block; clear: both; background-color: #409ed8; color: #fff; }
+
+.services-box h3{ font-weight: 500; padding-top: 50px; text-align: center; }
+
+.services-box p {
+    text-align: center;
+}
+
+.service { padding: 20px 20px; }
+.service i{ display: block; text-decoration: none; list-style: none; color: #fff; font-size: 280%; font-weight: lighter; }
+
+/*  ----------------------------  */
+/*        SECTION 6 FOOTER        */
+/*  ----------------------------  */
+
+footer {width: 100%;  margin: 0; padding: 0;  border-top: 1px solid #a3a2a2; background: #2980b9;}
+
+footer ul {background: #e2e2e2;}
+
+.footer-top {height: 220px;  display: block; padding-top: 50px; clear: both}
+.footer-title {margin-left: 250px; margin-right: 250px; color: aliceblue;}
+.footer-title h5 {font-size: 150%; color: aliceblue; font-weight: 500; padding: 0px 0px 2px 0px;}
+.footer-title p {font-size: 90%; margin-bottom: 10px;}
+
+footer ul li {width: 15%;padding-top: 10px; padding-right: 20px; font-size: 90%; float: left; list-style: none;}
+
+footer ul li:hover {font-weight: 400}
+.adresa {
+    margin-bottom: 30px;
+}
+.adresa p{
+    margin: 0;
+    padding: 2px;font-size: 80%;
+}
+.terms a {color:aliceblue; font-size: 90%; text-decoration: none; padding-bottom: 5px;}
+
+
+
+/*  ----------------------------
+/*         Social Header          */
+/* ----------------------------   */
+
+.social-header {width: 25%;  float: right;}
+.social-header a{ padding: 5px 0 5px 0px; text-decoration: none; display: inline-block; float: right; padding-left: 40px; vertical-align: middle; font-size: 130%; color: aliceblue}
+.social-header a:first-child { margin-top: 2px; font-size: 90%; float: left;}
+
+.sh-text {color: #fff;}
+/* .sh-t {color: #55acee;font-weight: 500;}
+.sh-f {color: #3b5998;font-weight: 500}
+.sh-l {color: #007bb5; font-weight: 500}
+.sh-i {color: #8a3ab9;} */
+
+.footer-bottom {margin-left: 250px; margin-right: 250px; color: aliceblue;}
+.footer-bottom hr {
+    margin-top: 20px;
+}
+.footer-bottom p {
+    width: 25%;
+    font-size: 80%;
+    color: beige;
+    padding-bottom:
+        20px;
+}
+/*  ----------------------------  */
+/*         INDEX END              */
+/*  ----------------------------  */
+
+/*  ----------------------------  */
+/*        COVID-19                */
+/*  ----------------------------  */
+
+/*  ----------------------------  */
+/*      SECTION 1 NOW             */
+/*  ----------------------------  */
+
+.content-covid-19 {position:relative; top: -800px; left: 100px; width: 30%;height: 200px; margin-top: 100px; margin-left: 200px; margin-bottom: 100px; padding: 20px; background: rgba(35, 164, 175, 0.72);color: #f1f1f1;}
+.content a {text-decoration: none; }
+
+.content-covid-19 span {color: aliceblue;font-weight: 400;}
+.content-covid-19 span:hover {color: #272829; padding-right: 20px;}
+.content-covid-19 i {padding-top: 7px; color: #d4d4d4; font-size: 80%;}
+
+

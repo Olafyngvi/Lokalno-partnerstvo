@@ -24,9 +24,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/normalize.css",
+              "src/assets/queries.css",
+              "src/assets/snnx.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/script.js"
+            ]
           },
           "configurations": {
             "production": {
