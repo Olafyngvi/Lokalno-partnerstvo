@@ -1,5 +1,11 @@
+
 <nav>
   <div class="top-navigation">
+    <div class="heder row pl-2 pt-2">
+      <h3>Lokalno partnerstvo za obrazovanje odraslih</h3>
+      <form action="pages/zzjz_search.php" class="search-f" method="post"><input class="#" type="text" name="search" placeholder="Unesi pojam..."><span><button name="submit" type="submit">Traži</button></span></form>
+    </div>
+
       <div class="top-navigation-bar">
           <a class="mobile-nav-icon">
           </a>
@@ -11,8 +17,8 @@
                   <li><a href="#"><span onmouseover="openNav_1()">Usluge</span></a></li>
                   <li><a [routerLink]="['/vijesti']" routerLinkActive="router-link-active" ><span onmouseover="openNav_2()">Vijesti</span></a></li>
                   <li><a href="#"><span onmouseover="openNav_3()">Oblasti</span></a></li>
-                  <li><a href="pages/careers.php"><span onclick="openNav_4()">Publikacije i podaci</span></a></li>
-                  <li><a href="pages/blog.php"><span onclick="openNav_4()">O nama</span></a></li>
+                  <li><a href="pages/careers.php"><span onclick="openNav_4()" onmouseover="closeNav_1(), closeNav_2(), closeNav_3()">Publikacije i podaci</span></a></li>
+                  <li><a href="pages/blog.php"><span onclick="openNav_4()" onmouseover="closeNav_1(), closeNav_2(), closeNav_3()">O nama</span></a></li>
               </ul>
               <div id="myNav_1" class="overlay">
                   <div class="navigation_container">

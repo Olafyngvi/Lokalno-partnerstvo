@@ -15,6 +15,7 @@ import { UslugeComponent } from './components/usluge/usluge.component';
 import { UkljuciSeComponent } from './components/ukljuci-se/ukljuci-se.component';
 import { PublikacijeIPodaciComponent } from './components/publikacije-i-podaci/publikacije-i-podaci.component';
 import { ONamaComponent } from './components/o-nama/o-nama.component';
+import { BodyComponent } from './components/body/body.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ONamaComponent } from './components/o-nama/o-nama.component';
     UslugeComponent,
     UkljuciSeComponent,
     PublikacijeIPodaciComponent,
-    ONamaComponent
+    ONamaComponent,
+    BodyComponent
   ],
   imports: [
     BrowserModule,
