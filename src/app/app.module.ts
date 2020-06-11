@@ -1,5 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -16,6 +22,14 @@ import { UkljuciSeComponent } from './components/ukljuci-se/ukljuci-se.component
 import { PublikacijeIPodaciComponent } from './components/publikacije-i-podaci/publikacije-i-podaci.component';
 import { ONamaComponent } from './components/o-nama/o-nama.component';
 import { BodyComponent } from './components/body/body.component';
+import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+
+import { AuthServiceService } from './services/auth-service.service';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { AdminTopbarComponent } from './components/admin-topbar/admin-topbar.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +46,24 @@ import { BodyComponent } from './components/body/body.component';
     UkljuciSeComponent,
     PublikacijeIPodaciComponent,
     ONamaComponent,
-    BodyComponent
+    BodyComponent,
+    LoginComponent,
+    DashboardComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+    SidebarComponent,
+    AdminTopbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule
   ],
-  providers: [],
+  providers: [AuthServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

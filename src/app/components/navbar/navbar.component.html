@@ -1,5 +1,5 @@
 
-<nav>
+<nav *ngIf="nav.visible">
   <div class="top-navigation">
     <div class="heder pl-2 pt-2">
       <h3>Lokalno partnerstvo za obrazovanje odraslih</h3>
@@ -20,6 +20,7 @@
                   <li><a href="#"><span onmouseover="openNav_3()">Oblasti</span></a></li>
                   <li><a href="pages/careers.php"><span onclick="openNav_4()" onmouseover="closeNav_1(), closeNav_2(), closeNav_3()">Publikacije i podaci</span></a></li>
                   <li><a href="pages/blog.php"><span onclick="openNav_4()" onmouseover="closeNav_1(), closeNav_2(), closeNav_3()">O nama</span></a></li>
+                  <li><a routerLink="/login">Login</a></li>
               </ul>
               <div id="myNav_1" class="overlay">
                   <div class="navigation_container">
