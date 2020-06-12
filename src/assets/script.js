@@ -69,10 +69,6 @@ var mypos = mywindow.scrollTop();
 mywindow.scrollTop(function() {
   if(mywindow.scrollTop() > mypos)
   {
-      document.getElementById("dema11").style.position = "relative";
-
-
-
   }
   mypos = mywindow.scrollTop();
 });
@@ -293,5 +289,4 @@ jQuery(function($){
       $('.login-ui').toggleClass('expand')
   })
 });
-
 

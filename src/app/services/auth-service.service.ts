@@ -110,8 +110,11 @@ SetUserData(user) {
 SignOut() {
   return this.afAuth.auth.signOut().then(() => {
     localStorage.removeItem('user');
-    this.router.navigate(['login']);
-  })
+    this.router.navigate(['/'])
+  .then(() => {
+    window.location.reload();
+  });
+  });
 }
 
 }

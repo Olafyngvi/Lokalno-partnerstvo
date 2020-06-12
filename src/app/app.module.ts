@@ -6,6 +6,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
+import { RichTextEditorModule } from '@syncfusion/ej2-angular-richtexteditor';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -30,6 +31,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { AuthServiceService } from './services/auth-service.service';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AdminTopbarComponent } from './components/admin-topbar/admin-topbar.component';
+import { TextEditorComponent } from './components/text-editor/text-editor.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import { AdminTopbarComponent } from './components/admin-topbar/admin-topbar.com
     SignUpComponent,
     ForgotPasswordComponent,
     SidebarComponent,
-    AdminTopbarComponent
+    AdminTopbarComponent,
+    TextEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,8 @@ import { AdminTopbarComponent } from './components/admin-topbar/admin-topbar.com
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    RichTextEditorModule
   ],
   providers: [AuthServiceService],
   bootstrap: [AppComponent]
