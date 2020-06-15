@@ -32,6 +32,9 @@ import { AuthServiceService } from './services/auth-service.service';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AdminTopbarComponent } from './components/admin-topbar/admin-topbar.component';
 import { TextEditorComponent } from './components/text-editor/text-editor.component';
+import { CallActionComponent } from './components/admin/call-action/call-action.component';
+import { VijestiAddComponent } from './components/admin/vijesti-add/vijesti-add.component';
+import { DashboardIndexComponent } from './components/admin/dashboard-index/dashboard-index.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +58,10 @@ import { TextEditorComponent } from './components/text-editor/text-editor.compon
     ForgotPasswordComponent,
     SidebarComponent,
     AdminTopbarComponent,
-    TextEditorComponent
+    TextEditorComponent,
+    CallActionComponent,
+    VijestiAddComponent,
+    DashboardIndexComponent
   ],
   imports: [
     BrowserModule,

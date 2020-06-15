@@ -8,6 +8,8 @@ import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VijestiAddComponent } from './components/admin/vijesti-add/vijesti-add.component';
+import { DashboardIndexComponent } from './components/admin/dashboard-index/dashboard-index.component';
 
 const routes: Routes = [
 
@@ -15,7 +17,12 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'vijesti', component: VijestiComponent},
   { path: 'registracija', component: SignUpComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard',
+    component: DashboardComponent,
+    children: [
+      {path: '', component: DashboardIndexComponent},
+      {path: 'nova-vijest', component: VijestiAddComponent}
+    ] },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   {path: '**', component: NotFoundComponent}
 
