@@ -1,0 +1,52 @@
+<div  class="row-fluid mb-2">
+  <button routerLink="/dashboard" style="background-color:transparent;top: 0;" class="btn btn-light"><i class="fa fa-lg fa-arrow-left text-secondary"></i></button>
+  <div class="row">
+    <div class="form-inline col-lg-3">
+      <label for="kate" class="mr-1">Kategorije</label>
+      <select [(ngModel)]="selected" name="kate" (change)="onChange()" class="form-control">
+        <option [selected] value="Sve vijesti"> Sve vijesti</option>
+        <option *ngFor="let kat of kategorije" [value]="kat.Naziv">{{kat.Naziv}}</option>
+      </select>
+    </div>
+    <div class="form-group col-lg-3">
+      <form class="form-inline">
+        <div class="input-group">
+          <label for="pretraga" class="mr-1">Pretraga</label>
+          <input class="form-control mr-1" type="text" name="pretraga" id="pretraga" [(ngModel)]="pretraga" >
+          <span class="input-group-btn mr-1">
+            <button class="btn btn-danger" (click)="pretraga = '';pretrazi()" type="button">
+              <i class="fa fa-times"></i>
+            </button>
+          </span>
+          <span class="input-group-btn">
+            <button class="btn btn-primary" (click)="pretrazi()" type="button">
+              <i class="fa fa-search"></i>
+            </button>
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+<table class="table table-striped table-hover  table-bordered">
+  <thead>
+    <tr>
+      <th>Naslov</th>
+      <th>Datum objave</th>
+      <th>Kategorija</th>
+      <!--<th>Sadržaj</th>-->
+      <th>Podnaslov</th>
+      <th>Akcija</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vijest of vijesti">
+      <td>{{vijest.Naslov}}</td>
+      <td>{{ vijest.Datum.seconds*1000 | date:'dd-MM-yyy' }}</td>
+      <td>{{vijest.Kategorija}}</td>
+      <!--<td [innerHTML]=vijest.Sadrzaj></td>-->
+      <td>{{vijest.Podnaslov}}</td>
+      <td><div class="btn-group"><a routerLink="/dashboard/izmjena-vijest/{{vijest.Id}}" class="mr-2 inline"><i class="fa fa-2x fa-edit"></i></a><a routerLink="/editMeal" class="mr-2 inline"><i class="fa fa-2x fa-trash"></i></a></div></td>
+    </tr>
+  </tbody>
+</table>

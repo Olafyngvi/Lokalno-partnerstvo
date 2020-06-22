@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { VijestiService } from 'src/app/services/vijesti.service';
+import { Vijest } from 'src/app/models/Vijest';
 
 @Component({
   selector: 'app-dashboard-index',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard-index.component.css']
 })
 export class DashboardIndexComponent implements OnInit {
-
-  constructor() { }
+  vijesti: Vijest[];
+  constructor(private vijestiService: VijestiService) { }
 
   ngOnInit(): void {
+    this.vijestiService.getProducts().subscribe(vijesti => {
+      this.vijesti = vijesti;
+    });
   }
 
 }

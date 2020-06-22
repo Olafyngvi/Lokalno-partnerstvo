@@ -25,14 +25,63 @@ export class VijestiService {
           map(actions => {
               return actions.map(action  => {
           const data = action.payload.doc.data() as Vijest;
-          data.id = action.payload.doc.id;
+          data.Id = action.payload.doc.id;
           return data;
             });
           })
         );
       return collection$;
   }
+  getByKategorija(kategorija: string): Observable<Vijest[]> {
+    let collection: AngularFirestoreCollection<Vijest>;
+    if (kategorija !== 'Sve vijesti') {
+      // tslint:disable-next-line: max-line-length
+       collection = this.afs.collection('vijesti', ref => ref.where('Kategorija', '==', kategorija));
+    } else {
+      collection = this.afs.collection('vijesti');
+    }
+    const collection$: Observable<Vijest[]> = collection.snapshotChanges().pipe(
+        map(actions => {
+            return actions.map(action  => {
+        const data = action.payload.doc.data() as Vijest;
+        data.Id = action.payload.doc.id;
+        return data;
+          });
+        })
+      );
+    return collection$;
+  }
 
+  getVijest(category: string, id: string): Observable<Vijest> {
+    this.vijestDoc = this.afs.doc<Vijest>(`${category}/${id}`);
+    this.vijest = this.vijestDoc.snapshotChanges().pipe(
+      map(action => {
+        if (action.payload.exists === false) {
+          return null;
+        } else {
+          const data = action.payload.data() as Vijest;
+          data.Id = action.payload.id;
+          return data;
+        }
+      })
+    );
+    return this.vijest;
+  }
+  updateVijest(id: string, vijest: Vijest) {
+    this.vijestDoc = this.afs.doc<Vijest>(`vijesti/${id}`);
+
+    this.novaVijest = {
+      Naslov: vijest.Naslov,
+      Podnaslov: vijest.Podnaslov,
+      Sadrzaj: vijest.Sadrzaj,
+      Kategorija: vijest.Kategorija,
+      Datum: vijest.Datum,
+      Fokus: vijest.Fokus
+    };
+    this.vijestDoc.update(this.novaVijest).catch(err => {
+      console.log(err);
+    });
+  }
   DodajVijest(vijest: Vijest) {
     const collection: AngularFirestoreCollection<Vijest> = this.afs.collection('vijesti');
     collection.add(vijest);

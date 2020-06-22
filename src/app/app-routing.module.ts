@@ -10,6 +10,11 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VijestiAddComponent } from './components/admin/vijesti-add/vijesti-add.component';
 import { DashboardIndexComponent } from './components/admin/dashboard-index/dashboard-index.component';
+import { KategorijeVijestiComponent } from './components/admin/kategorije-vijesti/kategorije-vijesti.component';
+import { KategorijeVijestiAddComponent } from './components/admin/kategorije-vijesti-add/kategorije-vijesti-add.component';
+import { KategorijeVijestiIzmjenaComponent } from './components/admin/kategorije-vijesti-izmjena/kategorije-vijesti-izmjena.component';
+import { SveVijestiComponent } from './components/admin/sve-vijesti/sve-vijesti.component';
+import { VijestiIzmjenaComponent } from './components/admin/vijesti-izmjena/vijesti-izmjena.component';
 
 const routes: Routes = [
 
@@ -21,7 +26,13 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       {path: '', component: DashboardIndexComponent},
-      {path: 'nova-vijest', component: VijestiAddComponent}
+      {path: 'vijesti', component: SveVijestiComponent},
+      {path: 'nova-vijest', component: VijestiAddComponent},
+      {path: 'nova-kategorija', component: KategorijeVijestiAddComponent},
+      {path: 'kategorije-vijesti', component: KategorijeVijestiComponent},
+      {path: 'izmjena-kategorija/:id', component: KategorijeVijestiIzmjenaComponent},
+      {path: 'izmjena-vijest/:id', component: VijestiIzmjenaComponent}
+
     ] },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   {path: '**', component: NotFoundComponent}

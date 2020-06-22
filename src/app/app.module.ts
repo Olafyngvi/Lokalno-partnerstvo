@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
 import { RichTextEditorModule } from '@syncfusion/ej2-angular-richtexteditor';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -35,6 +36,13 @@ import { TextEditorComponent } from './components/text-editor/text-editor.compon
 import { CallActionComponent } from './components/admin/call-action/call-action.component';
 import { VijestiAddComponent } from './components/admin/vijesti-add/vijesti-add.component';
 import { DashboardIndexComponent } from './components/admin/dashboard-index/dashboard-index.component';
+import { KategorijeVijestiComponent } from './components/admin/kategorije-vijesti/kategorije-vijesti.component';
+import { KategorijeVijestiAddComponent } from './components/admin/kategorije-vijesti-add/kategorije-vijesti-add.component';
+import { KategorijeVijestiIzmjenaComponent } from './components/admin/kategorije-vijesti-izmjena/kategorije-vijesti-izmjena.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+import { SveVijestiComponent } from './components/admin/sve-vijesti/sve-vijesti.component';
+import { VijestiIzmjenaComponent } from './components/admin/vijesti-izmjena/vijesti-izmjena.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +69,13 @@ import { DashboardIndexComponent } from './components/admin/dashboard-index/dash
     TextEditorComponent,
     CallActionComponent,
     VijestiAddComponent,
-    DashboardIndexComponent
+    DashboardIndexComponent,
+    KategorijeVijestiComponent,
+    KategorijeVijestiAddComponent,
+    KategorijeVijestiIzmjenaComponent,
+    ConfirmationDialogComponent,
+    SveVijestiComponent,
+    VijestiIzmjenaComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +85,10 @@ import { DashboardIndexComponent } from './components/admin/dashboard-index/dash
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
-    RichTextEditorModule
+    RichTextEditorModule,
+    FlashMessagesModule.forRoot(),
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [AuthServiceService],
   bootstrap: [AppComponent]

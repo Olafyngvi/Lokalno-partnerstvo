@@ -4,6 +4,9 @@ import { NavbarService } from '../../services/navbar.service';
 import { FooterService } from '../../services/footer.service';
 import { AuthServiceService } from '../../services/auth-service.service';
 
+import { VijestiService } from '../../services/vijesti.service';
+import { Vijest } from 'src/app/models/Vijest';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -14,7 +17,8 @@ export class DashboardComponent implements OnInit {
   constructor(public nav: NavbarService,
               public footer: FooterService,
               private auth: AuthServiceService,
-              private router: Router) { }
+              private router: Router,
+              ) { }
 
   ngOnInit(): void {
     this.nav.hide();

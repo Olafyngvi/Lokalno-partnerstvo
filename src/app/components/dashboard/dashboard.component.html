@@ -21,9 +21,9 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="tables.html">
+          <a class="nav-link" routerLink="vijesti">
             <i class="fa fa-fw fa-table"></i>
-            <span class="nav-link-text">Tables</span>
+            <span class="nav-link-text">Sve vijesti</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
@@ -63,14 +63,14 @@
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-sitemap"></i>
-            <span class="nav-link-text">Menu Levels</span>
+            <span class="nav-link-text">Kategorije</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseMulti">
             <li>
-              <a href="#">Second Level Item</a>
+              <a routerLink="kategorije-vijesti">Kategorije Vijesti</a>
             </li>
             <li>
-              <a href="#">Second Level Item</a>
+              <a routerLink="nova-kategorija">Dodaj novu</a>
             </li>
             <li>
               <a href="#">Second Level Item</a>
@@ -207,7 +207,7 @@
   </nav>
   <div class="content-wrapper">
     <div class="container-fluid">
-
+      <div class="container"><flash-messages></flash-messages></div>
       <router-outlet></router-outlet>
       </div>
     </div>

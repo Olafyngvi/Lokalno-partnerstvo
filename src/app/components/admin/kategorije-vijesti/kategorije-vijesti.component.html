@@ -1,0 +1,15 @@
+  <a class="btn btn-secondary mb-3" routerLink="/dashboard/nova-kategorija" >Dodaj novu kategoriju</a>
+  <table class="table table-striped table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>Naziv</th>
+        <th>Akcija</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let kategorija of kategorijeVijesti">
+        <td>{{kategorija.Naziv}}</td>
+        <td><div class="btn-group"><a routerLink="/dashboard/izmjena-kategorija/{{kategorija.Id}}" class="btn btn-light mr-2 inline">Edit</a><a (click)="onDeleteClick(kategorija)" class="btn btn-secondary text-white inline">Delete</a></div></td>
+      </tr>
+    </tbody>
+  </table>

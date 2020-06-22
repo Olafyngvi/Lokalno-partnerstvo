@@ -1,9 +1,12 @@
+import { Observable } from 'rxjs';
+
 export interface Vijest {
-  id?: string;
-  naslov?: string;
-  sadrzaj?: string;
-  kategorija?: string;
-  datum?: Date;
-  slika?: string;
-  fokus?: boolean;
+  Id?: string;
+  Naslov?: string;
+  Podnaslov?: string;
+  Sadrzaj?: string;
+  Kategorija?: string;
+  Datum?: any;
+  Slika?: Observable<any>;
+  Fokus?: boolean;
 }

@@ -13,7 +13,7 @@
       name="kategorijes"
       id="kategorija"
       [ngClass]="{'is-invalid': kategorija.errors && kategorija.touched}">
-      <option *ngFor="let kat of kategorije" [value]="kat.Naziv">
+      <option *ngFor="let kat of kategorije" [selected]="kat.Naziv === selectedObj" [value]="kat.Naziv">
         {{kat.Naziv}}
       </option>
       </select>
@@ -90,13 +90,15 @@
             <div class="img-preview pull-right" [ngStyle]="{'background-image': 'url('+ selectedFile.src +')'}" style="width: 310px; height: 175px;">
 
             </div>
+
           </div>
+          <img *ngIf="!selectedFile" class="img-preview pull-right" [src]="vijest.Slika | async" width="310px" height="175px" alt="">
         </div>
       </div>
 
     </div>
     <input type="reset" value="Reset" class="btn btn-secondary mt-4">
-    <input type="submit" value="Dodaj vijest" class="btn btn-secondary pull-right mt-4">
+    <input type="submit" value="Spremi" class="btn btn-secondary pull-right mt-4">
   </form>
 
 </div>
