@@ -10,9 +10,10 @@
       [(ngModel)]="selectedObj"
       class="form-control"
       required
-      name="kategorijes"
+      name="kategorije"
       id="kategorija"
-      [ngClass]="{'is-invalid': kategorija.errors && kategorija.touched}">
+      [ngClass]="{'is-invalid': (kategorija.errors || kategorija.value === 'Odaberite kategoriju') && kategorija.touched}">
+      <option value="Odaberite kategoriju">Odaberite kategoriju</option>
       <option *ngFor="let kat of kategorije" [value]="kat.Naziv">
         {{kat.Naziv}}
       </option>
@@ -63,9 +64,9 @@
     <div class="form-group">
         <ejs-richtexteditor #fromRTE #name='ngModel' [(value)]='value' required name="name" [(ngModel)]="value"
               (created)="rteCreated()"></ejs-richtexteditor>
-              <div *ngIf="(name.invalid && name.touched)" class="alert alert-danger">
-                  <div *ngIf="name.errors.required">
-                      Value is required.
+              <div *ngIf="(name.invalid && name.touched)">
+                  <div *ngIf="name.errors.required" class="alert alert-danger">
+                      Sadrzaj je obavezan
                   </div>
               </div>
     </div>
@@ -76,6 +77,7 @@
           <br />
           <input class="btn btn-secondary"
           #imageInput type="file"
+          name="Slika"
           id="image"
           accept="image/*"
           (change)="processFile(imageInput)"

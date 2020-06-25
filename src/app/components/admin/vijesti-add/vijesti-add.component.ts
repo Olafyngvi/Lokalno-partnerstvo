@@ -6,7 +6,9 @@ import { VijestiService } from '../../../services/vijesti.service';
 import { KategorijeVijestiService } from '../../../services/kategorije-vijesti.service';
 import { MyImageService } from '../../../services/my-image.service';
 import { ToolbarService, LinkService, ImageService,
-   HtmlEditorService, RichTextEditorComponent } from '@syncfusion/ej2-angular-richtexteditor';
+   HtmlEditorService, RichTextEditorComponent, Image } from '@syncfusion/ej2-angular-richtexteditor';
+import { FlashMessagesService } from 'angular2-flash-messages';
+import { ComfirmationDialogService } from '../../confirmation-dialog/comfirmation-dialog.service';
 
 import { Vijest } from 'src/app/models/Vijest';
 import { KategorijaVijesti } from '../../../models/KategorijaVijesti';
@@ -25,11 +27,13 @@ class ImageSnippet {
 export class VijestiAddComponent implements OnInit {
   selectedFile: ImageSnippet;
   kategorije: KategorijaVijesti[];
-  selectedObj: string;
+  selectedObj = 'Odaberite kategoriju';
   constructor(private vijestiService: VijestiService,
               private kategorijeService: KategorijeVijestiService,
               private router: Router,
-              private imageService: MyImageService) { }
+              private imageService: MyImageService,
+              private fm: FlashMessagesService,
+              private cds: ComfirmationDialogService) { }
   @ViewChild('fromRTE')
   private rteEle: RichTextEditorComponent;
   public value: string = null;
@@ -58,20 +62,21 @@ export class VijestiAddComponent implements OnInit {
     this.kategorijeService.getKategorijeVijesti().subscribe(kategorije => {
       this.kategorije = kategorije;
     });
-    this.rteEle.enableHtmlEncode = true;
   }
+
   onSubmit(form: NgForm): void {
-      if (form.hasError) {
-        console.log('Validacija');
+      if (form.invalid || this.selectedObj === 'Odaberite kategoriju') {
+        console.log(form.invalid);
+        console.log(this.selectedObj);
+        this.cds.alert('Validacija', 'Popunite sva tražena polja');
+
+      } else {
         this.vijest.Kategorija = this.selectedObj;
         this.vijest.Sadrzaj = this.rteEle.value;
         this.vijestiService.DodajVijest(this.vijest);
         this.router.navigate([`dashboard/vijesti`]);
-
-      } else {
-        this.vijestiService.DodajVijest(this.vijest);
-        this.router.navigate([`dashboard`]);
         this.imageService.uploadImage(this.selectedFile.file, this.vijest.Podnaslov, 'Vijesti');
+        this.fm.show('Vijest je uspješno kreirana', {cssClass: 'alert-success', timeout: 3000});
       }
   }
 }

@@ -143,7 +143,7 @@
             <a class="dropdown-item small" href="#">View all messages</a>
           </div>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown mr-5">
           <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-fw fa-bell"></i>
             <span class="d-lg-none">Alerts
@@ -186,22 +186,30 @@
             <a class="dropdown-item small" href="#">View all alerts</a>
           </div>
         </li>
-        <li class="nav-item">
-          <form class="form-inline my-2 my-lg-0 mr-lg-2">
-            <div class="input-group">
-              <input class="form-control" type="text" placeholder="Search for...">
-              <span class="input-group-btn">
-                <button class="btn btn-primary" type="button">
-                  <i class="fa fa-search"></i>
-                </button>
-              </span>
-            </div>
-          </form>
+        <li class="nav-item dropdown no-arrow mr-5">
+          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span>Dobrodošao, {{name}}</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+              <button class="dropdown-item btn btn-white" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Resetuj password</button>
+            <a class="dropdown-item" href="#">
+              <i class="fa fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+              Postavke (not impl)
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item" data-toggle="modal" data-target="#exampleModal">
+              <i class="fa fa-sign-out fa-sm fa-fw mr-2 text-gray-400"></i>
+              Odjavi se
+            </a>
+          </div>
+        </li>
+        <!--<li class="nav-item pt-2 mr-5">
+          <span>Dobrodošli, {{name}}</span>
         </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
             <i class="fa fa-fw fa-sign-out"></i>Logout</a>
-        </li>
+        </li>-->
       </ul>
     </div>
   </nav>

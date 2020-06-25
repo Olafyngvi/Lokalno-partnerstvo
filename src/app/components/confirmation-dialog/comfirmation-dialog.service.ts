@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { ConfirmationDialogComponent } from './confirmation-dialog.component';
+import { AlertDialogComponent } from '../admin/alert-dialog/alert-dialog.component';
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +25,16 @@ export class ComfirmationDialogService {
     modalRef.componentInstance.btnCancelText = btnCancelText;
 
     return modalRef.result;
+  }
+  public alert(
+    title: string,
+    message: string,
+    btnOkText: string = 'Uredu',
+    dialogSize: 'sm' | 'lg' = 'lg'): Promise<boolean> {
+      const modalRef = this.modalService.open(AlertDialogComponent, { size: dialogSize });
+      modalRef.componentInstance.title = title;
+      modalRef.componentInstance.message = message;
+      modalRef.componentInstance.btnOkText = btnOkText;
+      return modalRef.result;
   }
 }

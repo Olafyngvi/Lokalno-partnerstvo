@@ -1,13 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { AngularFireStorage } from '@angular/fire/storage';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ToolbarService, LinkService, ImageService,
   HtmlEditorService, RichTextEditorComponent } from '@syncfusion/ej2-angular-richtexteditor';
 
 import { VijestiService } from '../../../services/vijesti.service';
 import { KategorijeVijestiService } from '../../../services/kategorije-vijesti.service';
 import { MyImageService } from '../../../services/my-image.service';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 import { Vijest } from '../../../models/Vijest';
 import { KategorijaVijesti } from 'src/app/models/KategorijaVijesti';
@@ -40,7 +41,8 @@ export class VijestiIzmjenaComponent implements OnInit {
               private imageService: MyImageService,
               private kategorijeService: KategorijeVijestiService,
               private router: Router,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private fm: FlashMessagesService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
@@ -77,6 +79,7 @@ export class VijestiIzmjenaComponent implements OnInit {
           this.vijest.Sadrzaj = this.value;
           this.vijestiService.updateVijest(this.vijest.Id, this.vijest);
           this.router.navigate([`/dashboard/vijesti/`]);
+          this.fm.show('Vijest je uspješno izmjenjena', {cssClass: 'alert-success', timeout: 3000});
         } else {
           this.vijest.Kategorija = this.selectedObj;
           this.vijest.Sadrzaj = this.value;
@@ -84,6 +87,7 @@ export class VijestiIzmjenaComponent implements OnInit {
           this.imageService.deleteImage(this.vijest.Podnaslov, 'Vijesti');
           this.imageService.uploadImage(this.selectedFile.file, this.vijest.Podnaslov, 'Vijesti');
           this.router.navigate([`/dashboard/vijesti/`]);
+          this.fm.show('Vijest je uspješno izmjenjena', {cssClass: 'alert-success', timeout: 3000});
         }
     }
   }

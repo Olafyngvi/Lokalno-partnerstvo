@@ -100,7 +100,8 @@ SetUserData(user) {
   const userData: User = {
     email: user.email,
     displayName: user.displayName,
-  }
+  };
+  localStorage.setItem('user', JSON.stringify(user));
   return userRef.set(userData, {
     merge: true
   });

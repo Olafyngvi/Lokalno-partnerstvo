@@ -43,6 +43,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 import { SveVijestiComponent } from './components/admin/sve-vijesti/sve-vijesti.component';
 import { VijestiIzmjenaComponent } from './components/admin/vijesti-izmjena/vijesti-izmjena.component';
+import { AlertDialogComponent } from './components/admin/alert-dialog/alert-dialog.component';
+import { VijestComponent } from './components/vijest/vijest.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +77,9 @@ import { VijestiIzmjenaComponent } from './components/admin/vijesti-izmjena/vije
     KategorijeVijestiIzmjenaComponent,
     ConfirmationDialogComponent,
     SveVijestiComponent,
-    VijestiIzmjenaComponent
+    VijestiIzmjenaComponent,
+    AlertDialogComponent,
+    VijestComponent
   ],
   imports: [
     BrowserModule,

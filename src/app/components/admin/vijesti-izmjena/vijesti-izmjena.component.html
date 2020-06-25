@@ -10,7 +10,7 @@
       [(ngModel)]="selectedObj"
       class="form-control"
       required
-      name="kategorijes"
+      name="kategorije"
       id="kategorija"
       [ngClass]="{'is-invalid': kategorija.errors && kategorija.touched}">
       <option *ngFor="let kat of kategorije" [selected]="kat.Naziv === selectedObj" [value]="kat.Naziv">

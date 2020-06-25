@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { MyImageService } from '../services/my-image.service';
 
 import { Vijest } from '../models/Vijest';
 
@@ -16,11 +17,12 @@ export class VijestiService {
   vijest: Observable<Vijest>;
   novaVijest: Vijest;
   constructor(private afs: AngularFirestore,
-              private storage: AngularFireStorage) { }
+              private storage: AngularFireStorage,
+              private imageService: MyImageService) { }
 
   getProducts(): Observable<Vijest[]> {
       // tslint:disable-next-line: max-line-length
-      const collection: AngularFirestoreCollection<Vijest> = this.afs.collection('vijesti');
+      const collection: AngularFirestoreCollection<Vijest> = this.afs.collection('vijesti', ref => ref.orderBy('Datum', 'desc'));
       const collection$: Observable<Vijest[]> = collection.snapshotChanges().pipe(
           map(actions => {
               return actions.map(action  => {
@@ -85,5 +87,10 @@ export class VijestiService {
   DodajVijest(vijest: Vijest) {
     const collection: AngularFirestoreCollection<Vijest> = this.afs.collection('vijesti');
     collection.add(vijest);
+  }
+  DeleteVijest(vijest: Vijest) {
+    this.vijestDoc = this.afs.doc<Vijest>(`vijesti/${vijest.Id}`);
+    this.vijestDoc.delete();
+    this.imageService.deleteImage(vijest.Podnaslov, 'Vijesti');
   }
 }

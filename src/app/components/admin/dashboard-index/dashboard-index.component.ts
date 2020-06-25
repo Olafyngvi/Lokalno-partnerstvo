@@ -8,12 +8,14 @@ import { Vijest } from 'src/app/models/Vijest';
   styleUrls: ['./dashboard-index.component.css']
 })
 export class DashboardIndexComponent implements OnInit {
+  brojVijesti: any;
   vijesti: Vijest[];
   constructor(private vijestiService: VijestiService) { }
 
   ngOnInit(): void {
     this.vijestiService.getProducts().subscribe(vijesti => {
       this.vijesti = vijesti;
+      this.brojVijesti = vijesti.length;
     });
   }
 

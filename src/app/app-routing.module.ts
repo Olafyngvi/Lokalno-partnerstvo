@@ -15,12 +15,14 @@ import { KategorijeVijestiAddComponent } from './components/admin/kategorije-vij
 import { KategorijeVijestiIzmjenaComponent } from './components/admin/kategorije-vijesti-izmjena/kategorije-vijesti-izmjena.component';
 import { SveVijestiComponent } from './components/admin/sve-vijesti/sve-vijesti.component';
 import { VijestiIzmjenaComponent } from './components/admin/vijesti-izmjena/vijesti-izmjena.component';
+import { VijestComponent } from './components/vijest/vijest.component';
 
 const routes: Routes = [
 
   { path: '', component: HomeComponent },
   {path: 'login', component: LoginComponent},
   {path: 'vijesti', component: VijestiComponent},
+  {path: 'vijest/:id', component: VijestComponent},
   { path: 'registracija', component: SignUpComponent },
   { path: 'dashboard',
     component: DashboardComponent,
