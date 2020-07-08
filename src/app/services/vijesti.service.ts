@@ -53,7 +53,10 @@ export class VijestiService {
       );
     return collection$;
   }
-
+  updateKategorija(vijest: Vijest, kategorija: string) {
+    vijest.Kategorija = kategorija;
+    this.updateVijest(vijest.Id, vijest);
+  }
   getVijest(category: string, id: string): Observable<Vijest> {
     this.vijestDoc = this.afs.doc<Vijest>(`${category}/${id}`);
     this.vijest = this.vijestDoc.snapshotChanges().pipe(

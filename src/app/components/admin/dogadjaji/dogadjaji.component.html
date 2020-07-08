@@ -2,12 +2,12 @@
   <button routerLink="/dashboard" style="background-color:transparent;top: 0;" class="btn btn-light"><i class="fa fa-lg fa-arrow-left text-secondary"></i></button>
   <div class="row mt-2">
     <div class="col-lg-3">
-      <a class="btn btn-secondary" routerLink="/dashboard/nova-vijest" ><i class="fa fa-plus"></i></a>
+      <a class="btn btn-secondary" routerLink="/dashboard/novi-dogadjaj" ><i class="fa fa-plus"></i></a>
     </div>
     <div class="form-inline col-lg-3">
       <label for="kate" class="mr-1">Kategorije</label>
       <select [(ngModel)]="selected" name="kate" (change)="onChange()" class="form-control">
-        <option [selected] value="Sve vijesti"> Sve vijesti</option>
+        <option  value="Svi događaji"> Svi događaji</option>
         <option *ngFor="let kat of kategorije" [value]="kat.Naziv">{{kat.Naziv}}</option>
       </select>
     </div>
@@ -37,21 +37,21 @@
   <thead>
     <tr>
       <th>Naslov</th>
-      <th>Datum objave</th>
-      <th>Kategorija</th>
+      <th>Datum pocetka</th>
+      <th>Vrijeme pocetka</th>
       <!--<th>Sadržaj</th>-->
-      <th>Podnaslov</th>
+      <th>Kategorija</th>
       <th>Akcija</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let vijest of vijesti">
-      <td>{{vijest.Naslov}}</td>
-      <td>{{ vijest.Datum.seconds*1000 | date:'dd-MM-yyy' }}</td>
-      <td>{{vijest.Kategorija}}</td>
+    <tr *ngFor="let dogadjaj of dogadjaji">
+      <td>{{dogadjaj.Naslov}}</td>
+      <td>{{ dogadjaj.DatumPocetka}}</td>
+      <td>{{dogadjaj.VrijemePocetka}}</td>
       <!--<td [innerHTML]=vijest.Sadrzaj></td>-->
-      <td>{{vijest.Podnaslov}}</td>
-      <td><div class="btn-group"><a routerLink="/dashboard/izmjena-vijest/{{vijest.Id}}" class="mr-2 btn"><i class="fa fa-2x fa-edit"></i></a><a (click)="onDeleteClick(vijest)" class="mr-2 btn"><i class="fa fa-2x fa-trash"></i></a><a routerLink="/vijest/{{vijest.Id}}" class="mr-2 btn"><i class="fa fa-2x fa-expand"></i></a></div></td>
+      <td>{{dogadjaj.Kategorija}}</td>
+      <td><div class="btn-group"><a routerLink="/dashboard/izmjena-dogadjaj/{{dogadjaj.Id}}" class="mr-2 btn"><i class="fa fa-2x fa-edit"></i></a><a (click)="onDeleteClick(dogadjaj)" class="mr-2 btn"><i class="fa fa-2x fa-trash"></i></a><a routerLink="/dogadjaj/{{dogadjaj.Id}}" class="mr-2 btn"><i class="fa fa-2x fa-expand"></i></a></div></td>
     </tr>
   </tbody>
 </table>

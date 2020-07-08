@@ -15,7 +15,7 @@ import { KategorijaVijesti } from 'src/app/models/KategorijaVijesti';
 })
 export class SveVijestiComponent implements OnInit {
   pretraga = '';
-  selected: 'Sve vijesti';
+  selected = 'Sve vijesti';
   filter: Vijest[] = [];
   vijesti: Vijest[];
   kategorije: KategorijaVijesti[];

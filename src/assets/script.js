@@ -46,7 +46,7 @@ function closeNav_3() {
 /*      Close Navigation TOTAL    */
 /* ----------------------------   */
 
-var mywindow = $(window);
+/*var mywindow = $(window);
 var mypos = mywindow.scrollTop();
 mywindow.scroll(function() {
   if(mywindow.scrollTop() > mypos)
@@ -62,7 +62,7 @@ mywindow.scroll(function() {
   mypos = mywindow.scrollTop();
 });
 
-
+*/
 
 var mywindow = $(window);
 var mypos = mywindow.scrollTop();

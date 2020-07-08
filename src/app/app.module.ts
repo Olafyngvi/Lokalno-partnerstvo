@@ -45,6 +45,18 @@ import { SveVijestiComponent } from './components/admin/sve-vijesti/sve-vijesti.
 import { VijestiIzmjenaComponent } from './components/admin/vijesti-izmjena/vijesti-izmjena.component';
 import { AlertDialogComponent } from './components/admin/alert-dialog/alert-dialog.component';
 import { VijestComponent } from './components/vijest/vijest.component';
+import { KurseviComponent } from './components/admin/kursevi/kursevi.component';
+import { KategorijeKurseviComponent } from './components/admin/kategorije-kursevi/kategorije-kursevi.component';
+import { KategorijeKurseviAddComponent } from './components/admin/kategorije-kursevi-add/kategorije-kursevi-add.component';
+import { KategorijeKurseviIzmjenaComponent } from './components/admin/kategorije-kursevi-izmjena/kategorije-kursevi-izmjena.component';
+import { KursAddComponent } from './components/admin/kurs-add/kurs-add.component';
+import { KursIzmjenaComponent } from './components/admin/kurs-izmjena/kurs-izmjena.component';
+import { ObukeComponent } from './components/admin/obuke/obuke.component';
+import { ObukaAddComponent } from './components/admin/obuka-add/obuka-add.component';
+import { ObukaIzmjenaComponent } from './components/admin/obuka-izmjena/obuka-izmjena.component';
+import { DogadjajiComponent } from './components/admin/dogadjaji/dogadjaji.component';
+import { DogadjajAddComponent } from './components/admin/dogadjaj-add/dogadjaj-add.component';
+import { DogadjajIzmjenaComponent } from './components/admin/dogadjaj-izmjena/dogadjaj-izmjena.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +91,19 @@ import { VijestComponent } from './components/vijest/vijest.component';
     SveVijestiComponent,
     VijestiIzmjenaComponent,
     AlertDialogComponent,
-    VijestComponent
+    VijestComponent,
+    KurseviComponent,
+    KategorijeKurseviComponent,
+    KategorijeKurseviAddComponent,
+    KategorijeKurseviIzmjenaComponent,
+    KursAddComponent,
+    KursIzmjenaComponent,
+    ObukeComponent,
+    ObukaAddComponent,
+    ObukaIzmjenaComponent,
+    DogadjajiComponent,
+    DogadjajAddComponent,
+    DogadjajIzmjenaComponent
   ],
   imports: [
     BrowserModule,

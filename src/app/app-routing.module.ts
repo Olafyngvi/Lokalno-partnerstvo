@@ -16,6 +16,18 @@ import { KategorijeVijestiIzmjenaComponent } from './components/admin/kategorije
 import { SveVijestiComponent } from './components/admin/sve-vijesti/sve-vijesti.component';
 import { VijestiIzmjenaComponent } from './components/admin/vijesti-izmjena/vijesti-izmjena.component';
 import { VijestComponent } from './components/vijest/vijest.component';
+import { KurseviComponent } from './components/admin/kursevi/kursevi.component';
+import { KategorijeKurseviComponent } from './components/admin/kategorije-kursevi/kategorije-kursevi.component';
+import { KategorijeKurseviAddComponent } from './components/admin/kategorije-kursevi-add/kategorije-kursevi-add.component';
+import { KategorijeKurseviIzmjenaComponent } from './components/admin/kategorije-kursevi-izmjena/kategorije-kursevi-izmjena.component';
+import { KursAddComponent } from './components/admin/kurs-add/kurs-add.component';
+import { KursIzmjenaComponent } from './components/admin/kurs-izmjena/kurs-izmjena.component';
+import { ObukeComponent } from './components/admin/obuke/obuke.component';
+import { ObukaAddComponent } from './components/admin/obuka-add/obuka-add.component';
+import { ObukaIzmjenaComponent } from './components/admin/obuka-izmjena/obuka-izmjena.component';
+import { DogadjajiComponent } from './components/admin/dogadjaji/dogadjaji.component';
+import { DogadjajAddComponent } from './components/admin/dogadjaj-add/dogadjaj-add.component';
+import { DogadjajIzmjenaComponent } from './components/admin/dogadjaj-izmjena/dogadjaj-izmjena.component';
 
 const routes: Routes = [
 
@@ -28,12 +40,24 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       {path: '', component: DashboardIndexComponent},
+      {path: 'dogadjaji', component: DogadjajiComponent},
+      {path: 'kursevi', component: KurseviComponent},
+      {path: 'obuke', component: ObukeComponent},
+      {path: 'novi-dogadjaj', component: DogadjajAddComponent},
+      {path: 'nova-obuka', component: ObukaAddComponent},
+      {path: 'novi-kurs', component: KursAddComponent},
       {path: 'vijesti', component: SveVijestiComponent},
       {path: 'nova-vijest', component: VijestiAddComponent},
-      {path: 'nova-kategorija', component: KategorijeVijestiAddComponent},
+      {path: 'nova-kategorija-vijesti', component: KategorijeVijestiAddComponent},
       {path: 'kategorije-vijesti', component: KategorijeVijestiComponent},
-      {path: 'izmjena-kategorija/:id', component: KategorijeVijestiIzmjenaComponent},
-      {path: 'izmjena-vijest/:id', component: VijestiIzmjenaComponent}
+      {path: 'kategorije-kursevi', component: KategorijeKurseviComponent},
+      {path: 'nova-kategorija-kurs', component: KategorijeKurseviAddComponent},
+      {path: 'izmjena-kategorija-vijest/:id', component: KategorijeVijestiIzmjenaComponent},
+      {path: 'izmjena-kategorija-kurs/:id', component: KategorijeKurseviIzmjenaComponent},
+      {path: 'izmjena-vijest/:id', component: VijestiIzmjenaComponent},
+      {path: 'izmjena-kurs/:id', component: KursIzmjenaComponent},
+      {path: 'izmjena-obuka/:id', component: ObukaIzmjenaComponent},
+      {path: 'izmjena-dogadjaj/:id', component: DogadjajIzmjenaComponent}
 
     ] },
   { path: 'forgot-password', component: ForgotPasswordComponent },
