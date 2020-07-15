@@ -57,6 +57,11 @@ import { ObukaIzmjenaComponent } from './components/admin/obuka-izmjena/obuka-iz
 import { DogadjajiComponent } from './components/admin/dogadjaji/dogadjaji.component';
 import { DogadjajAddComponent } from './components/admin/dogadjaj-add/dogadjaj-add.component';
 import { DogadjajIzmjenaComponent } from './components/admin/dogadjaj-izmjena/dogadjaj-izmjena.component';
+import { DropZoneDirective } from './drop-zone.directive';
+import { UploaderComponent } from './components/admin/uploader/uploader.component';
+import { UploadTaskComponent } from './components/admin/upload-task/upload-task.component';
+import { SvePublikacijeComponent } from './components/admin/sve-publikacije/sve-publikacije.component';
+import { PublikacijaIzmjenaComponent } from './components/admin/publikacija-izmjena/publikacija-izmjena.component';
 
 @NgModule({
   declarations: [
@@ -103,7 +108,12 @@ import { DogadjajIzmjenaComponent } from './components/admin/dogadjaj-izmjena/do
     ObukaIzmjenaComponent,
     DogadjajiComponent,
     DogadjajAddComponent,
-    DogadjajIzmjenaComponent
+    DogadjajIzmjenaComponent,
+    DropZoneDirective,
+    UploaderComponent,
+    UploadTaskComponent,
+    SvePublikacijeComponent,
+    PublikacijaIzmjenaComponent
   ],
   imports: [
     BrowserModule,

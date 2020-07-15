@@ -28,6 +28,9 @@ import { ObukaIzmjenaComponent } from './components/admin/obuka-izmjena/obuka-iz
 import { DogadjajiComponent } from './components/admin/dogadjaji/dogadjaji.component';
 import { DogadjajAddComponent } from './components/admin/dogadjaj-add/dogadjaj-add.component';
 import { DogadjajIzmjenaComponent } from './components/admin/dogadjaj-izmjena/dogadjaj-izmjena.component';
+import { UploaderComponent } from './components/admin/uploader/uploader.component';
+import { SvePublikacijeComponent } from './components/admin/sve-publikacije/sve-publikacije.component';
+import { PublikacijaIzmjenaComponent } from './components/admin/publikacija-izmjena/publikacija-izmjena.component';
 
 const routes: Routes = [
 
@@ -57,7 +60,10 @@ const routes: Routes = [
       {path: 'izmjena-vijest/:id', component: VijestiIzmjenaComponent},
       {path: 'izmjena-kurs/:id', component: KursIzmjenaComponent},
       {path: 'izmjena-obuka/:id', component: ObukaIzmjenaComponent},
-      {path: 'izmjena-dogadjaj/:id', component: DogadjajIzmjenaComponent}
+      {path: 'izmjena-dogadjaj/:id', component: DogadjajIzmjenaComponent},
+      {path: 'izmjena-publikacija/:id', component: PublikacijaIzmjenaComponent},
+      {path: 'asd', component: UploaderComponent},
+      {path: 'publikacije', component: SvePublikacijeComponent}
 
     ] },
   { path: 'forgot-password', component: ForgotPasswordComponent },

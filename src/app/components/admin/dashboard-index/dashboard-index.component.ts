@@ -4,11 +4,13 @@ import { VijestiService } from 'src/app/services/vijesti.service';
 import { KursService } from '../../../services/kurs.service';
 import { PrakticnaObukaService } from '../../../services/prakticna-obuka.service';
 import { DogadjajiService } from '../../../services/dogadjaji.service';
+import { PublikacijeService } from '../../../services/publikacije.service';
 
 import { Kurs } from '../../../models/Kurs';
 import { Vijest } from 'src/app/models/Vijest';
 import { Prakticne } from 'src/app/models/Prakticne';
 import { Dogadjaj } from 'src/app/models/Dogadjaj';
+import { Publikacija } from '../../../models/Publikacija';
 
 @Component({
   selector: 'app-dashboard-index',
@@ -16,6 +18,8 @@ import { Dogadjaj } from 'src/app/models/Dogadjaj';
   styleUrls: ['./dashboard-index.component.css']
 })
 export class DashboardIndexComponent implements OnInit {
+  brojPublikacija: any;
+  publikacije: Publikacija[];
   brojDogadjaja: any;
   dogadjaji: Dogadjaj[];
   brojObuka: any;
@@ -27,7 +31,8 @@ export class DashboardIndexComponent implements OnInit {
   constructor(private vijestiService: VijestiService,
               private kursService: KursService,
               private obukeService: PrakticnaObukaService,
-              private dogadjajiService: DogadjajiService) { }
+              private dogadjajiService: DogadjajiService,
+              private publikacijeService: PublikacijeService) { }
 
   ngOnInit(): void {
     this.vijestiService.getProducts().subscribe(vijesti => {
@@ -45,7 +50,11 @@ export class DashboardIndexComponent implements OnInit {
     this.dogadjajiService.getDogadjaji().subscribe(dogadjaji => {
       this.dogadjaji = dogadjaji;
       this.brojDogadjaja = dogadjaji.length;
-    })
+    });
+    this.publikacijeService.getPublikacije().subscribe(publikacije => {
+      this.publikacije = publikacije;
+      this.brojPublikacija = publikacije.length;
+    });
   }
 
 }

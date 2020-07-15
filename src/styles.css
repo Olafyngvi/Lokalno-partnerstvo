@@ -604,3 +604,11 @@ footer ul li:hover {font-weight: 400}
   font-size: 12px;
   padding: 0.1rem 1rem;
 }
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 4%;
+  right: 10%;
+  opacity: 1;
+  transition: all .2s ease-in-out;
+ }

@@ -290,3 +290,20 @@ jQuery(function($){
   })
 });
 
+
+$("a[href='#top']").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+  return false;
+});
+$(function(){
+  $("a[href='#top']").hide() // try to hide google navigation bar
+});
+$(function () {
+  $(window).scroll(function () {
+      if ($(this).scrollTop() < 500) {
+          $("a[href='#top']").hide();
+      } else {
+          $("a[href='#top']").show();
+      }
+  });
+})
