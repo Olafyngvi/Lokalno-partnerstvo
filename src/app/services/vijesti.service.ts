@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { MyImageService } from '../services/my-image.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 import { Vijest } from '../models/Vijest';
 
@@ -18,11 +19,26 @@ export class VijestiService {
   novaVijest: Vijest;
   constructor(private afs: AngularFirestore,
               private storage: AngularFireStorage,
-              private imageService: MyImageService) { }
-
-  getProducts(): Observable<Vijest[]> {
+              private imageService: MyImageService,
+              private auth: AngularFireAuth) { }
+  getVijesti(): Observable<Vijest[]> {
       // tslint:disable-next-line: max-line-length
       const collection: AngularFirestoreCollection<Vijest> = this.afs.collection('vijesti', ref => ref.orderBy('Datum', 'desc'));
+      const collection$: Observable<Vijest[]> = collection.snapshotChanges().pipe(
+          map(actions => {
+              return actions.map(action  => {
+          const data = action.payload.doc.data() as Vijest;
+          data.Id = action.payload.doc.id;
+          return data;
+            });
+          })
+        );
+      return collection$;
+  }
+  getProducts(): Observable<Vijest[]> {
+      const user = this.auth.auth.currentUser.displayName;
+      // tslint:disable-next-line: max-line-length
+      const collection: AngularFirestoreCollection<Vijest> = this.afs.collection('vijesti', ref => ref.orderBy('Datum', 'desc').where('Objava', '==', user));
       const collection$: Observable<Vijest[]> = collection.snapshotChanges().pipe(
           map(actions => {
               return actions.map(action  => {
@@ -81,14 +97,17 @@ export class VijestiService {
       Sadrzaj: vijest.Sadrzaj,
       Kategorija: vijest.Kategorija,
       Datum: vijest.Datum,
-      Fokus: vijest.Fokus
+      Fokus: vijest.Fokus,
+      Objava: vijest.Objava
     };
     this.vijestDoc.update(this.novaVijest).catch(err => {
       console.log(err);
     });
   }
   DodajVijest(vijest: Vijest) {
+    const user = this.auth.auth.currentUser.displayName;
     const collection: AngularFirestoreCollection<Vijest> = this.afs.collection('vijesti');
+    vijest.Objava = user;
     collection.add(vijest);
   }
   DeleteVijest(vijest: Vijest) {

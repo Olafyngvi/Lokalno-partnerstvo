@@ -31,21 +31,33 @@ import { DogadjajIzmjenaComponent } from './components/admin/dogadjaj-izmjena/do
 import { UploaderComponent } from './components/admin/uploader/uploader.component';
 import { SvePublikacijeComponent } from './components/admin/sve-publikacije/sve-publikacije.component';
 import { PublikacijaIzmjenaComponent } from './components/admin/publikacija-izmjena/publikacija-izmjena.component';
+import { KursComponent } from './components/kurs/kurs.component';
+import { PrijavaComponent } from './components/prijava/prijava.component';
+import { PrijaveComponent } from './components/admin/prijave/prijave.component';
+import { AngularFireAuthGuard, redirectLoggedInTo, canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+
+const redirectLoggedIndashboard = () => redirectLoggedInTo(['dashboard']);
+const redirectUnauthorizedToLogin = redirectUnauthorizedTo(['login']);
 
 const routes: Routes = [
 
   { path: '', component: HomeComponent },
-  {path: 'login', component: LoginComponent},
+  {path: 'login', component: LoginComponent, canActivate: [AngularFireAuthGuard], data: {authGuardPipe: redirectLoggedIndashboard}},
   {path: 'vijesti', component: VijestiComponent},
   {path: 'vijest/:id', component: VijestComponent},
+  {path: 'kurs/:id/:p', component: KursComponent},
+  {path: 'prijava/:id/:naziv/:p', component: PrijavaComponent},
   { path: 'registracija', component: SignUpComponent },
   { path: 'dashboard',
     component: DashboardComponent,
+    ...canActivate(redirectUnauthorizedToLogin),
     children: [
       {path: '', component: DashboardIndexComponent},
       {path: 'dogadjaji', component: DogadjajiComponent},
       {path: 'kursevi', component: KurseviComponent},
       {path: 'obuke', component: ObukeComponent},
+      {path: 'prijave', component: PrijaveComponent},
+      {path: 'prijave/:p', component: PrijaveComponent},
       {path: 'novi-dogadjaj', component: DogadjajAddComponent},
       {path: 'nova-obuka', component: ObukaAddComponent},
       {path: 'novi-kurs', component: KursAddComponent},
@@ -62,9 +74,8 @@ const routes: Routes = [
       {path: 'izmjena-obuka/:id', component: ObukaIzmjenaComponent},
       {path: 'izmjena-dogadjaj/:id', component: DogadjajIzmjenaComponent},
       {path: 'izmjena-publikacija/:id', component: PublikacijaIzmjenaComponent},
-      {path: 'asd', component: UploaderComponent},
+      {path: 'nova-publikacija', component: UploaderComponent},
       {path: 'publikacije', component: SvePublikacijeComponent}
-
     ] },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   {path: '**', component: NotFoundComponent}

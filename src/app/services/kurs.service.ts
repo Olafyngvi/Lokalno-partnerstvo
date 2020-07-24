@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument  } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { AngularFireStorage } from '@angular/fire/storage';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 import { MyImageService } from '../services/my-image.service';
 
@@ -18,11 +18,27 @@ export class KursService {
   kurs: Observable<Kurs>;
   noviKurs: Kurs;
   constructor(private afs: AngularFirestore,
-              private imageService: MyImageService) { }
+              private imageService: MyImageService,
+              private auth: AngularFireAuth) { }
 
-  getKursevi(): Observable<Kurs[]> {
+    sviKursevi(): Observable<Kurs[]> {
     // tslint:disable-next-line: max-line-length
     const collection: AngularFirestoreCollection<Kurs> = this.afs.collection('kursevi', ref => ref.orderBy('DatumObjave', 'desc'));
+    const collection$: Observable<Kurs[]> = collection.snapshotChanges().pipe(
+        map(actions => {
+            return actions.map(action  => {
+        const data = action.payload.doc.data() as Kurs;
+        data.Id = action.payload.doc.id;
+        return data;
+          });
+        })
+      );
+    return collection$;
+}
+  getKursevi(): Observable<Kurs[]> {
+    const user = this.auth.auth.currentUser.displayName;
+    // tslint:disable-next-line: max-line-length
+    const collection: AngularFirestoreCollection<Kurs> = this.afs.collection('kursevi', ref => ref.orderBy('DatumObjave', 'desc').where('Objava', '==', user));
     const collection$: Observable<Kurs[]> = collection.snapshotChanges().pipe(
         map(actions => {
             return actions.map(action  => {
@@ -84,14 +100,17 @@ updateKurs(id: string, kurs: Kurs) {
     DatumObjave: kurs.DatumObjave,
     DatumPocetka: kurs.DatumPocetka,
     Cijena: kurs.Cijena,
-    BrojPolaznika: kurs.BrojPolaznika
+    BrojPolaznika: kurs.BrojPolaznika,
+    Objava: kurs.Objava
   };
   this.kursDoc.update(this.noviKurs).catch(err => {
     console.log(err);
   });
 }
 dodajKurs(kurs: Kurs) {
+  const user = this.auth.auth.currentUser.displayName;
   const collection: AngularFirestoreCollection<Kurs> = this.afs.collection('kursevi');
+  kurs.Objava = user;
   collection.add(kurs);
 }
 deleteKurs(kurs: Kurs) {

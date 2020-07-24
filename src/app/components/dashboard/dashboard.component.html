@@ -26,6 +26,12 @@
             <span class="nav-link-text">Publikacije i podaci</span>
           </a>
         </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link" routerLink="prijave">
+            <i class="fa fa-fw fa-users"></i>
+            <span class="nav-link-text">Prijave</span>
+          </a>
+        </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-wrench"></i>
@@ -146,44 +152,24 @@
         <li class="nav-item dropdown mr-5">
           <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-fw fa-bell"></i>
-            <span class="d-lg-none">Alerts
-              <span class="badge badge-pill badge-warning">6 New</span>
+            <span class="d-lg-none">Prijave
+              <span class="badge badge-pill badge-warning"></span>
             </span>
             <span class="indicator text-warning d-none d-lg-block">
               <i class="fa fa-fw fa-circle"></i>
             </span>
           </a>
           <div class="dropdown-menu" aria-labelledby="alertsDropdown">
-            <h6 class="dropdown-header">New Alerts:</h6>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
+            <a *ngFor="let prijava of prijave" class="dropdown-item" routerLink="prijave/{{prijava.EventNaziv}}">
               <span class="text-success">
                 <strong>
-                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
+                  {{prijava.Ime}} {{prijava.Prezime}}</strong>
               </span>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+              <p class="small float-right text-muted">{{prijava.DatumPrijave}}</p>
+              <p >{{prijava.Telefon}} {{prijava.Email}}</p>
+              <div class="dropdown-divider"></div>
             </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <span class="text-danger">
-                <strong>
-                  <i class="fa fa-long-arrow-down fa-fw"></i>Status Update</strong>
-              </span>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <span class="text-success">
-                <strong>
-                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
-              </span>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item small" href="#">View all alerts</a>
+            <a class="dropdown-item small text-center mt-2 mb-2" routerLink="prijave">Pogledaj sve prijave</a>
           </div>
         </li>
         <li class="nav-item dropdown no-arrow mr-5">
@@ -191,7 +177,7 @@
             <span>Dobrodošao, {{name}}</span>
           </a>
           <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-              <button class="dropdown-item btn btn-white" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Resetuj password</button>
+              <button class="dropdown-item btn btn-white" data-toggle="modal" data-target="#passReset"><i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Resetuj password</button>
             <a class="dropdown-item" href="#">
               <i class="fa fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
               Postavke (not impl)
@@ -241,17 +227,42 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Odjava ?</h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
           </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-body">Odaberite "Odjavi se" ispod ako želite da završite trenutnu sesiju.</div>
           <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" data-dismiss="modal" (click)="logout()"  >Logout</a>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Odustani</button>
+            <a class="btn btn-primary" data-dismiss="modal" (click)="logout()"  >Odjavi se</a>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Password reset modal -->
+    <div class="modal fade" id="passReset" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Zahtjev za resetovanje pasvorda</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="email">Unesite Vaš mail</label>
+              <input type="email" name="email" [(ngModel)]="email" class="form-control" required>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Odustani</button>
+            <button type="button" (click)="resetPassword()" data-dismiss="modal" class="btn btn-primary">Pošalji zahtjev</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </body>

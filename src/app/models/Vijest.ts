@@ -9,4 +9,5 @@ export interface Vijest {
   Datum?: any;
   Slika?: Observable<any>;
   Fokus?: boolean;
+  Objava: string;
 }

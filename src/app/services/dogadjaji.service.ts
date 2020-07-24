@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument  } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -17,11 +18,27 @@ export class DogadjajiService {
   dogadjaj: Observable<Dogadjaj>;
   noviDogadjaj: Dogadjaj;
   constructor(private afs: AngularFirestore,
-              private imageService: MyImageService) { }
+              private imageService: MyImageService,
+              private auth: AngularFireAuth) { }
 
-  getDogadjaji(): Observable<Dogadjaj[]> {
+  sviDogadjaji(): Observable<Dogadjaj[]> {
     // tslint:disable-next-line: max-line-length
     const collection: AngularFirestoreCollection<Dogadjaj> = this.afs.collection('dogadjaji', ref => ref.orderBy('DatumObjave', 'desc'));
+    const collection$: Observable<Dogadjaj[]> = collection.snapshotChanges().pipe(
+        map(actions => {
+            return actions.map(action  => {
+        const data = action.payload.doc.data() as Dogadjaj;
+        data.Id = action.payload.doc.id;
+        return data;
+          });
+        })
+      );
+    return collection$;
+}
+  getDogadjaji(): Observable<Dogadjaj[]> {
+    const user = this.auth.auth.currentUser.displayName;
+    // tslint:disable-next-line: max-line-length
+    const collection: AngularFirestoreCollection<Dogadjaj> = this.afs.collection('dogadjaji', ref => ref.orderBy('DatumObjave', 'desc').where('Objava', '==', user));
     const collection$: Observable<Dogadjaj[]> = collection.snapshotChanges().pipe(
         map(actions => {
             return actions.map(action  => {
@@ -81,14 +98,17 @@ updateDogadjaj(id: string, dogadjaj: Dogadjaj) {
     Kategorija: dogadjaj.Kategorija,
     DatumObjave: dogadjaj.DatumObjave,
     DatumPocetka: dogadjaj.DatumPocetka,
-    VrijemePocetka: dogadjaj.VrijemePocetka
+    VrijemePocetka: dogadjaj.VrijemePocetka,
+    Objava: dogadjaj.Objava
   };
   this.dogadjajDoc.update(this.noviDogadjaj).catch(err => {
     console.log(err);
   });
 }
 dodajDogadjaj(dogadjaj: Dogadjaj) {
+  const user = this.auth.auth.currentUser.displayName;
   const collection: AngularFirestoreCollection<Dogadjaj> = this.afs.collection('dogadjaji');
+  dogadjaj.Objava = user;
   collection.add(dogadjaj);
 }
 deleteDogadjaj(dogadjaj: Dogadjaj) {

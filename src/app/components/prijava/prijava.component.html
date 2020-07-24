@@ -1,0 +1,157 @@
+<div class="pozadina">
+  <div class="container pb-3 pt-3">
+    <div  class="row-fluid">
+      <!--<button routerLink="/dashboard/vijesti" style="background-color:transparent;top: 0;" class="btn btn-light"><i class="fa fa-lg fa-arrow-left text-secondary"></i></button>-->
+    </div>
+    <div class="container">
+      <h2 class="text-center">{{naziv}}</h2>
+      <form (ngSubmit)="onSubmit(rteForm)" #rteForm="ngForm">
+        <div class="form-group">
+          <label for="ime">Ime</label>
+          <input
+            type="text"
+            #prijavaIme="ngModel"
+            [ngClass]="{'is-invalid': prijavaIme.errors && prijavaIme.touched}"
+            [(ngModel)]="prijava.Ime"
+            name="Ime"
+            id="ime"
+            class="form-control"
+            required>
+          <div *ngIf="prijavaIme.invalid" class="invalid-feedback">
+            Vaše ime je obavezno
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="prezime">Prezime</label>
+          <input
+            type="text"
+            #prijavaPrezime="ngModel"
+            [ngClass]="{'is-invalid': prijavaPrezime.errors && prijavaPrezime.touched}"
+            [(ngModel)]="prijava.Prezime"
+            name="Prezime"
+            id="prezime"
+            class="form-control"
+            required>
+          <div [hidden]="!prijavaPrezime.errors?.required" class="invalid-feedback">
+            Vaše prezime je obavezno
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="datumRodjenja">Datum rođenja</label>
+          <input
+            type="date"
+            #prijavaDatumRodenja="ngModel"
+            [ngClass]="{'is-invalid': prijavaDatumRodenja.errors && prijavaDatumRodenja.touched}"
+            [(ngModel)]="prijava.DatumRodjenja"
+            name="datumRodjenja"
+            id="datumRodjenja"
+            class="form-control"
+            required>
+          <div [hidden]="!prijavaDatumRodenja.errors?.required" class="invalid-feedback">
+            Vaš datum rođenja je obavezan
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="adresa">Adresa</label>
+          <input
+            type="text"
+            #prijavaAdresa="ngModel"
+            [ngClass]="{'is-invalid': prijavaAdresa.errors && prijavaAdresa.touched}"
+            [(ngModel)]="prijava.Adresa"
+            name="Adresa"
+            id="adresa"
+            class="form-control"
+            required>
+          <div *ngIf="prijavaAdresa.invalid" class="invalid-feedback">
+            Vaša adresa je obavezna
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="JMBG">JMBG</label>
+          <input
+            type="text"
+            (keypress)="numberOnly($event)"
+            maxlength="13"
+            #prijavaJMBG="ngModel"
+            [ngClass]="{'is-invalid': prijavaJMBG.errors && prijavaJMBG.touched}"
+            [(ngModel)]="prijava.JMBG"
+            name="JMBG"
+            id="JMBG"
+            class="form-control"
+            required>
+          <div [hidden]="!prijavaJMBG.errors?.required" class="invalid-feedback">
+            Vaš jedinstveni matični broj je obavezan
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="text"
+            #prijavaEmail="ngModel"
+            [ngClass]="{'is-invalid': prijavaEmail.errors && prijavaEmail.touched}"
+            [(ngModel)]="prijava.Email"
+            name="Email"
+            id="email"
+            class="form-control"
+            required>
+          <div [hidden]="!prijavaEmail.errors?.required" class="invalid-feedback">
+            Vaš email je obavezan
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="telefon">Telefon</label>
+          <input
+            type="text"
+            (keypress)="numberOnly($event)"
+            #prijavaTelefon="ngModel"
+            [ngClass]="{'is-invalid': prijavaTelefon.errors && prijavaTelefon.touched}"
+            [(ngModel)]="prijava.Telefon"
+            name="Telefon"
+            id="telefon"
+            class="form-control"
+            required>
+          <div [hidden]="!prijavaTelefon.errors?.required" class="invalid-feedback">
+            Vaš broj telefona je obavezan
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="zanimanje">Zanimanje</label>
+          <input
+            type="text"
+            #prijavaZanimenja="ngModel"
+            [ngClass]="{'is-invalid': prijavaZanimenja.errors && prijavaZanimenja.touched}"
+            [(ngModel)]="prijava.Zanimanje"
+            name="Zanimanje"
+            id="zanimanje"
+            class="form-control"
+            required>
+          <div [hidden]="!prijavaZanimenja.errors?.required" class="invalid-feedback">
+            Vaše zanimanje je obavezno
+          </div>
+        </div>
+        <div class="form-group">
+          <p>Da li posjedujete neko prethodno znanje iz ove oblasti</p>
+          <input #radioDa type="radio" id="da" name="znanjeRadio" value="Da">
+          <label for="da"> Da</label><br>
+          <input checked type="radio" id="ne" name="znanjeRadio" value="Ne">
+          <label for="ne"> Ne</label><br>
+        </div>
+        <div class="form-group test">
+          <label for="znanje">Navedite nešto haha</label>
+          <input
+            type="text"
+            #prijavaZnanje="ngModel"
+            [(ngModel)]="prijava.Znanje"
+            name="Znanje"
+            id="znanje"
+            class="form-control">
+        </div>
+        <div class="mb-5">
+          <input type="reset" value="Reset" class="btn btn-secondary mt-4">
+          <input type="submit" value="Prijavi se" class="btn btn-secondary pull-right mt-4">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

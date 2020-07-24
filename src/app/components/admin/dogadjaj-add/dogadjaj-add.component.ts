@@ -41,7 +41,8 @@ export class DogadjajAddComponent implements OnInit {
     Kategorija: '',
     DatumObjave: new Date(),
     DatumPocetka: new Date(),
-    VrijemePocetka: ''
+    VrijemePocetka: '',
+    Objava: ''
   };
   processFile(imageInput: any) {
     const file: File = imageInput.files[0];

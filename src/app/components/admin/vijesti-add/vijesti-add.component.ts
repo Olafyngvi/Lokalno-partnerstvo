@@ -42,7 +42,8 @@ export class VijestiAddComponent implements OnInit {
     Sadrzaj: '',
     Kategorija: '',
     Datum: new Date(),
-    Fokus: false
+    Fokus: false,
+    Objava: ''
   };
   processFile(imageInput: any) {
     const file: File = imageInput.files[0];

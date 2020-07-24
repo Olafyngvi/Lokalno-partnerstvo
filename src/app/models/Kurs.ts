@@ -10,4 +10,5 @@ export interface Kurs {
   Cijena?: number;
   BrojPolaznika?: number;
   Slika?: Observable<any>;
+  Objava: string;
 }

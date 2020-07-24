@@ -57,7 +57,7 @@
       <!--<td [innerHTML]=vijest.Sadrzaj></td>-->
       <td>{{obuka.Cijena}} KM</td>
       <td>{{obuka.Trajanje}} sedmica</td>
-      <td><div class="btn-group"><a routerLink="/dashboard/izmjena-obuka/{{obuka.Id}}" class="mr-2 btn"><i class="fa fa-2x fa-edit"></i></a><a (click)="onDeleteClick(obuka)" class="mr-2 btn"><i class="fa fa-2x fa-trash"></i></a><a routerLink="/kurs/{{obuka.Id}}" class="mr-2 btn"><i class="fa fa-2x fa-expand"></i></a></div></td>
+      <td><div class="btn-group"><a routerLink="/dashboard/izmjena-obuka/{{obuka.Id}}" class="mr-2 btn"><i class="fa fa-2x fa-edit"></i></a><a (click)="onDeleteClick(obuka)" class="mr-2 btn"><i class="fa fa-2x fa-trash"></i></a><a routerLink="/kurs/{{obuka.Id}}/true" class="mr-2 btn"><i class="fa fa-2x fa-expand"></i></a></div></td>
     </tr>
   </tbody>
 </table>

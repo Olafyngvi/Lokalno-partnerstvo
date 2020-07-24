@@ -41,7 +41,8 @@
               "node_modules/@syncfusion/ej2-richtexteditor/styles/material.css"
             ],
             "scripts": [
-              "src/assets/script.js"
+              "src/assets/script.js",
+              "node_modules/jquery/dist/jquery.min.js"
             ]
           },
           "configurations": {

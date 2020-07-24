@@ -53,7 +53,7 @@
       <!--<td [innerHTML]=vijest.Sadrzaj></td>-->
       <td>{{kurs.Cijena}} KM</td>
       <td>{{kurs.Trajanje}} sedmica</td>
-      <td><div class="btn-group"><a routerLink="/dashboard/izmjena-kurs/{{kurs.Id}}" class="mr-2 btn"><i class="fa fa-2x fa-edit"></i></a><a (click)="onDeleteClick(kurs)" class="mr-2 btn"><i class="fa fa-2x fa-trash"></i></a><a routerLink="/kurs/{{kurs.Id}}" class="mr-2 btn"><i class="fa fa-2x fa-expand"></i></a></div></td>
+      <td><div class="btn-group"><a routerLink="/dashboard/izmjena-kurs/{{kurs.Id}}" class="mr-2 btn"><i class="fa fa-2x fa-edit"></i></a><a (click)="onDeleteClick(kurs)" class="mr-2 btn"><i class="fa fa-2x fa-trash"></i></a><a routerLink="/kurs/{{kurs.Id}}/false" class="mr-2 btn"><i class="fa fa-2x fa-expand"></i></a><a routerLink="/dashboard/prijave/{{kurs.Naslov}}" class="mr-2 btn"><i class="fa fa-2x fa-users"></i></a></div></td>
     </tr>
   </tbody>
 </table>

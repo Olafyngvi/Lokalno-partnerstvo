@@ -43,7 +43,8 @@ export class KursAddComponent implements OnInit {
     DatumPocetka: new Date(),
     Cijena: 0,
     BrojPolaznika: 0,
-    Trajanje: '-'
+    Trajanje: '-',
+    Objava: ''
   };
   processFile(imageInput: any) {
     const file: File = imageInput.files[0];

@@ -20,7 +20,8 @@
                   <li><a href="#"><span onmouseover="openNav_3()">Oblasti</span></a></li>
                   <li><a href="pages/careers.php"><span onclick="openNav_4()" onmouseover="closeNav_1(), closeNav_2(), closeNav_3()">Publikacije i podaci</span></a></li>
                   <li><a href="pages/blog.php"><span onclick="openNav_4()" onmouseover="closeNav_1(), closeNav_2(), closeNav_3()">O nama</span></a></li>
-                  <li><a routerLink="/login">Login</a></li>
+                  <li *ngIf="user === null"><a routerLink="/login">Login</a></li>
+                  <li *ngIf="user !== null"><a routerLink="/login">Dashboard</a></li>
               </ul>
               <div id="myNav_1" class="overlay">
                   <div class="navigation_container">

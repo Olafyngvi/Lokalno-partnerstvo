@@ -62,6 +62,11 @@ import { UploaderComponent } from './components/admin/uploader/uploader.componen
 import { UploadTaskComponent } from './components/admin/upload-task/upload-task.component';
 import { SvePublikacijeComponent } from './components/admin/sve-publikacije/sve-publikacije.component';
 import { PublikacijaIzmjenaComponent } from './components/admin/publikacija-izmjena/publikacija-izmjena.component';
+import { KursComponent } from './components/kurs/kurs.component';
+import { PrijavaComponent } from './components/prijava/prijava.component';
+import { PrijaveComponent } from './components/admin/prijave/prijave.component';
+import { AuthGuard } from './services/auth-guard.service';
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 
 @NgModule({
   declarations: [
@@ -113,7 +118,10 @@ import { PublikacijaIzmjenaComponent } from './components/admin/publikacija-izmj
     UploaderComponent,
     UploadTaskComponent,
     SvePublikacijeComponent,
-    PublikacijaIzmjenaComponent
+    PublikacijaIzmjenaComponent,
+    KursComponent,
+    PrijavaComponent,
+    PrijaveComponent
   ],
   imports: [
     BrowserModule,
@@ -128,7 +136,7 @@ import { PublikacijaIzmjenaComponent } from './components/admin/publikacija-izmj
     NgbModule,
     ReactiveFormsModule
   ],
-  providers: [AuthServiceService],
+  providers: [AuthServiceService, AuthGuard, AngularFireAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

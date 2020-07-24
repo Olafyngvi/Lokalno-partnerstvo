@@ -612,3 +612,6 @@ footer ul li:hover {font-weight: 400}
   opacity: 1;
   transition: all .2s ease-in-out;
  }
+ .modal-dialog {
+   margin-top: 18%;
+ }

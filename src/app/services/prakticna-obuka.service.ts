@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument  } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { AngularFireStorage } from '@angular/fire/storage';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 import { MyImageService } from '../services/my-image.service';
 
@@ -18,11 +18,26 @@ export class PrakticnaObukaService {
   obuka: Observable<Prakticne>;
   novaObuka: Prakticne;
   constructor(private afs: AngularFirestore,
-              private imageService: MyImageService) { }
-
-  getObuke(): Observable<Prakticne[]> {
+              private imageService: MyImageService,
+              private auth: AngularFireAuth) { }
+  sveObuke(): Observable<Prakticne[]> {
     // tslint:disable-next-line: max-line-length
     const collection: AngularFirestoreCollection<Prakticne> = this.afs.collection('prakticneObuke', ref => ref.orderBy('DatumObjave', 'desc'));
+    const collection$: Observable<Prakticne[]> = collection.snapshotChanges().pipe(
+        map(actions => {
+            return actions.map(action  => {
+        const data = action.payload.doc.data() as Prakticne;
+        data.Id = action.payload.doc.id;
+        return data;
+          });
+        })
+      );
+    return collection$;
+}
+  getObuke(): Observable<Prakticne[]> {
+    const user = this.auth.auth.currentUser.displayName;
+    // tslint:disable-next-line: max-line-length
+    const collection: AngularFirestoreCollection<Prakticne> = this.afs.collection('prakticneObuke', ref => ref.orderBy('DatumObjave', 'desc').where('Objava', '==', user));
     const collection$: Observable<Prakticne[]> = collection.snapshotChanges().pipe(
         map(actions => {
             return actions.map(action  => {
@@ -84,14 +99,17 @@ updateObuka(id: string, obuka: Prakticne) {
     DatumObjave: obuka.DatumObjave,
     DatumPocetka: obuka.DatumPocetka,
     Cijena: obuka.Cijena,
-    BrojPolaznika: obuka.BrojPolaznika
+    BrojPolaznika: obuka.BrojPolaznika,
+    Objava: obuka.Objava
   };
   this.obukaDoc.update(this.novaObuka).catch(err => {
     console.log(err);
   });
 }
 dodajObuku(obuka: Prakticne) {
+  const user = this.auth.auth.currentUser.displayName;
   const collection: AngularFirestoreCollection<Prakticne> = this.afs.collection('prakticneObuke');
+  obuka.Objava = user;
   collection.add(obuka);
 }
 deleteObuka(obuka: Prakticne) {

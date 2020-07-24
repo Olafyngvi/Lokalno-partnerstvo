@@ -8,4 +8,5 @@ export interface Dogadjaj {
   VrijemePocetka?: any;
   DatumObjave?: any;
   Slika?: Observable<any>;
+  Objava: string;
 }

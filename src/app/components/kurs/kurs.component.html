@@ -1,0 +1,25 @@
+<div onload="loadOnce()" class="pozadina">
+  <div class="container">
+    <section id="mainContent">
+      <div class="content_bottom">
+        <div class="col-lg-8 col-md-8">
+          <div class="content_bottom_left">
+            <div class="single_page_area">
+              <h2 class="post_titile">{{kurs.Naslov}} </h2>
+              <div class="single_page_content">
+                <div class="post_commentbox"> <a><i class="fa fa-tags"></i>{{kurs.Kategorija}}, </a> <a> {{kurs.DatumObjave.seconds*1000 | date}}</a> </div>
+                <img class="img-center" [src]="kurs.Slika | async" alt="">
+                <p [innerHTML]="kurs.Opis"></p>
+                <p><b>Datum početka: {{kurs.DatumPocetka}}</b></p>
+                <p><b>Trajanje: {{kurs.Trajanje}} dana</b></p>
+                <p><b>Broj polaznika: {{kurs.BrojPolaznika}}</b></p>
+                <p><b>Cijena: {{kurs.Cijena}} KM</b></p>
+              </div>
+              <a class="btn btn-primary mb-4 mt-4" routerLink="/prijava/{{id}}/{{kurs.Naslov}}/{{bool}}">Prijavi se</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

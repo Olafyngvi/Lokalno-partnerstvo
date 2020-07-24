@@ -16,7 +16,7 @@ export class VijestiComponent implements OnInit {
               private storage: AngularFireStorage) { }
 
   ngOnInit() {
-    this.vijestiService.getProducts().subscribe(vijesti => {
+    this.vijestiService.getVijesti().subscribe(vijesti => {
       vijesti.forEach(cur => {
         const ref = this.storage.ref(`Vijesti/${cur.Podnaslov}`);
         cur.Slika = ref.getDownloadURL();
