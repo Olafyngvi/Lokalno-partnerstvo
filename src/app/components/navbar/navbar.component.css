@@ -3,7 +3,7 @@
   margin-left: auto;
 }
 .overlay {
-  margin-top: 40px;
+  margin-top: 38px;
 }
 h3{
   color:black;
@@ -17,4 +17,8 @@ h3{
   padding-top: 10px;
   margin-left: 700px;
 
+}
+
+span {
+  font-family: sans-serif;
 }

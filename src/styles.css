@@ -13,7 +13,7 @@ html { background-color: #fdfdfd; color:#555; font-family: 'Roboto Slab', serif;
 /*           Headings             */
 /*  ----------------------------  */
 
-h1 { margin-top: 0; margin-bottom: 20px; color: #fff; font-size: 280%; font-weight: 300; letter-spacing: 1px; word-spacing: 4px;}
+h1 { margin-top: 0; margin-bottom: 20px; color: #fff; font-size: 280%; font-weight: 300; letter-spacing: 1px; word-spacing: 4px; font-family: sans-serif;}
 h2 { margin-top: 0; margin-bottom: 20px; color: #000; font-size: 200%; font-weight: 300; letter-spacing: 1px; word-spacing: 4px;}
 h3 { margin-top: 0; margin-bottom: 20px; font-size: 160%; font-weight: 300; letter-spacing: 1px; word-spacing: 4px;}
 h4 { padding: 20px 20px; margin-top: 0; margin-bottom: 20px; color: #000; font-size: 140%; font-weight: 300; letter-spacing: 1px; word-spacing: 4px;}
@@ -60,7 +60,7 @@ h5 { padding: 20px 20px; margin-top: 0; color: #1c1c1c; font-size: 120%; font-we
 
 .link-arrow { padding: 20px 0px; text-decoration: none; font-size: 90%; color: darkblue; font-weight: normal; vertical-align: middle; float: left;}
 
-a span { text-decoration: none; font-size: 100%; color:darkblue; font-weight: normal; vertical-align: middle; }
+a span { text-decoration: none; font-size: 100%; color:darkblue; font-weight: normal; vertical-align: middle; font-family: sans-serif;}
 a:hover span { padding-bottom: 1px; }
 
 .arrow-div { margin-top: 5px; display: inline-block; float: left; }
@@ -83,7 +83,9 @@ a:hover span { padding-bottom: 1px; }
 /*  ----------------------------  */
 
 .logo { height: 60px; width: auto; float: left; margin-top: 5px; margin-left: 20px; margin-bottom: 5px;}
-
+a{
+  font-family: sans-serif;
+}
 .header-title {width: 400px; margin: 0; padding: 0; display: inline; float: left;}
 .header-tit-tit {margin: 5px 0px 0px 10px; font-size: 200%; font-weight: 500; color: #409ed8;}
 .header-tit-subtit {margin: 2px 0px 0px 10px; font-size: 100%; color: #aaaaaa;}
@@ -615,3 +617,38 @@ footer ul li:hover {font-weight: 400}
  .modal-dialog {
    margin-top: 18%;
  }
+ .effect8
+ {
+     position:relative;
+     -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+             box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+ }
+ .effect8:before, .effect8:after
+ {
+     content:"";
+     position:absolute;
+     z-index:-1;
+     -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+     -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+     box-shadow:0 0 20px rgba(0,0,0,0.8);
+     top:10px;
+     bottom:10px;
+     left:0;
+     right:0;
+     -moz-border-radius:100px / 10px;
+     border-radius:100px / 10px;
+ }
+ .effect8:after
+ {
+     right:10px;
+     left:auto;
+     -webkit-transform:skew(8deg) rotate(3deg);
+        -moz-transform:skew(8deg) rotate(3deg);
+         -ms-transform:skew(8deg) rotate(3deg);
+          -o-transform:skew(8deg) rotate(3deg);
+             transform:skew(8deg) rotate(3deg);
+ }
+p{
+  font-family: sans-serif;
+}

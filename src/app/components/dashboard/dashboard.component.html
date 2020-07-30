@@ -155,7 +155,7 @@
             <span class="d-lg-none">Prijave
               <span class="badge badge-pill badge-warning"></span>
             </span>
-            <span class="indicator text-warning d-none d-lg-block">
+            <span *ngIf="broj > 0" class="indicator text-warning d-none d-lg-block">
               <i class="fa fa-fw fa-circle"></i>
             </span>
           </a>
@@ -169,7 +169,11 @@
               <p >{{prijava.Telefon}} {{prijava.Email}}</p>
               <div class="dropdown-divider"></div>
             </a>
-            <a class="dropdown-item small text-center mt-2 mb-2" routerLink="prijave">Pogledaj sve prijave</a>
+            <span *ngIf="broj === 0" class="text-secondary">
+              <strong class="pl-2">
+                Nema novih prijava</strong>
+            </span>
+            <a class="dropdown-item small text-center mt-5 mb-2" routerLink="prijave">Pogledaj sve prijave</a>
           </div>
         </li>
         <li class="nav-item dropdown no-arrow mr-5">

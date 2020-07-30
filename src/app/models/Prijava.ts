@@ -13,4 +13,5 @@ export interface Prijava {
   EventId?: string;
   EventNaziv?: string;
   Objava: string;
+  Pogledano?: boolean;
 }

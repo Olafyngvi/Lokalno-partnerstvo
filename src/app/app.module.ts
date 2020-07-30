@@ -67,6 +67,8 @@ import { PrijavaComponent } from './components/prijava/prijava.component';
 import { PrijaveComponent } from './components/admin/prijave/prijave.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { FacebookModule } from 'ngx-facebook';
 
 @NgModule({
   declarations: [
@@ -134,7 +136,9 @@ import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
     RichTextEditorModule,
     FlashMessagesModule.forRoot(),
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxDatatableModule,
+    FacebookModule.forRoot()
   ],
   providers: [AuthServiceService, AuthGuard, AngularFireAuthGuard],
   bootstrap: [AppComponent]

@@ -1,5 +1,4 @@
-<form (ngSubmit)="onSubmit(rteForm)" #rteForm="ngForm">
-
+<form (ngSubmit)="onSubmit(rteForm)" #rteForm="ngForm" class="effect8 pt-3 pb-3 mb-5 pl-3">
   <div class="form-group">
     <label for="naziv">Naslov</label>
     <input
@@ -52,7 +51,7 @@
 
 </div>
 
-<div *ngIf="(snapshot | async) as snap">
+<div *ngIf="(snapshot | async) as snap" class="mb-5">
 
   {{ snap.bytesTransferred }} KB of {{ snap.totalBytes }} KB
 
@@ -63,8 +62,8 @@
   </div>
 <hr>
 
-<button (click)="task.pause()" class="btn btn-warning" [hidden]="!isActive(snap)">Pause</button>
-<button (click)="task.cancel()" class="btn btn-danger" [hidden]="!isActive(snap)">Cancel</button>
+<button (click)="task.pause()" class="btn btn-warning mr-2" [hidden]="!isActive(snap)">Pause</button>
+<button (click)="task.cancel()" class="btn btn-danger mr-2" [hidden]="!isActive(snap)">Cancel</button>
 <button (click)="task.resume()" class="btn btn-info"   [hidden]="!(snap?.state === 'paused')">Resume</button>
 </div>
 

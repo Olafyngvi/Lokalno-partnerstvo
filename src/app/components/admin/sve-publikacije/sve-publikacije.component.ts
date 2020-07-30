@@ -15,7 +15,6 @@ import { Publikacija } from '../../../models/Publikacija';
 export class SvePublikacijeComponent implements OnInit {
   autori: string[] = [];
   nazivFajla: any;
-  nazivi: string[] = [];
   publikacije: Publikacija[];
   filter: Publikacija[] = [];
   selectedObj = 'Autori';
@@ -31,7 +30,6 @@ export class SvePublikacijeComponent implements OnInit {
       this.publikacije.forEach(doc => {
         const path = `${doc.Path}`;
         this.nazivFajla = doc.Path.split('/');
-        this.nazivi.push(this.nazivFajla[1]);
         const ref = this.storage.ref(path);
         ref.getDownloadURL().subscribe( url => {
           if (url) {
@@ -51,11 +49,9 @@ export class SvePublikacijeComponent implements OnInit {
   pretrazi() {
     if (this.pretraga === '') {this.publikacijeService.getPublikacije().subscribe(publikacije => {
       this.publikacije = publikacije;
-      this.nazivi.splice(0, this.nazivi.length);
       this.publikacije.forEach(doc => {
         const path = `${doc.Path}`;
         this.nazivFajla = doc.Path.split('/');
-        this.nazivi.push(this.nazivFajla[1]);
         const ref = this.storage.ref(path);
         ref.getDownloadURL().subscribe( url => {
           if (url) {
@@ -71,11 +67,9 @@ export class SvePublikacijeComponent implements OnInit {
         // tslint:disable-next-line: max-line-length
         this.filter = this.publikacije.filter((publikacija: Publikacija) => publikacija.Naziv.toLowerCase().includes(this.pretraga.toLowerCase()));
         this.publikacije = this.filter;
-        this.nazivi.splice(0, this.nazivi.length);
         this.publikacije.forEach(doc => {
           const path = `${doc.Path}`;
           this.nazivFajla = doc.Path.split('/');
-          this.nazivi.push(this.nazivFajla[1]);
           const ref = this.storage.ref(path);
           ref.getDownloadURL().subscribe( url => {
             if (url) {

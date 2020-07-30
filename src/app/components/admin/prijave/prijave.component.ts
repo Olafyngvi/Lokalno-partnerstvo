@@ -1,9 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AngularFirestoreDocument } from '@angular/fire/firestore';
 
 import { PrijavaService } from '../../../services/prijava.service';
+import { ComfirmationDialogService } from '../../confirmation-dialog/comfirmation-dialog.service';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 import { Prijava } from '../../../models/Prijava';
+import { Observable } from 'rxjs';
+import { data } from 'jquery';
 
 @Component({
   selector: 'app-prijave',
@@ -11,6 +16,7 @@ import { Prijava } from '../../../models/Prijava';
   styleUrls: ['./prijave.component.css']
 })
 export class PrijaveComponent implements OnInit {
+  private itemDoc: AngularFirestoreDocument<Prijava>;
   naziv: string;
   pretraga: string;
   selectedObj = 'Svi događaji';
@@ -19,7 +25,9 @@ export class PrijaveComponent implements OnInit {
   prijave: Prijava[];
 
   constructor(private prijavaService: PrijavaService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private fm: FlashMessagesService,
+              private cds: ComfirmationDialogService) { }
 
   ngOnInit(): void {
     this.naziv = this.route.snapshot.params.p;
@@ -42,7 +50,15 @@ export class PrijaveComponent implements OnInit {
       });
     }
   }
-  delete(prijava: Prijava) {}
+  delete(prijava: Prijava) {
+    this.cds.confirm('Pažnja', `Jeste li sigurni da želite obrisati prijavu od ${prijava.Ime} ${prijava.Prezime} ?`)
+    .then(confirmed => {
+      if (confirmed === false) {
+        this.fm.show('Prijava je uspješno obrisana', {cssClass: 'alert-success', timeout: 3000});
+        this.prijavaService.deletePrijava(prijava);
+      }
+    });
+  }
   onChange() {
     this.prijavaService.getByDogadjaj(this.selectedObj).subscribe(prijave => {
       this.prijave = prijave;
@@ -76,5 +92,16 @@ export class PrijaveComponent implements OnInit {
         });
       });
     }
+  }
+  checkValue(id: string, pogledano: boolean) {
+    this.itemDoc = this.prijavaService.getPrijavaValue(id);
+    this.itemDoc.update({Pogledano: pogledano})
+    .then(() => {
+      console.log('Document successfully updated!');
+    })
+    .catch((error) => {
+      // The document probably doesn't exist.
+      console.error('Error updating document: ', error);
+    });
   }
 }

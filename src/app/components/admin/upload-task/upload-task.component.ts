@@ -77,7 +77,7 @@ export class UploadTaskComponent implements OnInit {
       // The file's download URL
       finalize( async () =>  {
         this.pub.Url = await ref.getDownloadURL().toPromise();
-        await this.router.navigate(['dashboard']);
+        await this.router.navigate(['/dashboard/publikacije']);
       })
     );
   }

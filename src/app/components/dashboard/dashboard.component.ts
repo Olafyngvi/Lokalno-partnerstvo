@@ -18,6 +18,7 @@ import { User } from '../../models/User';
 })
 export class DashboardComponent implements OnInit {
   prijave: Prijava[];
+  broj: number;
   user: any;
   email: string;
   name: string;
@@ -33,8 +34,9 @@ export class DashboardComponent implements OnInit {
     this.user = JSON.parse(localStorage.getItem('user'));
     this.email = this.user.email;
     this.name = this.email.substring(0, this.email.lastIndexOf('@'));
-    this.prijavaService.getPrijave().subscribe(prijave => {
+    this.prijavaService.getNovePrijave().subscribe(prijave => {
       this.prijave = prijave;
+      this.broj = prijave.length;
     });
   }
   resetPassword() {

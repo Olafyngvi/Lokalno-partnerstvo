@@ -1,3 +1,8 @@
+<meta property="og:url"           content="http://localhost:4200/kurs/{{id}}/{{bool}}" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="{{kurs.Naslov}}" />
+<meta property="og:description"   content="{{kurs.Opis}}" />
+<meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
 <div onload="loadOnce()" class="pozadina">
   <div class="container">
     <section id="mainContent">
@@ -5,6 +10,7 @@
         <div class="col-lg-8 col-md-8">
           <div class="content_bottom_left">
             <div class="single_page_area">
+              <div class="fb-share-button" id="shareFB" data-href="http://localhost:4200/kurs/e1xfBJdY2ux5v3Jqvp0m/false" data-layout="button" data-size="large"><a target="_blank" id="shareFBLink" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4200%2Fkurs%2Fe1xfBJdY2ux5v3Jqvp0m%2Ffalse&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Dijeli</a></div>
               <h2 class="post_titile">{{kurs.Naslov}} </h2>
               <div class="single_page_content">
                 <div class="post_commentbox"> <a><i class="fa fa-tags"></i>{{kurs.Kategorija}}, </a> <a> {{kurs.DatumObjave.seconds*1000 | date}}</a> </div>
