@@ -1,5 +1,9 @@
 .ukljucise {
   padding-top: 200px;
-  height: 700px;
+  height: 800px;
   background-color: rgb(195, 196, 196);
+}
+img {
+ max-height: 600px;
+ overflow: hidden;
 }

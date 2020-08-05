@@ -18,10 +18,10 @@ export class UkljuciSeComponent implements OnInit {
   ngOnInit() {
     this.kursService.sviKursevi().subscribe(kursevi => {
       this.kursevi = kursevi;
-      const ref = this.storage.ref(`Kursevi/${this.kursevi[0].Naslov}`);
-      this.kursevi[0].Slika = ref.getDownloadURL();
-      console.log(this.kursevi[0]);
+      this.kursevi.forEach(doc => {
+        const ref = this.storage.ref(`Kursevi/${doc.Naslov}`);
+        doc.Slika = ref.getDownloadURL();
+      });
     });
   }
-
 }

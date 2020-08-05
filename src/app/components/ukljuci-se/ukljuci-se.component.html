@@ -1,4 +1,37 @@
 <div class="ukljucise row">
+  <div id="carouselExampleIndicators" class="carousel slide col-lg-12" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li *ngFor="let kurs of kursevi; let i = index" data-target="#carouselExampleIndicators" data-slide-to="i" class="active mb-5"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div *ngFor="let kurs of kursevi; let j = index" [class.active]="j == 0" class="carousel-item">
+        <div class="container-slide container">
+          <div class="row">
+            <div class="col-lg-6 col-sm-6 col-xs-6">
+              <h1 class="text-center mt-5">{{kurs.Naslov}}</h1>
+              <p class="text-center" [innerHTML]="kurs.Opis"></p>
+              <br>
+              <hr>
+              <a class="btn" style="margin-left: 40%;">Prijavi se</a>
+            </div>
+            <div class="col-lg-6 col-sm-6 col-xs-6 mb-5">
+              <img class="" [src]="kurs.Slika | async" width="600px" height="500px" alt="i slide">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+<!--<div class="ukljucise row">
   <div class="col-lg-6">
     <h1 class="text-center mt-5">{{kursevi[0].Naslov}}</h1>
     <p class="text-center">Text</p>
@@ -11,4 +44,4 @@
   <div class="col-lg-6">
     <img class="" [src]="kursevi[0].Slika | async" width="500px" height="400px" alt="">
   </div>
-</div>
+</div>-->
