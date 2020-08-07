@@ -5,9 +5,6 @@
 /*       Open Navigation          */
 /* ----------------------------   */
 
-
-
-
 function openNav_1() {
   document.getElementById("myNav_1").style.height = "450px";
   document.getElementById("myNav_1").style.transition = "0.1s";
@@ -45,24 +42,6 @@ function closeNav_3() {
 }
 /*      Close Navigation TOTAL    */
 /* ----------------------------   */
-
-/*var mywindow = $(window);
-var mypos = mywindow.scrollTop();
-mywindow.scroll(function() {
-  if(mywindow.scrollTop() > mypos)
-  {
-      document.getElementById("myNav_1").style.height = "0%";
-      document.getElementById("myNav_1").style.transition = "0s";
-      document.getElementById("myNav_2").style.height = "0%";
-      document.getElementById("myNav_2").style.transition = "0s";
-      document.getElementById("myNav_3").style.height = "0%";
-      document.getElementById("myNav_3").style.transition = "0s";
-
-  }
-  mypos = mywindow.scrollTop();
-});
-
-*/
 
 var mywindow = $(window);
 var mypos = mywindow.scrollTop();

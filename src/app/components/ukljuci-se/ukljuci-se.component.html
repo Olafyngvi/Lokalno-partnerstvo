@@ -4,9 +4,9 @@
       <li *ngFor="let kurs of kursevi; let i = index" data-target="#carouselExampleIndicators" data-slide-to="i" class="active mb-5"></li>
     </ol>
     <div class="carousel-inner">
-      <div *ngFor="let kurs of kursevi; let j = index" [class.active]="j == 0" class="carousel-item">
-        <div class="container-slide container">
-          <div class="row">
+      <div *ngFor="let kurs of kursevi; let j = index" [class.active]="j == 0" class="carousel-item ">
+        <div class="">
+          <!--<div class="row">
             <div class="col-lg-6 col-sm-6 col-xs-6">
               <h1 class="text-center mt-5">{{kurs.Naslov}}</h1>
               <p class="text-center" [innerHTML]="kurs.Opis"></p>
@@ -17,6 +17,14 @@
             <div class="col-lg-6 col-sm-6 col-xs-6 mb-5">
               <img class="" [src]="kurs.Slika | async" width="600px" height="500px" alt="i slide">
             </div>
+          </div>-->
+          <div class="view">
+            <img class="d-block w-100" [src]="kurs.Slika | async" style="object-fit: cover; height: 100%;" alt="">
+            <div class="mask rgba-black-light"></div>
+          </div>
+          <div class="carousel-caption">
+            <h3 class="h3-responsive">{{kurs.Naslov}}</h3>
+            <p [innerHTML]="kurs.Opis"></p>
           </div>
         </div>
       </div>

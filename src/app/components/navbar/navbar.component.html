@@ -1,14 +1,42 @@
 
 <nav *ngIf="nav.visible">
   <div class="top-navigation">
-    <div class="heder pl-2 pt-2">
+    <!--<div class="heder pl-2 pt-2">
       <h3>Lokalno partnerstvo za obrazovanje odraslih</h3>
       <div class="search-f">
       <form action="pages/zzjz_search.php" class="form-inline" method="post"><input class="form-control" type="text" name="search" placeholder="Unesi pojam..."><span><button name="submit" class="btn btn-secondary" type="submit">Traži</button></span></form>
-    </div></div>
+      </div>
+    </div>-->
+
+  <div class="topbar-section">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-lg-8 col-md-6 col-sm-6 hidden-xs-down">
+                  <div class="topsocial">
+                    <h3>Lokalno partnerstvo za obrazovanje odraslih</h3>
+                  </div><!-- end social -->
+              </div><!-- end col -->
+
+              <!--<div class="col-lg-4 hidden-md-down">
+                  <div class="topmenu text-center">
+                  </div>
+              </div>-->
+
+              <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 ">
+                  <div class="topsearch pull-right mr-5">
+                    <form class="form-inline">
+                      <input type="text" class="form-control" placeholder="Pretraži">
+                      <a type="submit" style="position: absolute; right: 6%;"><i class="fa fa-search"></i></a>
+                    </form>
+                  </div><!-- end search -->
+              </div><!-- end col -->
+          </div><!-- end row -->
+      </div><!-- end header-logo -->
+  </div><!-- end topbar -->
 
       <div class="top-navigation-bar">
-          <a class="mobile-nav-icon">
+          <a class="mobile-nav-icon pull-left">
+            <i class="fa fa-bars"></i>
           </a>
       </div>
       <div class="full_nav">
@@ -196,12 +224,12 @@
       <div class="responsive-menu">
           <div class="responsive-menu-container">
               <div>
-                  <div class="row">
-                      <div class="box75">
-                          <li><a href="#link">Zdravstvene oblasti</a></li>
-                      </div>
-                      <div class="box25-m1"><i class="ion-minus-round"></i></div>
+                <div class="row">
+                  <div class="box75">
+                      <li></li>
                   </div>
+                  <div class="box25-m1"><i class="fa fa-minus"></i></div>
+              </div>
                   <div class="row-m1">
                       <ul class="sub-menu">
                           <li><a href="#">Epidemiologija</a></li>

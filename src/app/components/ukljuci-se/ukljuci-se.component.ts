@@ -4,6 +4,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { KursService } from '../../services/kurs.service';
 
 import { Kurs } from '../../models/Kurs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-ukljuci-se',
@@ -23,5 +24,7 @@ export class UkljuciSeComponent implements OnInit {
         doc.Slika = ref.getDownloadURL();
       });
     });
+  }
+  getUrl(slika: Observable<string>) {
   }
 }
