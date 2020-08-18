@@ -17,6 +17,8 @@ import { Vijest } from '../../models/Vijest';
 export class VijestComponent implements OnInit {
   id: any;
   vijest: Vijest;
+  slicno: Vijest[];
+  nedavno: Vijest[];
   constructor(private vijestiService: VijestiService,
               private storage: AngularFireStorage,
               private router: Router,
@@ -26,13 +28,30 @@ export class VijestComponent implements OnInit {
               }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.footer.show();
     this.navbar.show();
     this.id = this.activatedRoute.snapshot.params.id;
     this.vijestiService.getVijest('vijesti', this.id).subscribe(vijest => {
       this.vijest = vijest;
+      this.vijestiService.getByKategorija(vijest.Kategorija).subscribe(slicno => {
+        this.slicno = slicno;
+        this.slicno.forEach(doc => {
+          // tslint:disable-next-line: no-shadowed-variable
+          const ref = this.storage.ref(`Vijesti/${doc.Podnaslov}`);
+          doc.Slika = ref.getDownloadURL();
+        });
+      });
       const ref = this.storage.ref(`Vijesti/${this.vijest.Podnaslov}`);
       this.vijest.Slika = ref.getDownloadURL();
+    });
+    this.vijestiService.getVijesti().subscribe(nedavno => {
+      this.nedavno = nedavno;
+      this.nedavno.forEach(doc => {
+        // tslint:disable-next-line: no-shadowed-variable
+        const ref = this.storage.ref(`Vijesti/${doc.Podnaslov}`);
+        doc.Slika = ref.getDownloadURL();
+      });
     });
   }
   loadOnce() {

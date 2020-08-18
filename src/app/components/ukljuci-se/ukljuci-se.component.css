@@ -8,3 +8,12 @@ img {
  max-height: 600px;
  overflow: hidden;
 }
+.carousel-caption {
+  bottom: 50% !important;
+}
+
+.prijava {
+  opacity: 0.5;
+  color: white;
+  width: 40%;
+}

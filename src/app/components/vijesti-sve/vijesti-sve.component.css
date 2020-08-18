@@ -1,0 +1,15 @@
+.red {
+  padding-top: 180px;
+}
+h4 {
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+}
+
+img {
+  max-height: 220px !important;
+  width: 330px !important;
+}
+a {
+  color: black !important;
+}

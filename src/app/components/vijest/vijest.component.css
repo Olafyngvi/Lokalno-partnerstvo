@@ -1,23 +1,24 @@
 .pozadina {
-  background-color: rgb(231, 227, 227);
+  background-color: rgb(247, 247, 247);
   padding-top: 10%;
   padding-bottom: 15%;
 }
 .container {
   background-color: white;
-  width: 40%;
-}
-h3 {
-  color: red;
+
 }
 .img-center{display:block; margin-left:auto; margin-right:auto; text-align:center}
-img {
-  max-width: 550px;
-  max-height: 330px;
-}
 .content_bottom{
   display:block;
 }
 .content_bottom_left{background-color:#fff; display:inline; margin-left:-15px; min-height:300px; padding-right:25px}
 .single_page_area{display:inline; padding-top:15px; padding-bottom:25px}
 .similar_post{background-color:#fff; display:inline-block; margin-bottom:20px; padding:0 15px; width:100%}
+
+.slicno {
+  max-height: 230px !important;
+  object-fit: fill;
+}
+.nedavne {
+  max-height: 37px !important;
+}

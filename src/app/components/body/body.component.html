@@ -1,3 +1,155 @@
 <div class="sadrzaj">
+  <h3 class="text-center">Kursevi</h3>
+  <section class="section first-section">
+    <div class="container-fluid">
+        <div class="masonry-blog clearfix">
+            <div class="left-side">
+                <div class="masonry-box post-media">
+                     <img [src]="kursevi[0].Slika | async" alt="" class="img-fluid">
+                     <div class="shadoweffect">
+                        <div class="shadow-desc">
+                            <div class="blog-meta">
+                                <span class="bg-aqua"><a title="">{{kursevi[0].Kategorija}}</a></span>
+                                <h4><a routerLink="/vijest/{{kursevi[0].Id}}" class="naslov" title="">{{kursevi[0].Naslov}}</a></h4>
+                                <small><a href="single.html" class="naslov" title="">{{kursevi[0].DatumPocetka.seconds*1000 | date }}</a></small>
+                            </div><!-- end meta -->
+                        </div><!-- end shadow-desc -->
+                    </div><!-- end shadow -->
+                </div><!-- end post-media -->
+            </div><!-- end left-side -->
 
+            <div class="center-side">
+                <div class="masonry-box post-media">
+                     <img [src]="kursevi[1].Slika | async" alt="" class="img-fluid">
+                     <div class="shadoweffect">
+                        <div class="shadow-desc">
+                            <div class="blog-meta">
+                                <span class="bg-green"><a title="">{{kursevi[1].Kategorija}}</a></span>
+                                <h4><a routerLink="/vijest/{{kursevi[1].Id}}" class="naslov" title="">{{kursevi[1].Naslov}}</a></h4>
+                                <small><a class="naslov" title="">{{kursevi[1].DatumPocetka.seconds*1000 | date }}</a></small>
+                            </div><!-- end meta -->
+                        </div><!-- end shadow-desc -->
+                    </div><!-- end shadow -->
+                </div><!-- end post-media -->
+            </div><!-- end left-side -->
+
+            <div class="right-side hidden-md-down">
+                <div class="masonry-box post-media">
+                     <img [src]="kursevi[2].Slika | async" alt="" class="img-fluid">
+                     <div class="shadoweffect">
+                        <div class="shadow-desc">
+                            <div class="blog-meta">
+                                <span class="bg-aqua"><a title="">{{kursevi[2].Kategorija}}</a></span>
+                                <h4><a routerLink="/vijest/{{kursevi[2].Id}}" class="naslov" title="">{{kursevi[2].Naslov}}</a></h4>
+                                <small><a class="naslov" title="">{{kursevi[2].DatumPocetka.seconds*1000 | date }}</a></small>
+                            </div><!-- end meta -->
+                        </div><!-- end shadow-desc -->
+                     </div><!-- end shadow -->
+                </div><!-- end post-media -->
+            </div><!-- end right-side -->
+        </div><!-- end masonry -->
+    </div>
+</section>
+<h3 class="text-center">Praktične obuke</h3>
+  <section class="section first-section">
+    <div class="container-fluid">
+        <div class="masonry-blog clearfix">
+            <div class="left-side">
+                <div class="masonry-box post-media">
+                     <img [src]="prakticne[0].Slika | async" alt="" class="img-fluid">
+                     <div class="shadoweffect">
+                        <div class="shadow-desc">
+                            <div class="blog-meta">
+                                <span class="bg-aqua"><a title="">{{prakticne[0].Kategorija}}</a></span>
+                                <h4><a routerLink="/vijest/{{prakticne[0].Id}}" class="naslov" title="">{{prakticne[0].Naslov}}</a></h4>
+                                <small><a class="naslov" title="">{{prakticne[0].DatumPocetka.seconds*1000 | date }}</a></small>
+                            </div><!-- end meta -->
+                        </div><!-- end shadow-desc -->
+                    </div><!-- end shadow -->
+                </div><!-- end post-media -->
+            </div><!-- end left-side -->
+
+            <div class="center-side">
+                <div class="masonry-box post-media">
+                     <img [src]="prakticne[1].Slika | async" alt="" class="img-fluid">
+                     <div class="shadoweffect">
+                        <div class="shadow-desc">
+                            <div class="blog-meta">
+                                <span class="bg-green"><a title="">{{prakticne[1].Kategorija}}</a></span>
+                                <h4><a routerLink="/vijest/{{prakticne[0].Id}}" class="naslov" title="">{{prakticne[1].Naslov}}</a></h4>
+                                <small><a class="naslov" title="">{{prakticne[1].DatumPocetka.seconds*1000 | date }}</a></small>
+                            </div><!-- end meta -->
+                        </div><!-- end shadow-desc -->
+                    </div><!-- end shadow -->
+                </div><!-- end post-media -->
+            </div><!-- end left-side -->
+
+            <div class="right-side hidden-md-down">
+                <div class="masonry-box post-media">
+                     <img [src]="prakticne[2].Slika | async" alt="" class="img-fluid">
+                     <div class="shadoweffect">
+                        <div class="shadow-desc">
+                            <div class="blog-meta">
+                                <span class="bg-aqua"><a title="">{{prakticne[2].Kategorija}}</a></span>
+                                <h4><a routerLink="/vijest/{{prakticne[0].Id}}" class="naslov" title="">{{prakticne[2].Naslov}}</a></h4>
+                                <small><a class="naslov" title="">{{prakticne[2].DatumPocetka.seconds*1000 | date }}</a></small>
+                            </div><!-- end meta -->
+                        </div><!-- end shadow-desc -->
+                     </div><!-- end shadow -->
+                </div><!-- end post-media -->
+            </div><!-- end right-side -->
+        </div><!-- end masonry -->
+    </div>
+</section>
+<h3 class="text-center">Događaji</h3>
+  <section class="section first-section">
+    <div class="container-fluid">
+        <div class="masonry-blog clearfix">
+            <div class="left-side">
+                <div class="masonry-box post-media">
+                     <img [src]="dogadjaji[0].Slika | async" alt="" class="img-fluid">
+                     <div class="shadoweffect">
+                        <div class="shadow-desc">
+                            <div class="blog-meta">
+                                <span class="bg-aqua"><a title="">{{dogadjaji[0].Kategorija}}</a></span>
+                                <h4><a routerLink="/vijest/{{prakticne[0].Id}}" class="naslov" title="">{{dogadjaji[0].Naslov}}</a></h4>
+                                <small><a class="naslov" title="">{{dogadjaji[0].DatumPocetka.seconds*1000 | date }}</a></small>
+                            </div><!-- end meta -->
+                        </div><!-- end shadow-desc -->
+                    </div><!-- end shadow -->
+                </div><!-- end post-media -->
+            </div><!-- end left-side -->
+
+            <div class="center-side">
+                <div class="masonry-box post-media">
+                     <img [src]="dogadjaji[1].Slika | async" alt="" class="img-fluid">
+                     <div class="shadoweffect">
+                        <div class="shadow-desc">
+                            <div class="blog-meta">
+                                <span class="bg-green"><a title="">{{dogadjaji[1].Kategorija}}</a></span>
+                                <h4><a routerLink="/vijest/{{prakticne[0].Id}}" class="naslov" title="">{{dogadjaji[1].Naslov}}</a></h4>
+                                <small><a class="naslov" title="">{{dogadjaji[1].DatumPocetka.seconds*1000 | date }}</a></small>
+                            </div><!-- end meta -->
+                        </div><!-- end shadow-desc -->
+                    </div><!-- end shadow -->
+                </div><!-- end post-media -->
+            </div><!-- end left-side -->
+
+            <div class="right-side hidden-md-down">
+                <div class="masonry-box post-media">
+                     <img [src]="dogadjaji[2].Slika | async" alt="" class="img-fluid">
+                     <div class="shadoweffect">
+                        <div class="shadow-desc">
+                            <div class="blog-meta">
+                                <span class="bg-aqua"><a title="">{{dogadjaji[2].Kategorija}}</a></span>
+                                <h4><a routerLink="/vijest/{{prakticne[0].Id}}" class="naslov" title="">{{dogadjaji[2].Naslov}}</a></h4>
+                                <small><a class="naslov" title="">{{dogadjaji[2].DatumPocetka.seconds*1000 | date }}</a></small>
+                            </div><!-- end meta -->
+                        </div><!-- end shadow-desc -->
+                     </div><!-- end shadow -->
+                </div><!-- end post-media -->
+            </div><!-- end right-side -->
+        </div><!-- end masonry -->
+    </div>
+</section>
 </div>

@@ -35,6 +35,8 @@ import { KursComponent } from './components/kurs/kurs.component';
 import { PrijavaComponent } from './components/prijava/prijava.component';
 import { PrijaveComponent } from './components/admin/prijave/prijave.component';
 import { AngularFireAuthGuard, redirectLoggedInTo, canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+import { VijestiSveComponent } from './components/vijesti-sve/vijesti-sve.component';
+import { PublikacijeComponent } from './components/publikacije/publikacije.component';
 
 const redirectLoggedIndashboard = () => redirectLoggedInTo(['dashboard']);
 const redirectUnauthorizedToLogin = redirectUnauthorizedTo(['login']);
@@ -43,11 +45,12 @@ const routes: Routes = [
 
   { path: '', component: HomeComponent },
   {path: 'login', component: LoginComponent, canActivate: [AngularFireAuthGuard], data: {authGuardPipe: redirectLoggedIndashboard}},
-  {path: 'vijesti', component: VijestiComponent},
+  {path: 'vijesti', component: VijestiSveComponent},
   {path: 'vijest/:id', component: VijestComponent},
   {path: 'kurs/:id/:p', component: KursComponent},
   {path: 'prijava/:id/:naziv/:p', component: PrijavaComponent},
   { path: 'registracija', component: SignUpComponent },
+  { path: 'publikacije', component: PublikacijeComponent },
   { path: 'dashboard',
     component: DashboardComponent,
     ...canActivate(redirectUnauthorizedToLogin),

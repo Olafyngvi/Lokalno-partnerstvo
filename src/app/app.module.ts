@@ -69,6 +69,9 @@ import { AuthGuard } from './services/auth-guard.service';
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { FacebookModule } from 'ngx-facebook';
+import { VijestiSveComponent } from './components/vijesti-sve/vijesti-sve.component';
+import { JwPaginationModule } from 'jw-angular-pagination';
+import { PublikacijeComponent } from './components/publikacije/publikacije.component';
 
 @NgModule({
   declarations: [
@@ -123,7 +126,9 @@ import { FacebookModule } from 'ngx-facebook';
     PublikacijaIzmjenaComponent,
     KursComponent,
     PrijavaComponent,
-    PrijaveComponent
+    PrijaveComponent,
+    VijestiSveComponent,
+    PublikacijeComponent
   ],
   imports: [
     BrowserModule,
@@ -138,7 +143,8 @@ import { FacebookModule } from 'ngx-facebook';
     NgbModule,
     ReactiveFormsModule,
     NgxDatatableModule,
-    FacebookModule.forRoot()
+    FacebookModule.forRoot(),
+    JwPaginationModule
   ],
   providers: [AuthServiceService, AuthGuard, AngularFireAuthGuard],
   bootstrap: [AppComponent]

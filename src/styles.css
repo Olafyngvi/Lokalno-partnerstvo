@@ -17,7 +17,7 @@ h1 { margin-top: 0; margin-bottom: 20px; color: #fff; font-size: 280%; font-weig
 h2 { margin-top: 0; margin-bottom: 20px; color: #000; font-size: 200%; font-weight: 300; letter-spacing: 1px; word-spacing: 4px; font-family: sans-serif;}
 h3 { margin-top: 0; margin-bottom: 20px; font-size: 160%; font-weight: 300; letter-spacing: 1px; word-spacing: 4px; font-family: sans-serif;}
 h4 { padding: 20px 20px; margin-top: 0; margin-bottom: 20px; color: #000; font-size: 140%; font-weight: 300; letter-spacing: 1px; word-spacing: 4px; font-family: sans-serif;}
-h5 { padding: 20px 20px; margin-top: 0; color: #1c1c1c; font-size: 120%; font-weight: 300; letter-spacing: 1px; word-spacing: 1px; line-height: 130%; font-weight:200; font-family: sans-serif;}
+h5 { margin-top: 0; color: #1c1c1c; font-family: sans-serif;}
 
 /*  ----------------------------  */
 /*         Section & Rows         */
@@ -652,6 +652,9 @@ p{
   .mobile-nav-icon i {
     color: white;
   }
+  .pozadina {
+    top: 100px;
+  }
 }
 
 @media (max-width: 1156px) {
@@ -732,6 +735,9 @@ p{
 }
 
 @media (max-width: 590px) {
+  .pozadina {
+    top: 180px;
+  }
   .comment-list .media {
       float: none !important;
       width: 100%;
@@ -805,7 +811,9 @@ p{
 .blog-title-area.text-center .breadcrumb {
   text-align: center;
 }
-
+.breadcrumb {
+  background-color: white !important;
+}
 .blog-title-area .blog-meta a {
   font-size: 10px;
   font-weight: 500;
