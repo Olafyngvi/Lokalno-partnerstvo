@@ -45,6 +45,7 @@ export class PrijavaComponent implements OnInit {
               private cds: ComfirmationDialogService) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.id = this.route.snapshot.params.id;
     this.bool = this.route.snapshot.params.p;
     if (this.bool === 'true') {

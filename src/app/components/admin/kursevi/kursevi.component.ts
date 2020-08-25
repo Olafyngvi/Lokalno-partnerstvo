@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestoreDocument } from '@angular/fire/firestore';
 
 import { KursService } from '../../../services/kurs.service';
 import { KategorijeKurseviService } from '../../../services/kategorije-kursevi.service';
@@ -14,6 +15,7 @@ import { KategorijaKurs } from 'src/app/models/KategorijaKurs';
   styleUrls: ['./kursevi.component.css']
 })
 export class KurseviComponent implements OnInit {
+  private itemDoc: AngularFirestoreDocument<Kurs>;
   pretraga = '';
   selected = 'Svi kursevi';
   filter: Kurs[] = [];
@@ -55,6 +57,17 @@ export class KurseviComponent implements OnInit {
         this.fm.show('Kurs je uspješno obrisan', {cssClass: 'alert-success', timeout: 3000});
         this.kursService.deleteKurs(kurs);
       }
+    });
+  }
+  checkValue(id: string, aktivan: boolean) {
+    this.itemDoc = this.kursService.getKursValue(id);
+    this.itemDoc.update({Aktivan: aktivan})
+    .then(() => {
+      console.log('Document successfully updated!');
+    })
+    .catch((error) => {
+      // The document probably doesn't exist.
+      console.error('Error updating document: ', error);
     });
   }
 }

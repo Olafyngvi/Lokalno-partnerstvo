@@ -27,7 +27,6 @@ export class VijestiSveComponent implements OnInit {
         doc.Slika = ref.getDownloadURL();
         doc.Sadrzaj = doc.Sadrzaj.substring(0, 400);
         doc.Sadrzaj = jQuery(doc.Sadrzaj).text();
-        console.log(doc.Sadrzaj);
       });
       // tslint:disable-next-line: max-line-length
       this.items = this.vijesti.map((x, i) => ({ id: (i + 1), Naslov: x.Naslov, Id: x.Id, Podnaslov: x.Podnaslov, Slika: x.Slika, Kategorija: x.Kategorija, Sadrzaj: x.Sadrzaj, Datum: x.Datum}));

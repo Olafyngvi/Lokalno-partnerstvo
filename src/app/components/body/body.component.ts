@@ -26,7 +26,6 @@ export class BodyComponent implements OnInit {
 
   ngOnInit() {
     this.kursService.sviKursevi().subscribe(kursevi => {
-      console.log(kursevi);
       this.kursevi = kursevi;
       this.kursevi.forEach(cur => {
         const ref = this.storage.ref(`Kursevi/${cur.Naslov}`);
@@ -34,7 +33,6 @@ export class BodyComponent implements OnInit {
       });
     });
     this.prakticneService.sveObuke().subscribe(obuke => {
-      console.log(obuke);
       this.prakticne = obuke;
       this.prakticne.forEach(cur => {
         const ref = this.storage.ref(`Obuke/${cur.Naslov}`);
@@ -42,7 +40,6 @@ export class BodyComponent implements OnInit {
       });
     });
     this.dogadjajiService.sviDogadjaji().subscribe(dogadjaji => {
-      console.log(dogadjaji);
       this.dogadjaji = dogadjaji;
       this.dogadjaji.forEach(cur => {
         const ref = this.storage.ref(`Dogadjaji/${cur.Naslov}`);

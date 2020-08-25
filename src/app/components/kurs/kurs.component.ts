@@ -18,11 +18,15 @@ import { async } from '@angular/core/testing';
   styleUrls: ['./kurs.component.css']
 })
 export class KursComponent implements OnInit {
+  datumDanas = new Date().getTime();
+  datumKurs: any;
   slikaURL: string;
   bool: any;
   id: string;
   obuka: Prakticne;
   kurs: Kurs;
+  slicno: Kurs[];
+  nedavno: Kurs[];
   constructor(private kursService: KursService,
               private footerService: FooterService,
               private navbarService: NavbarService,
@@ -33,6 +37,7 @@ export class KursComponent implements OnInit {
                }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.footerService.show();
     this.navbarService.show();
 
@@ -42,7 +47,9 @@ export class KursComponent implements OnInit {
     if (this.bool === 'true') {
       this.obukeService.getObuka(this.id).subscribe(obuka => {
         this.kurs = obuka;
-        // const ref = this.storage.ref(`Obuke/${this.kurs.Naslov}`);
+        this.datumKurs = new Date(obuka.DatumPocetka).getTime();
+        const ref = this.storage.ref(`Obuke/${this.kurs.Naslov}`);
+        this.kurs.Slika = ref.getDownloadURL();
         this.storage.ref('Obuke/' + this.kurs.Naslov).getDownloadURL().subscribe( slik => {
           this.meta.addTags([
             {property: 'og:image', content: slik},
@@ -52,14 +59,33 @@ export class KursComponent implements OnInit {
             { property: 'og:description', content: this.kurs.Opis}
           ]);
         });
+        this.obukeService.getByKategorija(this.kurs.Kategorija).subscribe(slicno => {
+          this.slicno = slicno;
+          this.slicno.forEach(doc => {
+            // tslint:disable-next-line: no-shadowed-variable
+            const ref = this.storage.ref(`Obuke/${doc.Naslov}`);
+            doc.Slika = ref.getDownloadURL();
+          });
+        });
+        this.obukeService.sveObuke().subscribe(nedavno => {
+          this.nedavno = nedavno;
+          this.nedavno.forEach(doc => {
+            // tslint:disable-next-line: no-shadowed-variable
+            const ref = this.storage.ref(`Obuke/${doc.Naslov}`);
+            doc.Slika = ref.getDownloadURL();
+          });
+        });
       });
     } else {
       this.kursService.getKurs(this.id).subscribe(kurs => {
         this.kurs = kurs;
-        // const ref = this.storage.ref(`Kursevi/${this.kurs.Naslov}`);
-        this.storage.ref('Obuke/' + this.kurs.Naslov).getDownloadURL().subscribe( slik => {
-          // tslint:disable-next-line: no-debugger
-          debugger;
+        console.log(kurs.DatumPocetka);
+        this.datumKurs = new Date(kurs.DatumPocetka).getTime();
+        console.log(this.datumKurs);
+        console.log(this.datumDanas);
+        const ref = this.storage.ref(`Kursevi/${this.kurs.Naslov}`);
+        this.kurs.Slika = ref.getDownloadURL();
+        this.storage.ref('Kursevi/' + this.kurs.Naslov).getDownloadURL().subscribe( slik => {
           this.meta.addTags([
             { property: 'og:url', content: `http://localhost:4200/kurs/${this.id}/${this.bool}`},
             { property: 'og:image', content: slik},
@@ -67,6 +93,22 @@ export class KursComponent implements OnInit {
             { property: 'og:title', content: this.kurs.Naslov},
             { property: 'og:description', content: this.kurs.Opis}
           ]);
+        });
+        this.kursService.getByKategorija(this.kurs.Kategorija).subscribe(slicno => {
+          this.slicno = slicno;
+          this.slicno.forEach(doc => {
+            // tslint:disable-next-line: no-shadowed-variable
+            const ref = this.storage.ref(`Kursevi/${doc.Naslov}`);
+            doc.Slika = ref.getDownloadURL();
+          });
+        });
+        this.kursService.sviKursevi().subscribe(nedavno => {
+          this.nedavno = nedavno;
+          this.nedavno.forEach(doc => {
+            // tslint:disable-next-line: no-shadowed-variable
+            const ref = this.storage.ref(`Kursevi/${doc.Naslov}`);
+            doc.Slika = ref.getDownloadURL();
+          });
         });
       });
     }

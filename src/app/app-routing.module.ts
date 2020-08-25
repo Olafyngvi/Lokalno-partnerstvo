@@ -37,6 +37,11 @@ import { PrijaveComponent } from './components/admin/prijave/prijave.component';
 import { AngularFireAuthGuard, redirectLoggedInTo, canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 import { VijestiSveComponent } from './components/vijesti-sve/vijesti-sve.component';
 import { PublikacijeComponent } from './components/publikacije/publikacije.component';
+import { UslugeComponent } from './components/usluge/usluge.component';
+import { OblastComponent } from './components/oblast/oblast.component';
+import { ONamaComponent } from './components/o-nama/o-nama.component';
+import { DogadjajComponent } from './components/dogadjaj/dogadjaj.component';
+import { PretragaComponent } from './components/pretraga/pretraga.component';
 
 const redirectLoggedIndashboard = () => redirectLoggedInTo(['dashboard']);
 const redirectUnauthorizedToLogin = redirectUnauthorizedTo(['login']);
@@ -46,7 +51,12 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   {path: 'login', component: LoginComponent, canActivate: [AngularFireAuthGuard], data: {authGuardPipe: redirectLoggedIndashboard}},
   {path: 'vijesti', component: VijestiSveComponent},
+  {path: 'usluge', component: UslugeComponent},
+  {path: 'oblasti', component: OblastComponent},
   {path: 'vijest/:id', component: VijestComponent},
+  {path: 'dogadjaj/:id', component: DogadjajComponent},
+  {path: 'pretraga/:p', component: PretragaComponent},
+  {path: 'o-nama', component: ONamaComponent},
   {path: 'kurs/:id/:p', component: KursComponent},
   {path: 'prijava/:id/:naziv/:p', component: PrijavaComponent},
   { path: 'registracija', component: SignUpComponent },

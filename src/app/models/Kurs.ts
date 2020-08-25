@@ -11,4 +11,5 @@ export interface Kurs {
   BrojPolaznika?: number;
   Slika?: Observable<any>;
   Objava: string;
+  Aktivan?: boolean;
 }

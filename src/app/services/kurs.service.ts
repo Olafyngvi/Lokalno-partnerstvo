@@ -35,6 +35,20 @@ export class KursService {
       );
     return collection$;
 }
+getAktivni(): Observable<Kurs[]> {
+  // tslint:disable-next-line: max-line-length
+  const collection: AngularFirestoreCollection<Kurs> = this.afs.collection('kursevi', ref => ref.where('Aktivan', '==', true));
+  const collection$: Observable<Kurs[]> = collection.snapshotChanges().pipe(
+      map(actions => {
+          return actions.map(action  => {
+      const data = action.payload.doc.data() as Kurs;
+      data.Id = action.payload.doc.id;
+      return data;
+        });
+      })
+    );
+  return collection$;
+}
   getKursevi(): Observable<Kurs[]> {
     const user = this.auth.auth.currentUser.displayName;
     // tslint:disable-next-line: max-line-length
@@ -89,6 +103,9 @@ updateKategorija(kurs: Kurs, kategorija: string) {
   this.updateKurs(kurs.Id, kurs);
 
 }
+getKursValue(id: string) {
+  return this.afs.doc<Kurs>(`kursevi/${id}`);
+}
 updateKurs(id: string, kurs: Kurs) {
   this.kursDoc = this.afs.doc<Kurs>(`kursevi/${id}`);
 
@@ -101,7 +118,8 @@ updateKurs(id: string, kurs: Kurs) {
     DatumPocetka: kurs.DatumPocetka,
     Cijena: kurs.Cijena,
     BrojPolaznika: kurs.BrojPolaznika,
-    Objava: kurs.Objava
+    Objava: kurs.Objava,
+    Aktivan: kurs.Aktivan
   };
   this.kursDoc.update(this.noviKurs).catch(err => {
     console.log(err);

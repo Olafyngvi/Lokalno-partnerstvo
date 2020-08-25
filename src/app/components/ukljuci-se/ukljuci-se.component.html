@@ -1,10 +1,10 @@
 <div class="ukljucise row">
   <div id="carouselExampleIndicators" class="carousel slide col-lg-12" data-ride="carousel">
     <ol class="carousel-indicators">
-      <li *ngFor="let kurs of kursevi; let i = index" data-target="#carouselExampleIndicators" data-slide-to="i" class="active mb-5"></li>
+      <li *ngFor="let kurs of aktivni; let i = index" data-target="#carouselExampleIndicators" data-slide-to="i" class="active mb-5"></li>
     </ol>
     <div class="carousel-inner">
-      <div *ngFor="let kurs of kursevi; let j = index" [class.active]="j == 0" class="carousel-item ">
+      <div *ngFor="let kurs of aktivni; let j = index" [class.active]="j == 0" class="carousel-item ">
         <div class="">
           <!--<div class="row">
             <div class="col-lg-6 col-sm-6 col-xs-6">
@@ -27,7 +27,7 @@
             <p [innerHTML]="kurs.Opis"></p>
             <br>
             <br>
-            <button class="btn prijava">Prijavi se</button>
+            <button routerLink="/prijava/{{kurs.Id}}/{{kurs.Naslov}}/{{kurs.Vrsta}}" class="btn prijava">Prijavi se</button>
           </div>
         </div>
       </div>

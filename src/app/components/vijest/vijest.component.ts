@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -21,7 +22,7 @@ export class VijestComponent implements OnInit {
   nedavno: Vijest[];
   constructor(private vijestiService: VijestiService,
               private storage: AngularFireStorage,
-              private router: Router,
+              private meta: Meta,
               private activatedRoute: ActivatedRoute,
               private footer: FooterService,
               private navbar: NavbarService) {
@@ -44,7 +45,20 @@ export class VijestComponent implements OnInit {
       });
       const ref = this.storage.ref(`Vijesti/${this.vijest.Podnaslov}`);
       this.vijest.Slika = ref.getDownloadURL();
+      this.storage.ref('Vijesti/' + this.vijest.Podnaslov).getDownloadURL().subscribe(slik => {
+        this.meta.addTags([
+          { property: 'og:image', content: slik},
+          { property: 'og:url', content: `http://localhost:4200/vijest/${this.vijest.Id}`},
+          { property: 'og:type', content: 'website' },
+          { property: 'og:title', content: this.vijest.Naslov},
+          { property: 'og:description', content: jQuery(this.vijest.Sadrzaj).text()}
+        ]);
+      });
     });
+      // tslint:disable-next-line: max-line-length
+    document.getElementById('shareFB').setAttribute('data-href', encodeURIComponent(document.URL));
+      // tslint:disable-next-line: max-line-length
+    document.getElementById('shareFBLink').setAttribute('href', 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL));
     this.vijestiService.getVijesti().subscribe(nedavno => {
       this.nedavno = nedavno;
       this.nedavno.forEach(doc => {

@@ -11,4 +11,5 @@ export interface Prakticne {
   BrojPolaznika?: number;
   Slika?: Observable<any>;
   Objava: string;
+  Aktivan?: boolean;
 }

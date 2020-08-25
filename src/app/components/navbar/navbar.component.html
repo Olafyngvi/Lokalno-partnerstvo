@@ -1,6 +1,6 @@
 
 <nav *ngIf="nav.visible">
-  <div class="top-navigation">
+  <div class="top-navigation" style="box-shadow: 0px 10px 10px -15px #111;">
     <!--<div class="heder pl-2 pt-2">
       <h3>Lokalno partnerstvo za obrazovanje odraslih</h3>
       <div class="search-f">
@@ -24,9 +24,9 @@
 
               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 ">
                   <div class="topsearch pull-right mr-5">
-                    <form class="form-inline">
-                      <input type="text" class="form-control" placeholder="Pretraži">
-                      <a type="submit" style="position: absolute; right: 6%;"><i class="fa fa-search"></i></a>
+                    <form (ngSubmit)="onSubmit(rteForm)" #rteForm="ngForm" class="form-inline">
+                      <input required type="text" name="pretraga" [(ngModel)]="pretraga" class="form-control mr-3" placeholder="Pretraži">
+                      <button type="submit" class="btn" style="position: absolute; right: 6%;"><i class="fa fa-search"></i></button>
                     </form>
                   </div><!-- end search -->
               </div><!-- end col -->
@@ -35,7 +35,7 @@
   </div><!-- end topbar -->
 
       <div class="top-navigation-bar">
-          <a class="mobile-nav-icon pull-left">
+          <a class="mobile-nav-icon pull-right">
             <i class="fa fa-bars"></i>
           </a>
       </div>
@@ -43,11 +43,11 @@
           <div class="row" onmouseleave="closeNav_1(), closeNav_2(), closeNav_3()" >
               <ul class="main_navigation_banner navigacija" role="banner">
                   <li><a [routerLink]="['/']" routerLinkActive="router-link-active" ><span>Home</span></a></li>
-                  <li><a href="#"><span onmouseover="openNav_1()">Usluge</span></a></li>
+                  <li><a routerLink="/usluge"><span onmouseover="openNav_1()">Usluge</span></a></li>
                   <li><a [routerLink]="['/vijesti']" routerLinkActive="router-link-active" ><span onmouseover="openNav_2()">Vijesti</span></a></li>
-                  <li><a href="#"><span onmouseover="openNav_3()">Oblasti</span></a></li>
+                  <li><a routerLink="/oblasti"><span onmouseover="openNav_3()">Oblasti</span></a></li>
                   <li><a routerLink="publikacije"><span onclick="openNav_4()" onmouseover="closeNav_1(), closeNav_2(), closeNav_3()">Publikacije i podaci</span></a></li>
-                  <li><a href="pages/blog.php"><span onclick="openNav_4()" onmouseover="closeNav_1(), closeNav_2(), closeNav_3()">O nama</span></a></li>
+                  <li><a routerLink="/o-nama"><span onclick="openNav_4()" onmouseover="closeNav_1(), closeNav_2(), closeNav_3()">O nama</span></a></li>
                   <li *ngIf="user === null"><a routerLink="/login">Login</a></li>
                   <li *ngIf="user !== null"><a routerLink="/login">Dashboard</a></li>
               </ul>
@@ -55,29 +55,32 @@
                   <div class="navigation_container">
                       <div class="sub_nav-l">
                           <ul class="nav_con_left">
-                              <li><a href="#" id="nc_l-1-1">Kursevi</a></li>
-                              <li><a href="#" id="nc_l-1-2">Praktična obuka</a></li>
-                              <li><a href="#" id="nc_l-1-3">Događaji</a></li>
+                              <li id="nc_l-1-1"><a href="#" >Kursevi</a></li>
+                              <li id="nc_l-1-2"><a href="#" >Praktična obuka</a></li>
+                              <li id="nc_l-1-3"><a href="#" >Događaji</a></li>
                           </ul>
                       </div>
                       <div class="sub_nav-r">
                           <div id="nc_r-1-1" class="row">
                             <div style="display: inline-block;">
-                                  <div><a class="title-subnav" href="pages/about.php">Kursevi</a></div>
-                                  <div>
+                                  <div><a class="title-subnav" >Kursevi</a></div>
+                                  <div class="row" style="height: inherit;">
+                                    <div class="col-lg-6">
                                       <p class="p-subnav-right">Kratak info</p>
+                                      <p class="pg-meni-01">
+                                        Mi vršimo uzorkovanje materijala za potrebe mikrobiloških i fizičko-hemijskih analiza na terenu i vrši mikrobiološke analize hrane, vode, vazduha, briseva predmeta opšte upotrebe i predmeta opšte upotrebe.</p>
+                                    </div>
+                                    <div class="col-lg-6">
+                                      <p class="p-subnav-right">{{kursevi[0].Naslov}}</p>
+                                      <p class="pg-meni-01">
+                                        {{kursevi[0].Opis}}</p>
+                                    </div>
                                   </div>
-                                  <p class="pg-meni-01">Mi pratimo, proučavamo, sprečavamo i suzbijamo bolesti kod ljudi odnosno tražimo odgovore na pitanja učestalosti i rasprostranjenosti bolesti, prirodnim zakonitostima njihovog nastanka (etiologija), održavanja ili iščezavanja iz ljudske populacije, a sve u cilju planskog utjecanja da se smanji učestalost bolesti ili da se neke bolesti čak posve iskorijene mjerama sprečavanja prije njihove pojave i suzbijanja, tj. direktne intervencije, ako su se već pojavile, da bi oboljelih bilo što manje.</p>
-
                                 </div>
-                                <div style="display: inline-block; background-color: aqua; margin-left: 10px;">
-                                  <img src="https://storage.radiosarajevo.ba/image/527220/1180x732/Rs1%20(1).jpg" alt="" width="500px" height="500px">
-                                </div>
-
                           </div>
                           <div id="nc_r-1-2">
                               <ul>
-                                  <div><a class="title-subnav" href="pages/news.php">Mikrobiologija</a></div>
+                                  <div><a class="title-subnav">Praktične obuke</a></div>
                                   <div>
                                       <p class="p-subnav-right">Kratak info</p>
                                   </div>
@@ -87,7 +90,7 @@
                           </div>
                           <div id="nc_r-1-3">
                               <ul>
-                                  <div><a class="title-subnav" href="#">Životna sredina</a></div>
+                                  <div><a class="title-subnav">Događaji</a></div>
                                   <div>
                                       <p class="p-subnav-right">Kratak info</p>
                                   </div>
@@ -95,13 +98,6 @@
                               </ul>
                           </div>
                           <div id="nc_r-1-4">
-                              <ul>
-                                  <div><a class="title-subnav" href="#">Socijalna medicina</a></div>
-                                  <div>
-                                      <p class="p-subnav-right">Kratak info</p>
-                                  </div>
-                                  <p class="pg-meni-01">Mi istražujemo međuzavisnost zdravstvenoga stanja stanovništva i socijalno-ekonomskih prilika u našoj zajednici. Proučavamo sistav i organizaciju zdravstvene zaštite te mogućnosti primjene suvremenih postignuća na taj sistem. Takođe se bavimo pronalaženjem socijalnih mjera za unaprjeđenje zdravlja stanovništva u kantonu.</p>
-                              </ul>
                           </div>
                           <a href="javascript:void(0)" class="closebtn" onclick="closeNav_1()"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
                       </div>
@@ -114,34 +110,72 @@
                               <div>
                                   <p class="p-subnav">Saznaj više</p>
                               </div>
-                              <li><a href="services/analytics.php" id="nc_l-2-1">Važne vijesti</a></li>
-                              <li><a href="services/public_policy.php" id="nc_l-2-2">Sve vijesti</a></li>
-                              <li><a href="services/skill_development.php" id="nc_l-2-3">Oglasi</a></li>
-                              <li><a href="services/business_initiatives.php" id="nc_l-2-4">Javne nabavke</a></li>
+                              <li id="nc_l-2-1"><a href="#" >Važne vijesti</a></li>
+                              <li id="nc_l-2-2"><a href="#">Sve vijesti</a></li>
                           </ul>
                       </div>
                       <div class="sub_nav-r">
                           <div id="nc_r-2-1">
                               <ul>
-                                  <div><a class="title-subnav" href="services/analytics.php">Analitika</a></div>
-                                  <div>
-                                      <p class="p-subnav-right">Brzi link</p>
-                                  </div>
-                                  <li><a href="#"></a></li>
+                                  <div><a class="title-subnav">Fokus</a></div>
+                                  <br>
+                                  <div class="widget">
+                                    <div class="blog-list-widget">
+                                        <div class="list-group">
+                                            <a *ngFor="let ned of vijesti" routerLink="/vijest/{{ned.Id}}" class="list-group-item list-group-item-action flex-column align-items-start">
+                                                <div class="w-100 justify-content-between">
+                                                    <img [src]="ned.Slika | async" alt="" class="nedavne float-left">
+                                                    <h5>{{ned.Naslov}}</h5>
+                                                    <small>{{ned.Podnaslov}}, {{ned.Datum.seconds*1000 | date}}</small>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div><!-- end blog-list -->
+                                </div><!-- end widget -->
                               </ul>
                           </div>
                           <div id="nc_r-2-2">
                               <ul>
-                                  <div><a class="title-subnav" href="services/public_policy.php">Javne politike</a></div>
-                                  <div>
-                                      <p class="p-subnav-right">Brzi link</p>
+                                  <div><a class="title-subnav" routerLink="/vijesti">Sve vijesti</a></div>
+                                  <br>
+                                  <div class="row" style="height: inherit;">
+                                    <div class="col-lg-6" style="border-right: 1px solid grey;">
+                                      <div class="widget">
+                                        <div class="blog-list-widget">
+                                            <div class="list-group">
+                                                <a *ngFor="let index of [0,1,2]" routerLink="/vijest/{{sveVijesti[index].Id}}" class="list-group-item list-group-item-action flex-column align-items-start">
+                                                    <div class="w-100 justify-content-between">
+                                                        <img [src]="sveVijesti[index].Slika | async" alt="" class="nedavne float-left">
+                                                        <h5>{{sveVijesti[index].Naslov}}</h5>
+                                                        <small>{{sveVijesti[index].Podnaslov}}, {{sveVijesti[index].Datum.seconds*1000 | date}}</small>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div><!-- end blog-list -->
+                                    </div><!-- end widget -->
+                                    </div>
+                                    <div class="col-lg-6">
+                                      <div class="widget">
+                                        <div class="blog-list-widget">
+                                            <div class="list-group">
+                                                <a *ngFor="let index of [3,4,5]" routerLink="/vijest/{{sveVijesti[index].Id}}" class="list-group-item list-group-item-action flex-column align-items-start">
+                                                    <div class="w-100 justify-content-between">
+                                                        <img [src]="sveVijesti[index].Slika | async" alt="" class="nedavne float-left">
+                                                        <h5>{{sveVijesti[index].Naslov}}</h5>
+                                                        <small>{{sveVijesti[index].Podnaslov}}, {{sveVijesti[index].Datum.seconds*1000 | date}}</small>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div><!-- end blog-list -->
+                                    </div><!-- end widget -->
+                                    </div>
                                   </div>
-                                  <li><a href="#"></a></li>
+
                               </ul>
                           </div>
                           <div id="nc_r-2-3">
                               <ul>
-                                  <div><a class="title-subnav" href="services/skill_development.php">Razvoj vještina</a></div>
+                                  <div><a class="title-subnav">Razvoj vještina</a></div>
                                   <div>
                                       <p class="p-subnav-right">Brzi link</p>
                                   </div>
@@ -150,7 +184,7 @@
                           </div>
                           <div id="nc_r-2-4">
                               <ul>
-                                  <div><a class="title-subnav" href="services/business_initiatives.php">Poslovni konsalting</a></div>
+                                  <div><a class="title-subnav">Poslovni konsalting</a></div>
                                   <div>
                                       <p class="p-subnav-right">Brzi link</p>
                                   </div>
@@ -168,16 +202,16 @@
                               <div>
                                   <!--<p class="p-subnav">Saznaj više</p>-->
                               </div>
-                              <li><a href="services/traditional_industries.php" id="nc_l-3-1">Pružaoci usluga</a></li>
-                              <li><a href="services/new_technologies.php" id="nc_l-3-2">Razvoj kapaciteta</a></li>
-                              <li><a href="services/public_sector.php" id="nc_l-3-3">Korisnici usluga</a></li>
-                              <li><a href="" id="nc_l-3-4">Okruženje za obrazovanje odraslih</a></li>
+                              <li id="nc_l-3-1"><a href="#">Pružaoci usluga</a></li>
+                              <li id="nc_l-3-2"><a href="#">Razvoj kapaciteta</a></li>
+                              <li id="nc_l-3-3"><a href="#">Korisnici usluga</a></li>
+                              <li id="nc_l-3-4"><a href="#">Okruženje za obrazovanje odraslih</a></li>
                           </ul>
                       </div>
                       <div class="sub_nav-r">
                           <div id="nc_r-3-1">
                               <ul>
-                                  <div><a class="title-subnav" href="services/traditional_industries.php">Pružaoci usluga</a></div>
+                                  <div><a class="title-subnav">Pružaoci usluga</a></div>
                                   <div>
                                       <p class="p-subnav-right">Brzi link</p>
                                   </div>
@@ -186,18 +220,18 @@
                           </div>
                           <div id="nc_r-3-2">
                               <ul>
-                                  <div><a class="title-subnav" href="services/new_technologies.php">Razvoj kapaciteta</a></div>
+                                  <div><a class="title-subnav">Razvoj kapaciteta</a></div>
                                   <div>
                                       <p class="p-subnav-right">Brzi link</p>
                                   </div>
-                                  <li><a href="services/digital.php">Zašto su važne digitalne tehnologije?</a></li>
-                                  <li><a href="services/digital_skills.php">Saznaj zašto su digitalne vještine važne</a></li>
-                                  <li><a href="services/digital_business.php">Vidi kako možeš razviti digitalni biznis</a></li>
+                                  <li><p>Zašto su važne digitalne tehnologije?</p></li>
+                                  <li><p>Saznaj zašto su digitalne vještine važne</p></li>
+                                  <li><p>Vidi kako možeš razviti digitalni biznis</p></li>
                               </ul>
                           </div>
                           <div id="nc_r-3-3">
                               <ul>
-                                  <div><a class="title-subnav" href="services/public_sector.php">Korisnici usluga</a></div>
+                                  <div><a class="title-subnav">Korisnici usluga</a></div>
                                   <div>
                                       <p class="p-subnav-right">Brzi link</p>
                                   </div>
@@ -206,7 +240,7 @@
                           </div>
                           <div id="nc_r-3-4">
                             <ul>
-                                <div><a class="title-subnav" href="services/public_sector.php">Okruženje za obrazovanje odraslih</a></div>
+                                <div><a class="title-subnav">Okruženje za obrazovanje odraslih</a></div>
                                 <div>
                                     <p class="p-subnav-right">Brzi link</p>
                                 </div>
@@ -230,57 +264,57 @@
                   </div>
                   <div class="box25-m1"><i class="fa fa-minus"></i></div>
               </div>
-                  <div class="row-m1">
-                      <ul class="sub-menu">
-                          <li><a href="#">Epidemiologija</a></li>
-                          <li><a href="#">Mikrobiologija</a></li>
-                          <li><a href="#">Životna sredina</a></li>
-                          <li><a href="#">Socijalna medicina</a></li>
-                      </ul>
-                  </div>
+              <div class="row">
+                <div class="box75">
+                    <li><a routerLink="">Početna</a></li>
+                </div>
+            </div>
               </div>
               <div>
                   <div class="row">
                       <div class="box75">
-                          <li><a href="#link">Vijesti</a></li>
+                          <li><a routerLink="/vijesti">Vijesti</a></li>
                       </div>
-                      <div class="box25-m2"><i class="ion-minus-round"></i></div>
+                      <div class="box25-m2"><i class="fa fa-minus"></i></div>
                   </div>
                   <div class="row-m2">
                       <ul class="sub-menu">
-                          <li><a href="#">Važne vijesti</a></li>
-                          <li><a href="#">Sve vijesti</a></li>
-                          <li><a href="#">Oglasi</a></li>
-                          <li><a href="#">Javne nabavke</a></li>
+                          <li><a routerLink="/vijesti">Važne vijesti</a></li>
+                          <li><a routerLink="/vijesti">Sve vijesti</a></li>
                       </ul>
                   </div>
               </div>
               <div>
                   <div class="row">
                       <div class="box75">
-                          <li><a href="#link">Urgentno</a></li>
+                          <li><a routerLink="/oblasti">Oblasti</a></li>
                       </div>
-                      <div class="box25-m3"><i class="ion-minus-round"></i></div>
+                      <div class="box25-m3"><i class="fa fa-minus"></i></div>
                   </div>
                   <div class="row-m3">
                       <ul class="sub-menu">
-                          <li><a href="#">Tradicionalna industrija</a></li>
-                          <li><a href="#">Nove tehnologije</a></li>
-                          <li><a href="#">Javni sektor</a></li>
+                          <li><a routerLink="/oblasti">Pružaoci usluga</a></li>
+                          <li><a routerLink="/oblasti">Razvoj kapaciteta</a></li>
+                          <li><a routerLink="/oblasti">Korisnici usluga</a></li>
+                          <li><a routerLink="/oblasti">Okruženje za obrazovanje odraslih</a></li>
                       </ul>
                   </div>
               </div>
               <div class="row">
                   <div class="box75">
-                      <li><a href="pages/careers.php">Podaci</a></li>
+                      <li><a  routerLink="/publikacije">Publikacije i podaci</a></li>
                   </div>
-                  <div class="box25-4"></div>
               </div>
               <div class="row">
                   <div class="box75">
-                      <li><a href="pages/blog.php">O nama</a></li>
+                      <li><a routerLink="/o-nama">O nama</a></li>
                   </div>
-                  <div class="box25-4"></div>
+              </div>
+              <div class="row">
+                <div class="box75">
+                  <li *ngIf="user === null"><a routerLink="/login">Login</a></li>
+                  <li *ngIf="user !== null"><a routerLink="/login">Dashboard</a></li>
+                </div>
               </div>
           </div>
       </div>

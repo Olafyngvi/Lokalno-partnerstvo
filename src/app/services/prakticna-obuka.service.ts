@@ -49,6 +49,20 @@ export class PrakticnaObukaService {
       );
     return collection$;
 }
+getAktivni(): Observable<Prakticne[]> {
+  // tslint:disable-next-line: max-line-length
+  const collection: AngularFirestoreCollection<Prakticne> = this.afs.collection('prakticneObuke', ref => ref.where('Aktivan', '==', true));
+  const collection$: Observable<Prakticne[]> = collection.snapshotChanges().pipe(
+      map(actions => {
+          return actions.map(action  => {
+      const data = action.payload.doc.data() as Prakticne;
+      data.Id = action.payload.doc.id;
+      return data;
+        });
+      })
+    );
+  return collection$;
+}
 getObuka(id: string): Observable<Prakticne> {
   this.obukaDoc = this.afs.doc<Prakticne>(`prakticneObuke/${id}`);
   this.obuka = this.obukaDoc.snapshotChanges().pipe(
@@ -88,6 +102,9 @@ updateKategorija(obuka: Prakticne, kategorija: string) {
   this.updateObuka(obuka.Id, obuka);
 
 }
+getObukaValue(id: string) {
+  return this.afs.doc<Prakticne>(`prakticneObuke/${id}`);
+}
 updateObuka(id: string, obuka: Prakticne) {
   this.obukaDoc = this.afs.doc<Prakticne>(`prakticneObuke/${id}`);
 
@@ -100,7 +117,8 @@ updateObuka(id: string, obuka: Prakticne) {
     DatumPocetka: obuka.DatumPocetka,
     Cijena: obuka.Cijena,
     BrojPolaznika: obuka.BrojPolaznika,
-    Objava: obuka.Objava
+    Objava: obuka.Objava,
+    Aktivan: obuka.Aktivan
   };
   this.obukaDoc.update(this.novaObuka).catch(err => {
     console.log(err);

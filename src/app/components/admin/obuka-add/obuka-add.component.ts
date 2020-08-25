@@ -45,7 +45,8 @@ export class ObukaAddComponent implements OnInit {
     Cijena: 0,
     BrojPolaznika: 0,
     Trajanje: '-',
-    Objava: ''
+    Objava: '',
+    Aktivan: true
   };
   processFile(imageInput: any) {
     const file: File = imageInput.files[0];

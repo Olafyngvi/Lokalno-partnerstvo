@@ -72,6 +72,9 @@ import { FacebookModule } from 'ngx-facebook';
 import { VijestiSveComponent } from './components/vijesti-sve/vijesti-sve.component';
 import { JwPaginationModule } from 'jw-angular-pagination';
 import { PublikacijeComponent } from './components/publikacije/publikacije.component';
+import { OblastComponent } from './components/oblast/oblast.component';
+import { DogadjajComponent } from './components/dogadjaj/dogadjaj.component';
+import { PretragaComponent } from './components/pretraga/pretraga.component';
 
 @NgModule({
   declarations: [
@@ -128,7 +131,10 @@ import { PublikacijeComponent } from './components/publikacije/publikacije.compo
     PrijavaComponent,
     PrijaveComponent,
     VijestiSveComponent,
-    PublikacijeComponent
+    PublikacijeComponent,
+    OblastComponent,
+    DogadjajComponent,
+    PretragaComponent
   ],
   imports: [
     BrowserModule,

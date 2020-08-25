@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestoreDocument } from '@angular/fire/firestore';
 
 import { ComfirmationDialogService } from '../../confirmation-dialog/comfirmation-dialog.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
@@ -14,6 +15,7 @@ import { KategorijaKurs } from 'src/app/models/KategorijaKurs';
   styleUrls: ['./obuke.component.css']
 })
 export class ObukeComponent implements OnInit {
+  private itemDoc: AngularFirestoreDocument<Prakticne>;
   pretraga = '';
   selected = 'Sve praktične obuke';
   filter: Prakticne[] = [];
@@ -56,6 +58,17 @@ export class ObukeComponent implements OnInit {
         this.fm.show('Praktična obuka je uspješno obrisana', {cssClass: 'alert-success', timeout: 3000});
         this.obukeService.deleteObuka(obuka);
       }
+    });
+  }
+  checkValue(id: string, aktivan: boolean) {
+    this.itemDoc = this.obukeService.getObukaValue(id);
+    this.itemDoc.update({Aktivan: aktivan})
+    .then(() => {
+      console.log('Document successfully updated!');
+    })
+    .catch((error) => {
+      // The document probably doesn't exist.
+      console.error('Error updating document: ', error);
     });
   }
 }

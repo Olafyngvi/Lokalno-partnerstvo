@@ -1,24 +1,3 @@
-<!--<div onload="loadOnce()" class="pozadina">
-  <div class="container">
-    <section id="mainContent">
-      <div class="content_bottom">
-        <div class="col-lg-8 col-md-8">
-          <div class="content_bottom_left">
-            <div class="single_page_area">
-              <h2 class="post_titile">{{vijest.Naslov}} </h2>
-              <div class="single_page_content">
-                <div class="post_commentbox"> <a><i class="fa fa-tags"></i>{{vijest.Kategorija}}</a> </div>
-                <img class="img-center" [src]="vijest.Slika | async" alt="">
-                <p [innerHTML]="vijest.Sadrzaj"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-</div>
--->
 <section class="section wb pozadina">
   <div class="container">
       <div class="row pt-5">
@@ -28,21 +7,21 @@
                       <ol class="breadcrumb hidden-xs-down mb-5">
                           <li class="breadcrumb-item"><a routerLink="">Početna</a></li>
                           <li class="breadcrumb-item"><a routerLink="/vijesti">Vijesti</a></li>
-                          <li class="breadcrumb-item active">{{vijest.Naslov}}</li>
+                          <li class="breadcrumb-item active">{{dogadjaj.Naslov}}</li>
                       </ol>
                       <div class="fb-share-button" id="shareFB" data-layout="button" data-size="large"><a target="_blank" id="shareFBLink" class="fb-xfbml-parse-ignore">Dijeli</a></div>
-                      <h3>{{vijest.Naslov}}</h3>
-                      <div class="post_commentbox"> <a><i class="fa fa-tags"></i>{{vijest.Kategorija}}</a> </div>
+                      <h3>{{dogadjaj.Naslov}}</h3>
+                      <div class="post_commentbox"> <a><i class="fa fa-tags"></i>{{dogadjaj.Kategorija}}</a> </div>
                       <div class="blog-meta big-meta">
                       </div><!-- end meta -->
                   </div><!-- end title -->
 
                   <div class="single-post-media">
-                      <img [src]="vijest.Slika | async" alt="" style="object-fit: cover;" class="img-fluid">
+                      <img [src]="dogadjaj.Slika | async" alt="" style="object-fit: cover;" class="img-fluid">
                   </div><!-- end media -->
 
                   <div class="blog-content">
-                      <div class="pp" [innerHTML]="vijest.Sadrzaj">
+                      <div class="pp" [innerHTML]="dogadjaj.Opis">
                       </div><!-- end pp -->
                   </div><!-- end content -->
 
@@ -55,16 +34,16 @@
                               <div class="blog-box">
                                   <div class="post-media">
                                       <a href="single.html" title="">
-                                          <img [src]="slicno[0].Slika | async" alt="" class="img-fluid">
+                                          <img [src]="dogadjaj.Slika | async" alt="" class="img-fluid">
                                           <div class="hovereffect">
                                               <span class=""></span>
                                           </div><!-- end hover -->
                                       </a>
                                   </div><!-- end media -->
                                   <div class="blog-meta">
-                                      <h4><a href="single.html" title="">{{slicno[0].Naslov}}</a></h4>
-                                      <small><a href="blog-category-01.html" title="">{{slicno[0].Kategorija}}</a></small>
-                                      <small><a href="blog-category-01.html" title="">{{slicno[0].Datum.seconds*1000 | date}}</a></small>
+                                      <h4><a href="single.html" title="">{{dogadjaj.Naslov}}</a></h4>
+                                      <small><a href="blog-category-01.html" title="">{{dogadjaj.Kategorija}}</a></small>
+                                      <small><a href="blog-category-01.html" title="">{{dogadjaj.DatumPocetka | date}}</a></small>
                                   </div><!-- end meta -->
                               </div><!-- end blog-box -->
                           </div><!-- end col -->
@@ -73,16 +52,16 @@
                               <div class="blog-box">
                                   <div class="post-media">
                                       <a href="single.html" title="">
-                                          <img [src]="slicno[1].Slika | async" alt="" class="slicno">
+                                          <img [src]="dogadjaj.Slika | async" alt="" class="slicno">
                                           <div class="hovereffect">
                                               <span class=""></span>
                                           </div><!-- end hover -->
                                       </a>
                                   </div><!-- end media -->
                                   <div class="blog-meta">
-                                      <h4><a href="single.html" title="">{{slicno[1].Naslov}}</a></h4>
-                                      <small><a href="blog-category-01.html" title="">{{slicno[1].Kategorija}}</a></small>
-                                      <small><a href="blog-category-01.html" title="">{{slicno[1].Datum.seconds*1000 | date}}</a></small>
+                                      <h4><a href="single.html" title="">{{dogadjaj.Naslov}}</a></h4>
+                                      <small><a href="blog-category-01.html" title="">{{dogadjaj.Kategorija}}</a></small>
+                                      <small><a href="blog-category-01.html" title="">{{dogadjaj.DatumPocetka | date}}</a></small>
                                   </div><!-- end meta -->
                               </div><!-- end blog-box -->
                           </div><!-- end col -->
@@ -99,13 +78,13 @@
                       <h2 class="widget-title">Nedavne</h2>
                       <div class="blog-list-widget">
                           <div class="list-group">
-                              <a *ngFor="let ned of nedavno" href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                              <!--<a *ngFor="let ned of nedavno" href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                   <div class="w-100 justify-content-between">
                                       <img [src]="ned.Slika | async" alt="" class="nedavne float-left">
                                       <h5>{{ned.Naslov}}</h5>
                                       <small>{{ned.Datum.seconds*1000 | date}}</small>
                                   </div>
-                              </a>
+                              </a>-->
                           </div>
                       </div><!-- end blog-list -->
                   </div><!-- end widget -->

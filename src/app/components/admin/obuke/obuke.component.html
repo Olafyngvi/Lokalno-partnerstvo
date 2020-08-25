@@ -93,6 +93,15 @@
       {{row.Trajanje}}
     </ng-template>
   </ngx-datatable-column>
+  <ngx-datatable-column name="Aktivan" [sortable]="false">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      <label class="switch">
+        <input type="checkbox" (change)="checkValue(row.Id,row.Aktivan)" name="pogledano" [(ngModel)]="row.Aktivan"
+        [ngModelOptions]="{standalone: true}">
+        <span class="slider round"></span>
+      </label>
+    </ng-template>
+  </ngx-datatable-column>
   <ngx-datatable-column name="Akcija" [sortable]="false">
     <ng-template let-row="row" ngx-datatable-cell-template>
       <div class="btn-group"><a routerLink="/dashboard/izmjena-obuka/{{row.Id}}" class="mr-2 btn"><i class="fa fa-2x fa-edit"></i></a><a (click)="onDeleteClick(row)" class="mr-2 btn"><i class="fa fa-2x fa-trash"></i></a><a routerLink="/kurs/{{row.Id}}/true" class="mr-2 btn"><i class="fa fa-2x fa-expand"></i></a></div>

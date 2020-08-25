@@ -35,6 +35,20 @@ export class VijestiService {
         );
       return collection$;
   }
+  getFocused(): Observable<Vijest[]> {
+    // tslint:disable-next-line: max-line-length
+    const collection: AngularFirestoreCollection<Vijest> = this.afs.collection('vijesti', ref => ref.orderBy('Datum', 'desc').where('Fokus', '==', true));
+    const collection$: Observable<Vijest[]> = collection.snapshotChanges().pipe(
+        map(actions => {
+            return actions.map(action  => {
+        const data = action.payload.doc.data() as Vijest;
+        data.Id = action.payload.doc.id;
+        return data;
+          });
+        })
+      );
+    return collection$;
+}
   getProducts(): Observable<Vijest[]> {
       const user = this.auth.auth.currentUser.displayName;
       // tslint:disable-next-line: max-line-length

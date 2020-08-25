@@ -166,7 +166,7 @@ a{
 .sub_nav-r ul li a{ font-size: 90%; text-decoration: none; color: #000; }
 .sub_nav-r ul li a:hover { border-bottom: 1px solid #797777;}
 
-.title-subnav { text-decoration: none; margin: 0; font-family: Roboto Slab; font-size: 240%; padding: 10px 0 2px 0; letter-spacing: 2px; color: #236d9d; border-bottom: 1px solid transparent; }
+.title-subnav { text-decoration: none; margin: 0; font-family: sans-serif; font-size: 240%; padding: 10px 0 2px 0; letter-spacing: 2px; color: #236d9d; border-bottom: 1px solid transparent; }
 
 
 .p-subnav-right{ margin: 0; font-weight: bold; font-size:90%; padding: 58px 0 10px 0;}
@@ -1420,7 +1420,7 @@ hr.invis3 {
   border-radius: 50%
 }
 .img-fluid {
-  max-height: 415px !important;
+  height: 415px !important;
 }
 
 .small-box .img-fluid {
