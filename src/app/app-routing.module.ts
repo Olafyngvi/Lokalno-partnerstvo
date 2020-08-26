@@ -42,6 +42,7 @@ import { OblastComponent } from './components/oblast/oblast.component';
 import { ONamaComponent } from './components/o-nama/o-nama.component';
 import { DogadjajComponent } from './components/dogadjaj/dogadjaj.component';
 import { PretragaComponent } from './components/pretraga/pretraga.component';
+import { HvalaComponent } from './components/hvala/hvala.component';
 
 const redirectLoggedIndashboard = () => redirectLoggedInTo(['dashboard']);
 const redirectUnauthorizedToLogin = redirectUnauthorizedTo(['login']);
@@ -59,6 +60,7 @@ const routes: Routes = [
   {path: 'o-nama', component: ONamaComponent},
   {path: 'kurs/:id/:p', component: KursComponent},
   {path: 'prijava/:id/:naziv/:p', component: PrijavaComponent},
+  { path: 'hvala', component: HvalaComponent},
   { path: 'registracija', component: SignUpComponent },
   { path: 'publikacije', component: PublikacijeComponent },
   { path: 'dashboard',

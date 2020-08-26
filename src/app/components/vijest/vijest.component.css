@@ -1,5 +1,4 @@
 .pozadina {
-  background-color: rgb(247, 247, 247);
   padding-top: 10%;
   padding-bottom: 15%;
 }
@@ -16,9 +15,18 @@
 .similar_post{background-color:#fff; display:inline-block; margin-bottom:20px; padding:0 15px; width:100%}
 
 .slicno {
-  max-height: 230px !important;
+  height: 230px !important;
   object-fit: fill;
 }
 .nedavne {
   max-height: 37px !important;
+}
+.nedavne {
+  margin-top: 200px;
+}
+hr {
+  margin-bottom: 0px !important;
+}
+.lista {
+  padding-top: 10px;
 }

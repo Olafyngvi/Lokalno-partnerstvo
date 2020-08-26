@@ -49,10 +49,11 @@
         </div><!-- end masonry -->
     </div>
 </section>
+
 <section class="section first-section">
   <div class="container-fluid">
       <div class="masonry-blog clearfix">
-          <div class="left-side">
+          <div class="left-side-big">
               <div class="masonry-box small-box post-media">
                    <img [src]="vijesti[0].Slika | async" alt="" class="img-fluid">
                    <div class="shadoweffect">
@@ -79,35 +80,9 @@
            </div><!-- end post-media -->
           </div><!-- end left-side -->
 
-          <div class="center-side">
-              <div class="masonry-box small-box post-media">
-                   <img [src]="vijesti[1].Slika | async" alt="" class="img-fluid">
-                   <div class="shadoweffect">
-                      <div class="shadow-desc">
-                          <div class="blog-meta">
-                              <span class="bg-green"><a title="">{{vijesti[1].Kategorija}}</a></span>
-                              <h4><a href="single.html" class="naslov" title="">{{vijesti[1].Naslov}}</a></h4>
-                              <small><a href="single.html" class="naslov" title="">{{vijesti[1].Datum.seconds*1000 | date }}</a></small>
-                          </div><!-- end meta -->
-                      </div><!-- end shadow-desc -->
-                  </div><!-- end shadow -->
-              </div><!-- end post-media -->
-
-              <div class="masonry-box small-box post-media">
-                   <img [src]="vijesti[2].Slika | async" alt="" class="img-fluid">
-                   <div class="shadoweffect">
-                      <div class="shadow-desc">
-                          <div class="blog-meta">
-                              <span class="bg-green"><a title="">{{vijesti[3].Kategorija}}</a></span>
-                              <h4><a routerLink="vijest/{{vijesti[3].Id}}" class="naslov" title="">{{vijesti[3].Naslov}}</a></h4>
-                              <small><a href="single.html" class="naslov" title="">{{vijesti[3].Datum.seconds*1000 | date }}</a></small>
-                          </div><!-- end meta -->
-                      </div><!-- end shadow-desc -->
-                  </div><!-- end shadow -->
-              </div><!-- end post-media -->
           </div><!-- end left-side -->
 
-          <div class="right-side hidden-md-down">
+          <div class="right-side-big hidden-md-down">
               <div class="masonry-box small-box post-media">
                    <img [src]="vijesti[4].Slika | async" alt="" class="img-fluid">
                    <div class="shadoweffect">
@@ -134,5 +109,4 @@
            </div><!-- end post-media -->
           </div><!-- end right-side -->
       </div><!-- end masonry -->
-  </div>
 </section>

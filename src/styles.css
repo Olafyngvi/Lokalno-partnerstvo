@@ -123,7 +123,7 @@ a{
 .main_navigation_banner { margin-left: 0px;  float: left; list-style: none; padding-top: 15px;}
 .main_navigation_banner li { margin-left:35px; display: inline-block; }
 .main_navigation_banner li a:link, .main_navigation_banner li a:visited { color:#1c1c1c; font-size: 90%; font-weight: normal; text-decoration: none; padding: 5px 0; border-bottom: 4px solid transparent; transition: border-bottom 0.2s; }
-.main_navigation_banner li a:hover, .main_navigation_banner li a:active { border-bottom: 4px solid #236d9d; }
+.main_navigation_banner li a:hover, .main_navigation_banner li a:active { padding-bottom: 10px; border-bottom: 4px solid #236d9d; }
 
 /*  ----------------------------  */
 /*        OVERLAY MENU            */
@@ -199,7 +199,7 @@ a{
 /*          MINI NAV              */
 /*  ----------------------------  */
 
-.responsive-menu-container { margin: 0; padding: 0; width: 360px; background: #fff; float: left; }
+.responsive-menu-container { margin: 0; padding: 0; width: 100%; background: #fff; float: left; }
 .responsive-menu-container .row { margin-top: 40px; height: 40px;}
 .responsive-menu-container .row:hover { background: #2980b9; color: #fff;}
 
@@ -215,7 +215,7 @@ a{
 
 .expand1 {display: none !important;}
 
-.responsive-menu{ display: none; height: auto; background: rgba(0, 0, 0, 0.29);   position: absolute; top: 0px; padding-top: 50px; margin: 0; width: 100%; z-index: 10; border-top: 1px solid #bcbbbb; font-size: 90%; }
+.responsive-menu{ display: none; height: auto; background: rgba(0, 0, 0, 0.29);   position: fixed; top: 0px; padding-top: 50px; margin: 0; width: 100%; z-index: 10; border-top: 1px solid #bcbbbb; font-size: 90%; }
 
 .box25-m1, .box25-m2, .box25-m3, .box25-m4 { margin: 0; padding: 0; margin-top: 10px; display: block; cursor: pointer; font-size: 110%; }
 
@@ -535,6 +535,12 @@ html{position:relative;min-height:100%}body{overflow-x:hidden}body.sticky-footer
   width: 33.33333%;
 }
 
+.left-side-big,
+.right-side-big {
+  display: inline;
+
+}
+
 .post-media img,
 .masonry-box img {
   -webkit-transition: all .3s ease-in-out;
@@ -568,7 +574,7 @@ html{position:relative;min-height:100%}body{overflow-x:hidden}body.sticky-footer
 }
 
 .small-box {
-  width: 50%;
+  width: 25%;
   float: left;
 }
 
@@ -673,6 +679,9 @@ p{
 }
 
 @media (max-width: 991px) {
+  .topsocial {
+    display: none;
+  }
   .custombox .blog-list-widget,
   .custombox .blog-box {
       margin: 1rem 0;
@@ -690,6 +699,9 @@ p{
 }
 
 @media (max-width: 768px) {
+  .topsocial {
+    display: none;
+  }
   .post-sharing .btn {
       padding: 0.6rem !important;
   }
@@ -718,6 +730,9 @@ p{
 }
 
 @media (max-width: 728px) {
+  .topsocial {
+    display: none;
+  }
   .center-side,
   .left-side,
   .right-side {
@@ -737,6 +752,9 @@ p{
 @media (max-width: 590px) {
   .pozadina {
     top: 180px;
+  }
+  .topsocial {
+    display: none;
   }
   .comment-list .media {
       float: none !important;

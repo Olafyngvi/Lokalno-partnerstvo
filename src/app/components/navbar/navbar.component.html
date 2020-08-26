@@ -11,9 +11,11 @@
   <div class="topbar-section">
       <div class="container-fluid">
           <div class="row">
-              <div class="col-lg-8 col-md-6 col-sm-6 hidden-xs-down">
+              <div class="col-lg-8 hidden-md-down hidden-xs-down hidden-xs-down">
                   <div class="topsocial">
-                    <h3>Lokalno partnerstvo za obrazovanje odraslih</h3>
+                    <h5>Lokalno partnerstvo</h5>
+                    <br>
+                    <h5>za obrazovanje odraslih</h5>
                   </div><!-- end social -->
               </div><!-- end col -->
 
@@ -25,8 +27,8 @@
               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 ">
                   <div class="topsearch pull-right mr-5">
                     <form (ngSubmit)="onSubmit(rteForm)" #rteForm="ngForm" class="form-inline">
-                      <input required type="text" name="pretraga" [(ngModel)]="pretraga" class="form-control mr-3" placeholder="Pretraži">
-                      <button type="submit" class="btn" style="position: absolute; right: 6%;"><i class="fa fa-search"></i></button>
+                      <input required type="text" name="pretraga" [(ngModel)]="pretraga" class="form-control mr-3" placeholder="">
+                      <button type="submit" class="btn" style="position: absolute; right: 6%; display: none"><i class="fa fa-search"></i></button>
                     </form>
                   </div><!-- end search -->
               </div><!-- end col -->
@@ -258,12 +260,7 @@
       <div class="responsive-menu">
           <div class="responsive-menu-container">
               <div>
-                <div class="row">
-                  <div class="box75">
-                      <li></li>
-                  </div>
-                  <div class="box25-m1"><i class="fa fa-minus"></i></div>
-              </div>
+
               <div class="row">
                 <div class="box75">
                     <li><a routerLink="">Početna</a></li>
@@ -275,9 +272,9 @@
                       <div class="box75">
                           <li><a routerLink="/vijesti">Vijesti</a></li>
                       </div>
-                      <div class="box25-m2"><i class="fa fa-minus"></i></div>
+                      <div class="box25-m2"><i class="m2 fa fa-plus"></i></div>
                   </div>
-                  <div class="row-m2">
+                  <div class="row-m2 expand1">
                       <ul class="sub-menu">
                           <li><a routerLink="/vijesti">Važne vijesti</a></li>
                           <li><a routerLink="/vijesti">Sve vijesti</a></li>
@@ -289,9 +286,9 @@
                       <div class="box75">
                           <li><a routerLink="/oblasti">Oblasti</a></li>
                       </div>
-                      <div class="box25-m3"><i class="fa fa-minus"></i></div>
+                      <div class="box25-m3"><i class="m3 fa fa-plus"></i></div>
                   </div>
-                  <div class="row-m3">
+                  <div class="row-m3 expand1">
                       <ul class="sub-menu">
                           <li><a routerLink="/oblasti">Pružaoci usluga</a></li>
                           <li><a routerLink="/oblasti">Razvoj kapaciteta</a></li>

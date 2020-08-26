@@ -75,6 +75,7 @@ import { PublikacijeComponent } from './components/publikacije/publikacije.compo
 import { OblastComponent } from './components/oblast/oblast.component';
 import { DogadjajComponent } from './components/dogadjaj/dogadjaj.component';
 import { PretragaComponent } from './components/pretraga/pretraga.component';
+import { HvalaComponent } from './components/hvala/hvala.component';
 
 @NgModule({
   declarations: [
@@ -134,7 +135,8 @@ import { PretragaComponent } from './components/pretraga/pretraga.component';
     PublikacijeComponent,
     OblastComponent,
     DogadjajComponent,
-    PretragaComponent
+    PretragaComponent,
+    HvalaComponent
   ],
   imports: [
     BrowserModule,

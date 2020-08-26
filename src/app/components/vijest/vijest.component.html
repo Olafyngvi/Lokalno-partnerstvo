@@ -55,7 +55,7 @@
                               <div class="blog-box">
                                   <div class="post-media">
                                       <a href="single.html" title="">
-                                          <img [src]="slicno[0].Slika | async" alt="" class="img-fluid">
+                                          <img [src]="slicno[0].Slika | async" alt="" class="slicno">
                                           <div class="hovereffect">
                                               <span class=""></span>
                                           </div><!-- end hover -->
@@ -94,17 +94,18 @@
           </div><!-- end col -->
 
           <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-              <div class="sidebar">
+              <div class="sidebar nedavne">
                   <div class="widget">
-                      <h2 class="widget-title">Nedavne</h2>
-                      <div class="blog-list-widget">
-                          <div class="list-group">
-                              <a *ngFor="let ned of nedavno" href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                                  <div class="w-100 justify-content-between">
-                                      <img [src]="ned.Slika | async" alt="" class="nedavne float-left">
+                      <h1 class="widget-title" style="color:black">Nedavne</h1>
+                      <hr>
+                      <div class="">
+                          <div class="">
+                              <a *ngFor="let ned of nedavno" href="single.html" class=" list-group-item-action flex-column align-items-start">
+                                  <div class="w-100 justify-content-between lista">
                                       <h5>{{ned.Naslov}}</h5>
                                       <small>{{ned.Datum.seconds*1000 | date}}</small>
                                   </div>
+                                  <hr>
                               </a>
                           </div>
                       </div><!-- end blog-list -->

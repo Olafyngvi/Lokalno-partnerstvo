@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import * as $ from 'jquery/dist/jquery.min.js';
-
+import * as firebase from 'firebase/app';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { PrijavaService } from '../../services/prijava.service';
 import { ComfirmationDialogService } from '../confirmation-dialog/comfirmation-dialog.service';
 import { KursService } from '../../services/kurs.service';
@@ -13,12 +14,14 @@ import { Kurs } from '../../models/Kurs';
 import { Prakticne } from '../../models/Prakticne';
 
 
+
 @Component({
   selector: 'app-prijava',
   templateUrl: './prijava.component.html',
   styleUrls: ['./prijava.component.css']
 })
 export class PrijavaComponent implements OnInit {
+  captchaVerifier: firebase.auth.RecaptchaVerifier;
   bool: any;
   objava: string;
   naziv: string;
@@ -42,7 +45,8 @@ export class PrijavaComponent implements OnInit {
               private kursService: KursService,
               private prakticneService: PrakticnaObukaService,
               private route: ActivatedRoute,
-              private cds: ComfirmationDialogService) { }
+              private cds: ComfirmationDialogService,
+              private auth: AngularFireAuth) { }
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
@@ -75,11 +79,21 @@ export class PrijavaComponent implements OnInit {
     if (form.invalid) {
       this.cds.alert('Validacija', 'Popunite sva tražena polja');
     } else {
-      this.prijava.EventId = this.id;
-      this.prijava.EventNaziv = this.naziv;
-      this.prijava.Objava = this.objava;
-      this.prijavaService.dodajPrijavu(this.prijava);
-      this.router.navigate(['/dashboard']);
+      this.captchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
+        size: 'invisible',
+        callback: (response) => {
+          // reCAPTCHA solved, allow signInWithPhoneNumber.
+          this.prijava.EventId = this.id;
+          this.prijava.EventNaziv = this.naziv;
+          this.prijava.Objava = this.objava;
+          this.prijavaService.dodajPrijavu(this.prijava);
+          this.router.navigate(['/hvala']);
+        },
+        'expired-callback': () => {
+          console.log('expired');
+        }
+      },
+      this.auth.auth.app);
     }
   }
   numberOnly(event): boolean {
@@ -88,6 +102,5 @@ export class PrijavaComponent implements OnInit {
       return false;
     }
     return true;
-
   }
 }

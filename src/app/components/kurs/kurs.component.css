@@ -1,5 +1,4 @@
 .pozadina {
-  background-color: rgb(231, 227, 227);
   padding-top: 10%;
   padding-bottom: 15%;
 }
@@ -23,4 +22,10 @@ img {
 }
 .nedavne {
   max-height: 37px !important;
+}
+.lista {
+  padding-top: 10px;
+}
+hr {
+  margin-bottom: 0px;
 }

@@ -37,6 +37,7 @@
     "ionicons": "^5.0.1",
     "jquery": "^3.5.1",
     "jw-angular-pagination": "^1.2.0",
+    "ng-recaptcha": "^5.0.0",
     "ngx-facebook": "^3.0.0-0",
     "rxjs": "~6.5.5",
     "tslib": "^1.10.0",

@@ -244,12 +244,22 @@ jQuery(function($){
 jQuery(function($){
   $( '.box25-m2' ).click(function(){
       $('.row-m2').toggleClass('expand1')
+      if($('.m2').hasClass('fa-minus')) {
+        $('.m2').removeClass('fa-minus').addClass('fa-plus')
+      } else {
+        $('.m2').removeClass('fa-plus').addClass('fa-minus')
+      }
   })
 });
 
 jQuery(function($){
   $( '.box25-m3' ).click(function(){
       $('.row-m3').toggleClass('expand1')
+      if($('.m3').hasClass('fa-minus')) {
+        $('.m3').removeClass('fa-minus').addClass('fa-plus')
+      } else {
+        $('.m3').removeClass('fa-plus').addClass('fa-minus')
+      }
   })
 });
 
