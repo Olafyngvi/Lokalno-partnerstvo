@@ -25,8 +25,8 @@
               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 ">
                   <div class="topsearch pull-right mr-5">
                     <form (ngSubmit)="onSubmit(rteForm)" #rteForm="ngForm" class="form-inline">
-                      <input required type="text" name="pretraga" [(ngModel)]="pretraga" class="form-control mr-3" placeholder="">
-                      <button type="submit" class="btn" style="position: absolute; right: 6%; display: none"><i class="fa fa-search"></i></button>
+                      <input required type="text" name="pretraga" [(ngModel)]="pretraga" class="form-control mr-3 empty" placeholder="&#xF002;">
+                      <!--<button type="submit" class="btn" style="position: absolute; right: 6%; display: none"><i class="fa fa-search"></i></button>-->
                     </form>
                   </div><!-- end search -->
               </div><!-- end col -->
@@ -71,9 +71,7 @@
                                         Mi vršimo uzorkovanje materijala za potrebe mikrobiloških i fizičko-hemijskih analiza na terenu i vrši mikrobiološke analize hrane, vode, vazduha, briseva predmeta opšte upotrebe i predmeta opšte upotrebe.</p>
                                     </div>
                                     <div class="col-lg-6">
-                                      <p class="p-subnav-right">{{kursevi[0].Naslov}}</p>
-                                      <p class="pg-meni-01">
-                                        {{kursevi[0].Opis}}</p>
+
                                     </div>
                                   </div>
                                 </div>
@@ -147,7 +145,7 @@
                                                     <div class="w-100 justify-content-between">
                                                         <img [src]="sveVijesti[index].Slika | async" alt="" class="nedavne float-left">
                                                         <h5>{{sveVijesti[index].Naslov}}</h5>
-                                                        <small>{{sveVijesti[index].Podnaslov}}, {{sveVijesti[index].Datum.seconds*1000 | date}}</small>
+                                                        <small>{{sveVijesti[index].Podnaslov}}, <b> {{sveVijesti[index].Datum.seconds*1000 | date}}</b></small>
                                                     </div>
                                                 </a>
                                             </div>
@@ -162,7 +160,7 @@
                                                     <div class="w-100 justify-content-between">
                                                         <img [src]="sveVijesti[index].Slika | async" alt="" class="nedavne float-left">
                                                         <h5>{{sveVijesti[index].Naslov}}</h5>
-                                                        <small>{{sveVijesti[index].Podnaslov}}, {{sveVijesti[index].Datum.seconds*1000 | date}}</small>
+                                                        <small>{{sveVijesti[index].Podnaslov}}, <b> {{sveVijesti[index].Datum.seconds*1000 | date}}</b></small>
                                                     </div>
                                                 </a>
                                             </div>

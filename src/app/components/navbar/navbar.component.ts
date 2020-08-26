@@ -30,21 +30,13 @@ export class NavbarComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    this.authService.getAuth().subscribe(user => {
-      this.user = user;
-    });
-    this.kursService.sviKursevi().subscribe(kursevi => {
-      this.kursevi = kursevi;
-      this.kursevi.forEach(doc => {
-        const ref = this.storage.ref(`Kursevi/${doc.Naslov}`);
-        doc.Slika = ref.getDownloadURL();
-      });
-    });
     this.vijestiService.getFocused().subscribe(vijesti => {
+      debugger;
       this.vijesti = vijesti;
       this.vijesti.forEach(doc => {
         const ref = this.storage.ref(`Vijesti/${doc.Podnaslov}`);
         doc.Slika = ref.getDownloadURL();
+        doc.Podnaslov = doc.Podnaslov.substring(0, 50) + '...';
       });
     });
     this.vijestiService.getVijesti().subscribe(vijesti => {
@@ -52,7 +44,11 @@ export class NavbarComponent implements OnInit {
       this.sveVijesti.forEach(doc => {
         const ref = this.storage.ref(`Vijesti/${doc.Podnaslov}`);
         doc.Slika = ref.getDownloadURL();
+        doc.Podnaslov = doc.Podnaslov.substring(0, 50) + '...';
       });
+    });
+    this.authService.getAuth().subscribe(user => {
+      this.user = user;
     });
   }
   onSubmit(form: NgForm) {
