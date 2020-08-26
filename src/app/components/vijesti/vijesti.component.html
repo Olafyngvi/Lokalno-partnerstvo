@@ -55,13 +55,13 @@
       <div class="masonry-blog clearfix">
           <div class="left-side-big">
               <div class="masonry-box small-box post-media">
-                   <img [src]="vijesti[0].Slika | async" alt="" class="img-fluid">
+                   <img [src]="vijesti[3].Slika | async" alt="" class="img-fluid">
                    <div class="shadoweffect">
                       <div class="shadow-desc">
                           <div class="blog-meta">
-                              <span class="bg-aqua"><a title="">{{vijesti[0].Kategorija}}</a></span>
-                              <h4><a routerLink="/vijest/{{vijesti[0].Id}}" class="naslov" title="">{{vijesti[0].Naslov}}</a></h4>
-                              <small><a href="single.html" class="naslov" title="">{{vijesti[0].Datum.seconds*1000 | date }}</a></small>
+                              <span class="bg-aqua"><a title="">{{vijesti[3].Kategorija}}</a></span>
+                              <h4><a routerLink="/vijest/{{vijesti[3].Id}}" class="naslov" title="">{{vijesti[3].Naslov}}</a></h4>
+                              <small><a href="single.html" class="naslov" title="">{{vijesti[3].Datum.seconds*1000 | date }}</a></small>
                           </div><!-- end meta -->
                       </div><!-- end shadow-desc -->
                   </div><!-- end shadow -->
@@ -84,25 +84,25 @@
 
           <div class="right-side-big hidden-md-down">
               <div class="masonry-box small-box post-media">
-                   <img [src]="vijesti[4].Slika | async" alt="" class="img-fluid">
+                   <img [src]="vijesti[5].Slika | async" alt="" class="img-fluid">
                    <div class="shadoweffect">
                       <div class="shadow-desc">
                           <div class="blog-meta">
-                              <span class="bg-aqua"><a title="">{{vijesti[2].Kategorija}}</a></span>
-                              <h4><a href="single.html" class="naslov" title="">{{vijesti[2].Naslov}}</a></h4>
-                              <small><a href="single.html" class="naslov" title="">{{vijesti[2].Datum.seconds*1000 | date }}</a></small>
+                              <span class="bg-aqua"><a title="">{{vijesti[5].Kategorija}}</a></span>
+                              <h4><a href="single.html" class="naslov" title="">{{vijesti[5].Naslov}}</a></h4>
+                              <small><a href="single.html" class="naslov" title="">{{vijesti[5].Datum.seconds*1000 | date }}</a></small>
                           </div><!-- end meta -->
                       </div><!-- end shadow-desc -->
                    </div><!-- end shadow -->
               </div><!-- end post-media -->
               <div class="masonry-box small-box post-media">
-                <img [src]="vijesti[4].Slika | async" alt="" height="200px" class="img-fluid">
+                <img [src]="vijesti[6].Slika | async" alt="" height="200px" class="img-fluid">
                 <div class="shadoweffect">
                    <div class="shadow-desc">
                        <div class="blog-meta">
-                           <span class="bg-aqua"><a title="">{{vijesti[4].Kategorija}}</a></span>
-                           <h4><a href="single.html" class="naslov" title="">{{vijesti[4].Naslov}}</a></h4>
-                           <small><a href="single.html" class="naslov" title="">{{vijesti[4].Datum.seconds*1000 | date }}</a></small>
+                           <span class="bg-aqua"><a title="">{{vijesti[6].Kategorija}}</a></span>
+                           <h4><a href="single.html" class="naslov" title="">{{vijesti[6].Naslov}}</a></h4>
+                           <small><a href="single.html" class="naslov" title="">{{vijesti[6].Datum.seconds*1000 | date }}</a></small>
                        </div><!-- end meta -->
                    </div><!-- end shadow-desc -->
                 </div><!-- end shadow -->
