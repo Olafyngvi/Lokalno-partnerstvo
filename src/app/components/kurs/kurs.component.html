@@ -59,22 +59,22 @@
               <hr class="invis1">
 
               <div class="custombox clearfix">
-                  <h4 class="small-title">Slično</h4>
+                  <h4 class="small-title mt-4">Slično</h4>
                   <div class="row">
                       <div class="col-lg-6">
                           <div class="blog-box">
                               <div class="post-media">
-                                  <a href="single.html" title="">
-                                      <img [src]="slicno[0].Slika | async" alt="" style="object-fit: cover;" class="img-fluid">
+                                  <a routerLink="/kurs/{{slicno[0].Id}}/{{bool}}" title="">
+                                      <img [src]="slicno[0].Slika | async" alt="" style="object-fit: cover;" class="slicno">
                                       <div class="hovereffect">
                                           <span class=""></span>
                                       </div><!-- end hover -->
                                   </a>
                               </div><!-- end media -->
                               <div class="blog-meta">
-                                  <h4><a href="single.html" title="">{{slicno[0].Naslov}}</a></h4>
-                                  <small><a href="blog-category-01.html" title="">{{slicno[0].Kategorija}}</a></small>
-                                  <small><a href="blog-category-01.html" title="">{{slicno[0].DatumPocetka | date}}</a></small>
+                                  <h4><a routerLink="/kurs/{{slicno[0].Id}}/{{bool}}" title="">{{slicno[0].Naslov}}</a></h4>
+                                  <small><a title="">{{slicno[0].Kategorija}}</a></small>
+                                  <small><a title="">{{slicno[0].DatumPocetka | date}}</a></small>
                               </div><!-- end meta -->
                           </div><!-- end blog-box -->
                       </div><!-- end col -->
@@ -82,7 +82,7 @@
                       <div *ngIf="slicno[1] !== undefined" class="col-lg-6">
                           <div class="blog-box">
                               <div class="post-media">
-                                  <a href="single.html" title="">
+                                  <a routerLink="/kurs/{{slicno[1].Id}}/{{bool}}" title="">
                                       <img [src]="slicno[1].Slika | async" alt="" class="slicno">
                                       <div class="hovereffect">
                                           <span class=""></span>
@@ -90,9 +90,9 @@
                                   </a>
                               </div><!-- end media -->
                               <div class="blog-meta">
-                                  <h4><a href="single.html" title="">{{slicno[1].Naslov}}</a></h4>
-                                  <small><a href="blog-category-01.html" title="">{{slicno[1].Kategorija}}</a></small>
-                                  <small><a href="blog-category-01.html" title="">{{slicno[1].DatumPocetka | date}}</a></small>
+                                  <h4><a routerLink="/kurs/{{slicno[1].Id}}/{{bool}}" title="">{{slicno[1].Naslov}}</a></h4>
+                                  <small><a title="">{{slicno[1].Kategorija}}</a></small>
+                                  <small><a title="">{{slicno[1].DatumPocetka | date}}</a></small>
                               </div><!-- end meta -->
                           </div><!-- end blog-box -->
                       </div><!-- end col -->
@@ -104,13 +104,13 @@
       </div><!-- end col -->
 
       <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-          <div class="sidebar">
+          <div class="sidebar nedavne">
               <div class="widget">
                   <h2 class="widget-title">Nedavno</h2>
                   <hr>
                   <div class="">
                       <div class="">
-                          <a *ngFor="let ned of nedavno" href="single.html" class=" list-group-item-action flex-column align-items-start">
+                          <a *ngFor="let ned of nedavno" routerLink="/kurs/{{ned.Id}}/{{bool}}" class=" list-group-item-action flex-column align-items-start">
                               <div class="w-100 justify-content-between lista">
                                   <h5>{{ned.Naslov}}</h5>
                                   <small>{{ned.DatumPocetka | date}}</small>

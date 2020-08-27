@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Meta } from '@angular/platform-browser';
 
@@ -17,17 +17,21 @@ import { Dogadjaj } from '../../models/Dogadjaj';
 export class DogadjajComponent implements OnInit {
   id: any;
   dogadjaj: Dogadjaj;
+  slicno: Dogadjaj[];
+  nedavno: Dogadjaj[];
   constructor(private dogadjajiService: DogadjajiService,
               private route: ActivatedRoute,
               private storage: AngularFireStorage,
               private navbar: NavbarService,
               private footer: FooterService,
-              private meta: Meta) { }
+              private meta: Meta,
+              private router: Router) { }
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
     this.navbar.show();
     this.footer.show();
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.id = this.route.snapshot.params.id;
     // tslint:disable-next-line: deprecation
     this.dogadjajiService.getDogadjaj(this.id).subscribe(dogadjaj => {
@@ -48,5 +52,16 @@ export class DogadjajComponent implements OnInit {
       // tslint:disable-next-line: max-line-length
       document.getElementById('shareFBLink').setAttribute('href', 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL));
     });
+    this.dogadjajiService.sviDogadjaji().subscribe(nedavno => {
+      this.nedavno = nedavno;
+    });
+    this.dogadjajiService.sviDogadjaji().subscribe(slicno => {
+      this.slicno = slicno;
+      this.slicno.forEach(doc => {
+        // tslint:disable-next-line: no-shadowed-variable
+        const ref = this.storage.ref(`Dogadjaji/${doc.Naslov}`);
+        doc.Slika = ref.getDownloadURL();
+      });
+    })
   }
 }

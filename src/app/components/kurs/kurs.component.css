@@ -6,10 +6,7 @@
   background-color: white;
 }
 .img-center{display:block; margin-left:auto; margin-right:auto; text-align:center}
-img {
-  max-width: 550px;
-  max-height: 330px;
-}
+
 .content_bottom{
   display:block;
 }
@@ -21,11 +18,14 @@ img {
   object-fit: fill;
 }
 .nedavne {
-  max-height: 37px !important;
+  margin-top: 200px;
 }
 .lista {
   padding-top: 10px;
 }
 hr {
   margin-bottom: 0px;
+}
+.slicno {
+  height: 230px;
 }

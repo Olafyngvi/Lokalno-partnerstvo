@@ -14,7 +14,7 @@
 
                 <div class="blog-meta big-meta col-md-8">
                     <h4><a routerLink="/vijest/{{item.Id}}" title="">{{item.Naslov}}</a></h4>
-                    <p [innerHTML]="item.Sadrzaj"></p>
+                    <p>{{item.Podnaslov}}</p>
                     <small><a title="">{{item.Kategorija}}</a></small>
                     <small><a title="">{{item.Datum.seconds*1000 | date}}</a></small>
                 </div>

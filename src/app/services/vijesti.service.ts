@@ -102,6 +102,9 @@ export class VijestiService {
     );
     return this.vijest;
   }
+  getVijestValue(id: string) {
+    return this.afs.doc<Vijest>(`vijesti/${id}`);
+  }
   updateVijest(id: string, vijest: Vijest) {
     this.vijestDoc = this.afs.doc<Vijest>(`vijesti/${id}`);
 

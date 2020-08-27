@@ -28,22 +28,22 @@
                   <hr class="invis1">
 
                   <div class="custombox clearfix">
-                      <h4 class="small-title">Slično</h4>
+                      <h4 class="small-title mt-4">Slično</h4>
                       <div class="row">
                           <div class="col-lg-6">
                               <div class="blog-box">
                                   <div class="post-media">
-                                      <a href="single.html" title="">
-                                          <img [src]="dogadjaj.Slika | async" alt="" class="img-fluid">
+                                      <a routerLink="/dogadjaj/{{slicno[0].Id}}" title="">
+                                          <img [src]="slicno[0].Slika | async" alt="" class="slicno">
                                           <div class="hovereffect">
                                               <span class=""></span>
                                           </div><!-- end hover -->
                                       </a>
                                   </div><!-- end media -->
                                   <div class="blog-meta">
-                                      <h4><a href="single.html" title="">{{dogadjaj.Naslov}}</a></h4>
-                                      <small><a href="blog-category-01.html" title="">{{dogadjaj.Kategorija}}</a></small>
-                                      <small><a href="blog-category-01.html" title="">{{dogadjaj.DatumPocetka | date}}</a></small>
+                                      <h4><a routerLink="/dogadjaj/{{slicno[0].Id}}" title="">{{slicno[0].Naslov}}</a></h4>
+                                      <small><a title="">{{slicno[0].Kategorija}}</a></small>
+                                      <small><a title="">{{slicno[0].DatumPocetka | date}}</a></small>
                                   </div><!-- end meta -->
                               </div><!-- end blog-box -->
                           </div><!-- end col -->
@@ -51,17 +51,17 @@
                           <div class="col-lg-6">
                               <div class="blog-box">
                                   <div class="post-media">
-                                      <a href="single.html" title="">
-                                          <img [src]="dogadjaj.Slika | async" alt="" class="slicno">
+                                      <a routerLink="/dogadjaj/{{slicno[1].Id}}" title="">
+                                          <img [src]="slicno[1].Slika | async" alt="" class="slicno">
                                           <div class="hovereffect">
                                               <span class=""></span>
                                           </div><!-- end hover -->
                                       </a>
                                   </div><!-- end media -->
                                   <div class="blog-meta">
-                                      <h4><a href="single.html" title="">{{dogadjaj.Naslov}}</a></h4>
-                                      <small><a href="blog-category-01.html" title="">{{dogadjaj.Kategorija}}</a></small>
-                                      <small><a href="blog-category-01.html" title="">{{dogadjaj.DatumPocetka | date}}</a></small>
+                                      <h4><a routerLink="/dogadjaj/{{slicno[1].Id}}" title="">{{slicno[1].Naslov}}</a></h4>
+                                      <small><a title="">{{slicno[1].Kategorija}}</a></small>
+                                      <small><a title="">{{slicno[1].DatumPocetka | date}}</a></small>
                                   </div><!-- end meta -->
                               </div><!-- end blog-box -->
                           </div><!-- end col -->
@@ -73,18 +73,19 @@
           </div><!-- end col -->
 
           <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-              <div class="sidebar">
+              <div class="sidebar nedavne">
                   <div class="widget">
-                      <h2 class="widget-title">Nedavne</h2>
-                      <div class="blog-list-widget">
-                          <div class="list-group">
-                              <!--<a *ngFor="let ned of nedavno" href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                      <h2 class="widget-title">Nedavni</h2>
+                      <hr>
+                      <div class="">
+                          <div class="">
+                              <a *ngFor="let ned of nedavno" routerLink="/dogadjaj/{{ned.Id}}" class="list-group-item-action flex-column align-items-start">
                                   <div class="w-100 justify-content-between">
-                                      <img [src]="ned.Slika | async" alt="" class="nedavne float-left">
                                       <h5>{{ned.Naslov}}</h5>
-                                      <small>{{ned.Datum.seconds*1000 | date}}</small>
+                                      <small>{{ned.DatumPocetka | date}}</small>
                                   </div>
-                              </a>-->
+                                  <hr>
+                              </a>
                           </div>
                       </div><!-- end blog-list -->
                   </div><!-- end widget -->

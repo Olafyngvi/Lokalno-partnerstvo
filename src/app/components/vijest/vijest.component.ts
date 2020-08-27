@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
 
 import { AngularFireStorage } from '@angular/fire/storage';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationStart} from '@angular/router';
 
 import { VijestiService } from '../../services/vijesti.service';
 import { FooterService } from '../../services/footer.service';
@@ -25,13 +25,15 @@ export class VijestComponent implements OnInit {
               private meta: Meta,
               private activatedRoute: ActivatedRoute,
               private footer: FooterService,
-              private navbar: NavbarService) {
+              private navbar: NavbarService,
+              private router: Router) {
               }
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
     this.footer.show();
     this.navbar.show();
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.id = this.activatedRoute.snapshot.params.id;
     this.vijestiService.getVijest('vijesti', this.id).subscribe(vijest => {
       this.vijest = vijest;

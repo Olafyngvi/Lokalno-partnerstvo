@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToolbarService, LinkService, ImageService,
   HtmlEditorService, RichTextEditorComponent } from '@syncfusion/ej2-angular-richtexteditor';
@@ -24,6 +25,7 @@ class ImageSnippet {
   providers: [ToolbarService, LinkService, ImageService, HtmlEditorService]
 })
 export class VijestiIzmjenaComponent implements OnInit {
+  private itemDoc: AngularFirestoreDocument<Vijest>;
   @ViewChild('fromRTE')
   private rteEle: RichTextEditorComponent;
   public value: string = null;
@@ -90,5 +92,16 @@ export class VijestiIzmjenaComponent implements OnInit {
           this.fm.show('Vijest je uspješno izmjenjena', {cssClass: 'alert-success', timeout: 3000});
         }
     }
+  }
+  checkValue(id: string, fokus: boolean) {
+    this.itemDoc = this.vijestiService.getVijestValue(id);
+    this.itemDoc.update({Fokus: fokus})
+    .then(() => {
+      console.log('Document successfully updated!');
+    })
+    .catch((error) => {
+      // The document probably doesn't exist.
+      console.error('Error updating document: ', error);
+    });
   }
 }

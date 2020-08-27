@@ -33,14 +33,15 @@ export class KursComponent implements OnInit {
               private storage: AngularFireStorage,
               private route: ActivatedRoute,
               private obukeService: PrakticnaObukaService,
-              private meta: Meta) {
+              private meta: Meta,
+              private router: Router) {
                }
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
     this.footerService.show();
     this.navbarService.show();
-
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     // provjera da li je pozvano sa obuke
     this.bool = this.route.snapshot.params.p;
     this.id = this.route.snapshot.params.id;
@@ -69,11 +70,6 @@ export class KursComponent implements OnInit {
         });
         this.obukeService.sveObuke().subscribe(nedavno => {
           this.nedavno = nedavno;
-          this.nedavno.forEach(doc => {
-            // tslint:disable-next-line: no-shadowed-variable
-            const ref = this.storage.ref(`Obuke/${doc.Naslov}`);
-            doc.Slika = ref.getDownloadURL();
-          });
         });
       });
     } else {
@@ -104,11 +100,6 @@ export class KursComponent implements OnInit {
         });
         this.kursService.sviKursevi().subscribe(nedavno => {
           this.nedavno = nedavno;
-          this.nedavno.forEach(doc => {
-            // tslint:disable-next-line: no-shadowed-variable
-            const ref = this.storage.ref(`Kursevi/${doc.Naslov}`);
-            doc.Slika = ref.getDownloadURL();
-          });
         });
       });
     }

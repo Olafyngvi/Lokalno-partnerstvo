@@ -56,7 +56,7 @@
       <label for="fokus">Fokus</label>
       <br>
       <label class="switch">
-        <input type="checkbox" name="fokus" [(ngModel)]="vijest.Fokus"
+        <input type="checkbox" (change)="checkValue(vijest.Id,vijest.Fokus)" name="fokus" [(ngModel)]="vijest.Fokus"
         [ngModelOptions]="{standalone: true}">
         <span class="slider round"></span>
       </label>

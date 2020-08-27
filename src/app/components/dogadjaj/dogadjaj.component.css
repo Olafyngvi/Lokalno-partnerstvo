@@ -16,9 +16,13 @@
 .similar_post{background-color:#fff; display:inline-block; margin-bottom:20px; padding:0 15px; width:100%}
 
 .slicno {
-  max-height: 230px !important;
+  height: 230px !important;
   object-fit: fill;
 }
 .nedavne {
   max-height: 37px !important;
+  margin-top: 200px;
+}
+hr {
+  margin-top: 0px;
 }

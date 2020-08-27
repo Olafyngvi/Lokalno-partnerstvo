@@ -26,3 +26,6 @@ input.empty {
   font-weight: normal;
   text-decoration: inherit;
 }
+hr {
+  margin-bottom: 10px;
+}

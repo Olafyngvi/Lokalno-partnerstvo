@@ -120,12 +120,13 @@
                                   <div class="widget">
                                     <div class="blog-list-widget">
                                         <div class="list-group">
-                                            <a *ngFor="let ned of vijesti" routerLink="/vijest/{{ned.Id}}" class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <a *ngFor="let index of [0,1,2]" routerLink="/vijest/{{vijesti[index].Id}}" class="list-group-item list-group-item-action flex-column align-items-start">
                                                 <div class="w-100 justify-content-between">
-                                                    <img [src]="ned.Slika | async" alt="" class="nedavne float-left">
-                                                    <h5>{{ned.Naslov}}</h5>
-                                                    <small>{{ned.Podnaslov}}, {{ned.Datum.seconds*1000 | date}}</small>
+
+                                                    <h5>{{vijesti[index].Naslov}}</h5>
+                                                    <small>{{vijesti[index].Podnaslov}}, {{vijesti[index].Datum.seconds*1000 | date}}</small>
                                                 </div>
+                                                <hr>
                                             </a>
                                         </div>
                                     </div><!-- end blog-list -->
