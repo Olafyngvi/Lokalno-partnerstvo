@@ -53,55 +53,96 @@
 <section class="section first-section">
   <div class="container-fluid">
       <div class="masonry-blog clearfix">
-              <div class="masonry-box small-box post-media">
-                   <img [src]="vijesti[3].Slika | async" alt="" class="img-fluid">
-                   <div class="shadoweffect">
-                      <div class="shadow-desc">
-                          <div class="blog-meta">
-                              <span class="bg-aqua"><a title="">{{vijesti[3].Kategorija}}</a></span>
-                              <h4><a routerLink="/vijest/{{vijesti[3].Id}}" class="naslov" title="">{{vijesti[3].Naslov}}</a></h4>
-                              <small><a class="naslov" title="">{{vijesti[3].Datum.seconds*1000 | date }}</a></small>
-                          </div><!-- end meta -->
-                      </div><!-- end shadow-desc -->
-                  </div><!-- end shadow -->
-              </div><!-- end post-media -->
-              <div class="masonry-box small-box post-media">
-                <img [src]="vijesti[4].Slika | async" alt="" class="img-fluid">
-                <div class="shadoweffect">
-                   <div class="shadow-desc">
-                       <div class="blog-meta">
-                           <span class="bg-aqua"><a title="">{{vijesti[4].Kategorija}}</a></span>
-                           <h4><a routerLink="/vijest/{{vijesti[4].Id}}" class="naslov" title="">{{vijesti[4].Naslov}}</a></h4>
-                           <small><a class="naslov" title="">{{vijesti[4].Datum.seconds*1000 | date }}</a></small>
-                       </div><!-- end meta -->
-                   </div><!-- end shadow-desc -->
-               </div><!-- end shadow -->
-           </div><!-- end post-media -->
-           <div class="masonry-box small-box post-media">
-            <img [src]="vijesti[5].Slika | async" alt="" class="img-fluid">
+        <div class="universal">
+          <div class="masonry-box small-box post-media">
+            <img [src]="vijesti[3].Slika | async" alt="" class="img-fluid">
             <div class="shadoweffect">
                <div class="shadow-desc">
                    <div class="blog-meta">
-                       <span class="bg-aqua"><a title="">{{vijesti[5].Kategorija}}</a></span>
-                       <h4><a routerLink="/vijest/{{vijesti[5].Id}}" class="naslov" title="">{{vijesti[5].Naslov}}</a></h4>
-                       <small><a class="naslov" title="">{{vijesti[5].Datum.seconds*1000 | date }}</a></small>
+                       <span class="bg-aqua"><a title="">{{vijesti[3].Kategorija}}</a></span>
+                       <h4><a routerLink="/vijest/{{vijesti[3].Id}}" class="naslov" title="">{{vijesti[3].Naslov}}</a></h4>
+                       <small><a class="naslov" title="">{{vijesti[3].Datum.seconds*1000 | date }}</a></small>
                    </div><!-- end meta -->
                </div><!-- end shadow-desc -->
+           </div><!-- end shadow -->
+          </div><!-- end post-media -->
+        </div> <!--end universal-->
+        <div class="universal">
+          <div class="masonry-box small-box post-media">
+            <img [src]="vijesti[4].Slika | async" alt="" class="img-fluid">
+            <div class="shadoweffect">
+              <div class="shadow-desc">
+                <div class="blog-meta">
+                    <span class="bg-aqua"><a title="">{{vijesti[4].Kategorija}}</a></span>
+                    <h4><a routerLink="/vijest/{{vijesti[4].Id}}" class="naslov" title="">{{vijesti[4].Naslov}}</a></h4>
+                    <small><a class="naslov" title="">{{vijesti[4].Datum.seconds*1000 | date }}</a></small>
+                </div><!-- end meta -->
+              </div><!-- end shadow-desc -->
             </div><!-- end shadow -->
-       </div><!-- end post-media -->
-       <div class="masonry-box small-box post-media">
-        <img [src]="vijesti[6].Slika | async" alt="" height="200px" class="img-fluid">
-        <div class="shadoweffect">
-           <div class="shadow-desc">
-               <div class="blog-meta">
-                   <span class="bg-aqua"><a title="">{{vijesti[6].Kategorija}}</a></span>
-                   <h4><a routerLink="/vijest/{{vijesti[6].Id}}" class="naslov" title="">{{vijesti[6].Naslov}}</a></h4>
-                   <small><a class="naslov" title="">{{vijesti[6].Datum.seconds*1000 | date }}</a></small>
-               </div><!-- end meta -->
-           </div><!-- end shadow-desc -->
-        </div><!-- end shadow -->
-   </div><!-- end post-media -->
-          </div><!-- end left-side -->
-
-      </div><!-- end masonry -->
+          </div><!-- end post-media -->
+        </div> <!--end universal-->
+        <div class="universal">
+          <div class="masonry-box small-box post-media">
+            <img [src]="vijesti[5].Slika | async" alt="" class="img-fluid">
+            <div class="shadoweffect">
+              <div class="shadow-desc">
+                <div class="blog-meta">
+                  <span class="bg-aqua"><a title="">{{vijesti[5].Kategorija}}</a></span>
+                  <h4><a routerLink="/vijest/{{vijesti[5].Id}}" class="naslov" title="">{{vijesti[5].Naslov}}</a></h4>
+                  <small><a class="naslov" title="">{{vijesti[5].Datum.seconds*1000 | date }}</a></small>
+                </div><!-- end meta -->
+              </div><!-- end shadow-desc -->
+            </div><!-- end shadow -->
+          </div><!-- end post-media -->
+        </div> <!--end universal-->
+        <div class="universal">
+          <div class="masonry-box small-box post-media">
+            <img [src]="vijesti[6].Slika | async" alt="" height="200px" class="img-fluid">
+            <div class="shadoweffect">
+              <div class="shadow-desc">
+                <div class="blog-meta">
+                  <span class="bg-aqua"><a title="">{{vijesti[6].Kategorija}}</a></span>
+                  <h4><a routerLink="/vijest/{{vijesti[6].Id}}" class="naslov" title="">{{vijesti[6].Naslov}}</a></h4>
+                  <small><a class="naslov" title="">{{vijesti[6].Datum.seconds*1000 | date }}</a></small>
+                </div><!-- end meta -->
+              </div><!-- end shadow-desc -->
+            </div><!-- end shadow -->
+          </div><!-- end post-media -->
+        </div> <!--end universal-->
+      </div><!-- end masonry-blog -->
+  </div><!-- end container-fluid -->
 </section>
+<section>
+  <div class="container-fluid">
+    <div class="masonry-blog clearfix">
+      <div class="universal-big">
+        <div class="masonry-box post-media">
+          <img [src]="vijesti[7].Slika | async" alt="" class="img-fluid">
+          <div class="shadoweffect">
+            <div class="shadow-desc">
+              <div class="blog-meta">
+                <span class="bg-aqua"><a title="">{{vijesti[7].Kategorija}}</a></span>
+                <h4><a routerLink="/vijest/{{vijesti[7].Id}}" class="naslov" title="">{{vijesti[7].Naslov}}</a></h4>
+                <small><a class="naslov" title="">{{vijesti[7].Datum.seconds*1000 | date }}</a></small>
+              </div><!-- end meta -->
+            </div><!-- end shadow-desc -->
+          </div><!-- end shadow -->
+        </div><!-- end post-media -->
+      </div><!--end universal-->
+      <div class="universal-big">
+        <div class="masonry-box post-media">
+          <img [src]="vijesti[8].Slika | async" alt="" height="200px" class="img-fluid">
+          <div class="shadoweffect">
+            <div class="shadow-desc">
+              <div class="blog-meta">
+                <span class="bg-aqua"><a title="">{{vijesti[8].Kategorija}}</a></span>
+                <h4><a routerLink="/vijest/{{vijesti[8].Id}}" class="naslov" title="">{{vijesti[8].Naslov}}</a></h4>
+                <small><a class="naslov" title="">{{vijesti[8].Datum.seconds*1000 | date }}</a></small>
+              </div><!-- end meta -->
+            </div><!-- end shadow-desc -->
+          </div><!-- end shadow -->
+        </div><!-- end post-media -->
+      </div><!--end universal-->
+    </div><!-- end of masonry-blog -->
+    </div><!--end of container-fluid-->
+  </section>

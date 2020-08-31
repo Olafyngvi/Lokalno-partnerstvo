@@ -11,19 +11,19 @@
   <div class="topbar-section">
       <div class="container-fluid">
           <div class="row">
-              <div class="col-lg-8 hidden-md-down hidden-xs-down hidden-xs-down">
+              <div class="col-lg-4">
                   <div class="topsocial">
-                    <h5>Lokalno partnerstvo <br> za obrazovanje odraslih</h5>
+                    <img src="../../../assets/Slike/logo.png" alt="">
                   </div><!-- end social -->
               </div><!-- end col -->
 
-              <!--<div class="col-lg-4 hidden-md-down">
+              <div class="col-lg-4 hidden-md-down">
                   <div class="topmenu text-center">
                   </div>
-              </div>-->
+              </div>
 
-              <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 ">
-                  <div class="topsearch pull-right mr-5">
+              <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 pt-3 d-flex justify-content-center">
+                  <div class="topsearch pull-right">
                     <form (ngSubmit)="onSubmit(rteForm)" #rteForm="ngForm" class="form-inline">
                       <input required type="text" name="pretraga" [(ngModel)]="pretraga" class="form-control mr-3 empty" placeholder="&#xF002;">
                       <!--<button type="submit" class="btn" style="position: absolute; right: 6%; display: none"><i class="fa fa-search"></i></button>-->
@@ -105,9 +105,7 @@
                   <div class="navigation_container">
                       <div class="sub_nav-l">
                           <ul class="nav_con_left">
-                              <div>
-                                  <p class="p-subnav">Saznaj više</p>
-                              </div>
+
                               <li id="nc_l-2-1"><a href="#" >Važne vijesti</a></li>
                               <li id="nc_l-2-2"><a href="#">Sve vijesti</a></li>
                           </ul>
@@ -144,7 +142,7 @@
                                             <div class="list-group">
                                                 <a *ngFor="let index of [0,1,2]" routerLink="/vijest/{{sveVijesti[index].Id}}" class="list-group-item list-group-item-action flex-column align-items-start">
                                                     <div class="w-100 justify-content-between">
-                                                        <img [src]="sveVijesti[index].Slika | async" alt="" class="nedavne float-left">
+                                                        <!--<img [src]="sveVijesti[index].Slika | async" alt="" class="nedavne float-left">-->
                                                         <h5>{{sveVijesti[index].Naslov}}</h5>
                                                         <small>{{sveVijesti[index].Podnaslov}}, <b> {{sveVijesti[index].Datum.seconds*1000 | date}}</b></small>
                                                     </div>
@@ -159,7 +157,7 @@
                                             <div class="list-group">
                                                 <a *ngFor="let index of [3,4,5]" routerLink="/vijest/{{sveVijesti[index].Id}}" class="list-group-item list-group-item-action flex-column align-items-start">
                                                     <div class="w-100 justify-content-between">
-                                                        <img [src]="sveVijesti[index].Slika | async" alt="" class="nedavne float-left">
+                                                        <!--<img [src]="sveVijesti[index].Slika | async" alt="" class="nedavne float-left">-->
                                                         <h5>{{sveVijesti[index].Naslov}}</h5>
                                                         <small>{{sveVijesti[index].Podnaslov}}, <b> {{sveVijesti[index].Datum.seconds*1000 | date}}</b></small>
                                                     </div>

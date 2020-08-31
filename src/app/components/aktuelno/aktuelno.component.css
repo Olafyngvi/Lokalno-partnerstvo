@@ -1,0 +1,13 @@
+.pozadina {
+  background: url("../../../assets/Slike/iot2.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.row {
+  background-color: whitesmoke;
+  height: 500px;
+  margin-top: 200px !important;
+  margin-bottom: 100px !important;
+}

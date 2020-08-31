@@ -31,7 +31,6 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.vijestiService.getFocused().subscribe(vijesti => {
-      debugger;
       this.vijesti = vijesti;
       this.vijesti.forEach(doc => {
         const ref = this.storage.ref(`Vijesti/${doc.Podnaslov}`);

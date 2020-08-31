@@ -2,9 +2,6 @@
   margin-right: auto;
   margin-left: auto;
 }
-.overlay {
-  margin-top: 38px;
-}
 h3{
   color:black;
   display: inline-block;
@@ -28,4 +25,7 @@ input.empty {
 }
 hr {
   margin-bottom: 10px;
+}
+.topsocial {
+
 }

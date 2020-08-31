@@ -129,7 +129,7 @@ a{
 /*        OVERLAY MENU            */
 /*  ----------------------------  */
 
-.overlay { background-color: rgba(0,0,0, 0.9); height: 0%; width: 100%; position: fixed; z-index: 1; top: 95px; left: 0; overflow-y: hidden; transition: 0.2s; }
+.overlay { background-color: rgba(0,0,0, 0.9); height: 0%; width: 100%; position: fixed; z-index: 1; top: 160px; left: 0; overflow-y: hidden; transition: 0.2s; }
 .overlay-content { width: 100%; position: relative; top: 25%; text-align: center; margin-top: 30px;}
 
 .overlay .closebtn{ width: 460px; height: 20px; position: absolute; top: 400px; text-align: left; padding-left: 100px; }
@@ -199,7 +199,7 @@ a{
 /*          MINI NAV              */
 /*  ----------------------------  */
 
-.responsive-menu-container { margin: 0; padding: 0; width: 100%; background: #fff; float: left; }
+.responsive-menu-container { margin: 0; padding-top: 20px; width: 100%; background: #fff; float: left; }
 .responsive-menu-container .row { margin-top: 40px; height: 40px;}
 .responsive-menu-container .row:hover { background: #2980b9; color: #fff;}
 
@@ -527,12 +527,19 @@ html{position:relative;min-height:100%}body{overflow-x:hidden}body.sticky-footer
   font-size: 20px;
   padding: 0.4rem 0 0.2rem;
 }
-
 .center-side,
 .left-side,
 .right-side {
   float: left;
   width: 33.33333%
+}
+.universal {
+  float: left;
+  width: 25%;
+}
+.universal-big {
+  float: left;
+  width: 50%;
 }
 
 .left-side-big,
@@ -577,7 +584,7 @@ html{position:relative;min-height:100%}body{overflow-x:hidden}body.sticky-footer
   overflow: auto;
 }
 .small-box {
-  width: 25%;
+  width: 100%;
   float: left;
 }
 
@@ -656,7 +663,7 @@ p{
 **************************************/
 @media (max-width: 1280px) {
   .overlay {
-    top: 118px;
+    top: 160px;
   }
   .mobile-nav-icon i {
     color: white;
@@ -671,7 +678,7 @@ p{
       font-size: 14px;
   }
   .overlay {
-    top: 115px;
+    top: 160px;
   }
 }
 
@@ -682,9 +689,12 @@ p{
 }
 
 @media (max-width: 991px) {
-  .topsocial {
-    display: none;
+  .topsocial img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   }
+
   .custombox .blog-list-widget,
   .custombox .blog-box {
       margin: 1rem 0;
@@ -696,8 +706,12 @@ p{
       float: left;
       width: 50%;
   }
+  .universal {
+   float: left;
+   width: 50%;
+  }
   .overlay {
-    top: 78px;
+    top: 215px;
   }
 }
 
@@ -736,6 +750,8 @@ p{
   .topsocial {
     display: none;
   }
+  .universal-big,
+  .universal,
   .center-side,
   .left-side,
   .right-side {
@@ -779,7 +795,8 @@ p{
       margin-top: 1rem;
   }
   .footer-text img,
-  .small-box {
+  .small-box,
+  .mid-box {
       float: none;
       width: 100%;
   }
@@ -1446,4 +1463,8 @@ hr.invis3 {
 
 .small-box .img-fluid {
   height: 300px !important;
+}
+.mid-box {
+  width: 50%;
+  float: left;
 }

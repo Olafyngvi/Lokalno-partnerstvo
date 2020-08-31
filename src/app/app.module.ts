@@ -76,6 +76,7 @@ import { OblastComponent } from './components/oblast/oblast.component';
 import { DogadjajComponent } from './components/dogadjaj/dogadjaj.component';
 import { PretragaComponent } from './components/pretraga/pretraga.component';
 import { HvalaComponent } from './components/hvala/hvala.component';
+import { AktuelnoComponent } from './components/aktuelno/aktuelno.component';
 
 @NgModule({
   declarations: [
@@ -136,7 +137,8 @@ import { HvalaComponent } from './components/hvala/hvala.component';
     OblastComponent,
     DogadjajComponent,
     PretragaComponent,
-    HvalaComponent
+    HvalaComponent,
+    AktuelnoComponent
   ],
   imports: [
     BrowserModule,
