@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hvala',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HvalaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      this.router.navigate(['']);
+    }, 5000);
   }
 
 }

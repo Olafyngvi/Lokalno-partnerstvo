@@ -7,19 +7,19 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  cookieMessage: any = 'This website uses cookies to ensure you get the best experience on our website.';
-  cookieDismiss: any = 'Got it';
-  cookieLinkText: any = 'Learn more';
+  cookieMessage: any = 'Ova web stranica koristi kolačiće kako bi osigurala najbolje iskustvo na našoj web stranici.';
+  cookieDismiss: any = 'Shvaćam';
+  cookieLinkText: any = 'Saznaj više';
   title = 'Obrazovanje-odraslih';
   ngOnInit(): void {
     const cc = window as any;
     cc.cookieconsent.initialise({
       palette: {
         popup: {
-          background: '#164969'
+          background: '#2e2d2d'
         },
         button: {
-          background: '#ffe000',
+          background: '#d9d9d9',
           text: '#164969'
         }
       },
