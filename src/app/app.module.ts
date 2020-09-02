@@ -77,6 +77,7 @@ import { DogadjajComponent } from './components/dogadjaj/dogadjaj.component';
 import { PretragaComponent } from './components/pretraga/pretraga.component';
 import { HvalaComponent } from './components/hvala/hvala.component';
 import { AktuelnoComponent } from './components/aktuelno/aktuelno.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -154,7 +155,8 @@ import { AktuelnoComponent } from './components/aktuelno/aktuelno.component';
     ReactiveFormsModule,
     NgxDatatableModule,
     FacebookModule.forRoot(),
-    JwPaginationModule
+    JwPaginationModule,
+    BrowserAnimationsModule
   ],
   providers: [AuthServiceService, AuthGuard, AngularFireAuthGuard],
   bootstrap: [AppComponent]

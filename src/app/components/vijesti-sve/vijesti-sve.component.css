@@ -5,11 +5,32 @@ h4 {
   margin-left: 0 !important;
   margin-top: 0 !important;
 }
-
 img {
   max-height: 220px !important;
-  width: 330px !important;
+  width: 100%;
 }
+
 a {
   color: black !important;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 23%);
+  grid-gap: 20px;
+}
+
+.grid-cell {
+  position: relative;
+  border: solid whitesmoke;
+  height: auto;
+  border-radius: 3px;
+  text-align: right, bottom;
+}
+.grid-cell .proba {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.mojDiv {
+  padding-left: 5% !important;
 }

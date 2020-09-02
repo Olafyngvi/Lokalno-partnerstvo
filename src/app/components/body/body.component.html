@@ -5,11 +5,11 @@
         <div class="widget">
             <div class="blog-list-widget">
                 <div class="list-group">
-                    <a *ngFor="let ned of kursevi" routerLink="/kurs/{{ned.Id}}/false" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <a *ngFor="let ned of kursevi" routerLink="/kurs/{{ned.Id}}/false" class="list-group-item list-group-item-action flex-column align-items-start mb-3">
                         <div class="w-100 justify-content-between">
                             <img [src]="ned.Slika | async" alt="" class="nedavne float-left">
                             <h5>{{ned.Naslov}}</h5>
-                            <small>Početak: {{ned.DatumPocetka | date}}</small>
+                            <p>Početak: {{ned.DatumPocetka | date}}</p>
                         </div>
                     </a>
                 </div>
@@ -21,11 +21,11 @@
       <div class="widget">
         <div class="blog-list-widget">
             <div class="list-group">
-                <a *ngFor="let ned of prakticne" routerLink="/kurs/{{ned.Id}}/true" class="list-group-item list-group-item-action flex-column align-items-start">
+                <a *ngFor="let ned of prakticne" routerLink="/kurs/{{ned.Id}}/true" class="list-group-item list-group-item-action flex-column align-items-start mb-3">
                     <div class="w-100 justify-content-between">
                         <img [src]="ned.Slika | async" alt="" class="nedavne float-left">
                         <h5>{{ned.Naslov}}</h5>
-                        <small>Početak: {{ned.DatumPocetka | date}}</small>
+                        <p>Početak: {{ned.DatumPocetka | date}}</p>
                     </div>
                 </a>
             </div>
@@ -37,11 +37,11 @@
       <div class="widget">
         <div class="blog-list-widget">
             <div class="list-group">
-                <a *ngFor="let ned of dogadjaji" routerLink="/dogadjaj/{{ned.Id}}" class="list-group-item list-group-item-action flex-column align-items-start">
+                <a *ngFor="let ned of dogadjaji" routerLink="/dogadjaj/{{ned.Id}}" class="list-group-item list-group-item-action flex-column align-items-start mb-3">
                     <div class="w-100 justify-content-between">
                         <img [src]="ned.Slika | async" alt="" class="nedavne float-left">
                         <h5>{{ned.Naslov}}</h5>
-                        <small>Početak: {{ned.DatumPocetka | date}}, {{ned.VrijemePocetka}}</small>
+                        <p>Početak: {{ned.DatumPocetka | date}}, {{ned.VrijemePocetka}}</p>
                     </div>
                 </a>
             </div>
