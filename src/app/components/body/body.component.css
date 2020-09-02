@@ -3,3 +3,12 @@
   height: auto;
   padding-top: 5%;
 }
+.text-center{
+  display: block;
+  background-color: #7bb342;
+  padding: 20px;
+  color: #fff;
+}
+.plava{
+  background-color: #007DC5;
+}
