@@ -2,7 +2,7 @@
   padding-top: 130px;
   height: 100%;
   background-color: #ffffff;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 img {
  max-height: 835px;
@@ -10,14 +10,22 @@ img {
 }
 .carousel-caption {
   bottom: 20% !important;
+  right: 60%;
+  width: 30%;
+
 }
 
 .prijava {
   opacity: 0.5;
   color: white;
-  width: 40%;
+  width: 50%;
 }
 .carousel {
   padding-left: 0px !important;
   padding-right: 0px !important;
+}
+
+.carousel h3{
+  font-size: 45px;
+  
 }
