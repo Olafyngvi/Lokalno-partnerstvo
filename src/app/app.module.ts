@@ -78,6 +78,9 @@ import { PretragaComponent } from './components/pretraga/pretraga.component';
 import { HvalaComponent } from './components/hvala/hvala.component';
 import { AktuelnoComponent } from './components/aktuelno/aktuelno.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SviKurseviComponent } from './components/svi-kursevi/svi-kursevi.component';
+import { SveObukeComponent } from './components/sve-obuke/sve-obuke.component';
+import { SviDogadjajiComponent } from './components/svi-dogadjaji/svi-dogadjaji.component';
 
 @NgModule({
   declarations: [
@@ -139,7 +142,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DogadjajComponent,
     PretragaComponent,
     HvalaComponent,
-    AktuelnoComponent
+    AktuelnoComponent,
+    SviKurseviComponent,
+    SveObukeComponent,
+    SviDogadjajiComponent
   ],
   imports: [
     BrowserModule,

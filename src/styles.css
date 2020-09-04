@@ -673,6 +673,9 @@ p{
   .pozadina {
     top: 100px;
   }
+  .onama {
+    height: 1400px !important;
+  }
 }
 
 @media (max-width: 1156px) {
@@ -722,6 +725,9 @@ p{
   }
   .mobile-nav-icon i {
     color: black;
+  }
+  .onama {
+    height: 1000px !important;
   }
 }
 
@@ -819,6 +825,24 @@ p{
       border: 0 none !important;
       font-size: 17px !important;
       padding: 1.3rem 1rem !important;
+  }
+  .onama {
+    height: 1400px !important;
+  }
+}
+@media (max-width: 440px) {
+  .onama {
+    height: 1600px !important;
+  }
+}
+@media (max-width: 410px) {
+  .onama {
+    height: 1800px !important;
+  }
+}
+@media (max-width: 380px) {
+  .onama {
+    height: 2000px !important;
   }
 }
 .single-post-media {

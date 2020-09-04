@@ -26,6 +26,6 @@ input.empty {
 hr {
   margin-bottom: 10px;
 }
-.topsocial {
-
+a:hover {
+  text-decoration: none;
 }

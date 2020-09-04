@@ -2,6 +2,7 @@
   background:linear-gradient(rgba(22, 99, 214, 0.39), rgba(34, 104, 209, 0.582)), url("onama1.jpg");
   background-position: center center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
 
 }
@@ -10,7 +11,7 @@
   height: 920px;
   background-color: rgba(241, 240, 240, 0.096);
   padding-top:110px;
-  
+
 }
 
 .slikepartneri{
@@ -18,7 +19,7 @@
   margin: 0 auto;
   height: 85px;
   width: auto;
-  
+
 }
 .red{
   padding: 0 110px;
@@ -35,7 +36,7 @@ a{
   color: #0775cb;
   margin-top: 25px;
   font-size: 14px;
-  
+
 }
 .text{
   text-align: justify;
@@ -46,11 +47,13 @@ a{
   background:linear-gradient(rgba(22, 99, 214, 0.719), rgba(34, 104, 209, 0.712)), url("plavoslika1.jpg");
   background-position:ctop;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
-  height: 320px;
+  height: auto;
   margin-top: 35px;
   margin-bottom: 70px;
-  padding-top: 70px;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 .plavi p{
   color: #fff;
@@ -68,6 +71,7 @@ i{
 
 }
 .podnaslov{
+  margin-top: 100px;
   display: block;
   font-size: 30px;
   color: #0775cb;

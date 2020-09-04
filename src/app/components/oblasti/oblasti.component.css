@@ -2,7 +2,7 @@
 .flip-card {
   background-color: transparent;
   width: 300px;
-  height: 200px;
+  height: 300px;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
@@ -39,7 +39,7 @@
   background-color:rgba(241, 238, 238, 0.541);
   color: white;
   transform: rotateY(180deg);
-  
+
 }
 
 .fa {
@@ -55,9 +55,10 @@
   background:linear-gradient(rgba(22, 99, 214, 0.719), rgba(34, 104, 209, 0.712)), url("plavoslika1.jpg");
   background-position:ctop;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
-  height:380px ;
-  
+  height:auto ;
+
 }
 .btn-secondary{
   margin-top: 60px;

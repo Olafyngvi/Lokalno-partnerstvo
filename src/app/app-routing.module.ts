@@ -43,6 +43,9 @@ import { ONamaComponent } from './components/o-nama/o-nama.component';
 import { DogadjajComponent } from './components/dogadjaj/dogadjaj.component';
 import { PretragaComponent } from './components/pretraga/pretraga.component';
 import { HvalaComponent } from './components/hvala/hvala.component';
+import { SviKurseviComponent } from './components/svi-kursevi/svi-kursevi.component';
+import { SveObukeComponent } from './components/sve-obuke/sve-obuke.component';
+import { SviDogadjajiComponent } from './components/svi-dogadjaji/svi-dogadjaji.component';
 
 const redirectLoggedIndashboard = () => redirectLoggedInTo(['dashboard']);
 const redirectUnauthorizedToLogin = redirectUnauthorizedTo(['login']);
@@ -59,6 +62,9 @@ const routes: Routes = [
   {path: 'pretraga/:p', component: PretragaComponent},
   {path: 'o-nama', component: ONamaComponent},
   {path: 'kurs/:id/:p', component: KursComponent},
+  {path: 'kursevi', component: SviKurseviComponent},
+  {path: 'obuke', component: SveObukeComponent},
+  {path: 'dogadjaji', component: SviDogadjajiComponent},
   {path: 'prijava/:id/:naziv/:p', component: PrijavaComponent},
   { path: 'hvala', component: HvalaComponent},
   { path: 'registracija', component: SignUpComponent },

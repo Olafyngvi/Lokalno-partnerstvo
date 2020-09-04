@@ -1,11 +1,11 @@
 .ukljucise {
-  padding-top: 130px;
+  padding-top: 100px;
   height: 100%;
   background-color: #ffffff;
   margin-bottom: 5%;
 }
 img {
- max-height: 835px;
+ max-height: 865px;
  overflow: hidden;
 }
 .carousel-caption {
@@ -15,7 +15,7 @@ img {
 }
 
 .carousel-caption button{
- 
+
     background-color: #7BB342;
       border: none;
       padding: 10px;
@@ -35,5 +35,5 @@ img {
 
 .carousel h3{
   font-size: 45px;
-  
+
 }

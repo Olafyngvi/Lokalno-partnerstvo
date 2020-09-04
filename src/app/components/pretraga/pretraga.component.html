@@ -37,7 +37,7 @@
               <div class="blog-box row">
                   <div class="col-md-4">
                       <div class="post-media">
-                          <a routerLink="/vijest/{{item.Id}}" title="">
+                          <a routerLink="/kurs/{{item.Id}}/false" title="">
                               <img [src]="item.Slika | async" alt="" class="">
                               <div class="hovereffect"></div>
                           </a>
@@ -45,7 +45,7 @@
                   </div>
 
                   <div class="blog-meta big-meta col-md-8">
-                      <h4><a routerLink="/vijest/{{item.Id}}" title="">{{item.Naslov}}</a></h4>
+                      <h4><a routerLink="/kurs/{{item.Id}}/false" title="">{{item.Naslov}}</a></h4>
                       <p [innerHTML]="item.Opis"></p>
                       <small><a title="">{{item.Kategorija}}</a></small>
                       <small><a title="">{{item.DatumPocetka | date}}</a></small>
@@ -68,7 +68,7 @@
               <div class="blog-box row">
                   <div class="col-md-4">
                       <div class="post-media">
-                          <a routerLink="/vijest/{{item.Id}}" title="">
+                          <a routerLink="/kurs/{{item.Id}}/true" title="">
                               <img [src]="item.Slika | async" alt="" class="">
                               <div class="hovereffect"></div>
                           </a>
@@ -76,7 +76,7 @@
                   </div>
 
                   <div class="blog-meta big-meta col-md-8">
-                      <h4><a routerLink="/vijest/{{item.Id}}" title="">{{item.Naslov}}</a></h4>
+                      <h4><a routerLink="/kurs/{{item.Id}}/true" title="">{{item.Naslov}}</a></h4>
                       <p [innerHTML]="item.Opis"></p>
                       <small><a title="">{{item.Kategorija}}</a></small>
                       <small><a title="">{{item.DatumPocetka | date}}</a></small>
@@ -98,7 +98,7 @@
               <div class="blog-box row">
                   <div class="col-md-4">
                       <div class="post-media">
-                          <a routerLink="/vijest/{{item.Id}}" title="">
+                          <a routerLink="/dogadjaj/{{item.Id}}" title="">
                               <img [src]="item.Slika | async" alt="" class="">
                               <div class="hovereffect"></div>
                           </a>
@@ -106,7 +106,7 @@
                   </div>
 
                   <div class="blog-meta big-meta col-md-8">
-                      <h4><a routerLink="/vijest/{{item.Id}}" title="">{{item.Naslov}}</a></h4>
+                      <h4><a routerLink="/dogadjaj/{{item.Id}}" title="">{{item.Naslov}}</a></h4>
                       <p [innerHTML]="item.Opis"></p>
                       <small><a title="">{{item.Kategorija}}</a></small>
                       <small><a title="">{{item.DatumPocetka | date}}, {{item.VrijemePocetka}}</a></small>

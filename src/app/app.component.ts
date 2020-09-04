@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ export class AppComponent implements OnInit {
   cookieLinkText: any = 'Saznaj više';
   title = 'Obrazovanje-odraslih';
   ngOnInit(): void {
+    AOS.init();
     const cc = window as any;
     cc.cookieconsent.initialise({
       palette: {

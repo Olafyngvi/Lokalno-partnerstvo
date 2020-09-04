@@ -20,17 +20,12 @@ a {
 }
 
 .grid-cell {
-  position: relative;
   border: solid whitesmoke;
   height: auto;
   border-radius: 3px;
   text-align: right, bottom;
 }
-.grid-cell .proba {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
+
 .mojDiv {
   padding-left: 5% !important;
 }

@@ -13,3 +13,6 @@
 .plava{
   background-color: #007DC5;
 }
+a:hover {
+  text-decoration: none;
+}
