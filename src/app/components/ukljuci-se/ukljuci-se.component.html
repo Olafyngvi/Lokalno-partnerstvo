@@ -27,7 +27,8 @@
             <p [innerHTML]="kurs.Opis"></p>
             <br>
             <br>
-            <button routerLink="/prijava/{{kurs.Id}}/{{kurs.Naslov}}/{{kurs.Vrsta}}" class="btn prijava">Prijavi se</button>
+            <button *ngIf="kurs.Id !== undefined" routerLink="/prijava/{{kurs.Id}}/{{kurs.Naslov}}/{{kurs.Vrsta}}" class="btn prijava">{{kurs.Dugme}}</button>
+            <button *ngIf="kurs.Id === undefined" routerLink="/o-nama" class="btn prijava">{{kurs.Dugme}}</button>
           </div>
         </div>
       </div>

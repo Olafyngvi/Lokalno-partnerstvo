@@ -1,12 +1,12 @@
 .red {
-  padding-top: 180px;
+  padding-top: 100px;
 }
 h4 {
   margin-left: 0 !important;
   margin-top: 0 !important;
 }
 img {
-  max-height: 220px !important;
+  height: 200px !important;
   width: 100%;
 }
 
@@ -28,4 +28,14 @@ a {
 
 .mojDiv {
   padding-left: 5% !important;
+}
+.vijestiBanner {
+  padding-top: 200px;
+  height: 600px;
+  background: linear-gradient(to bottom, rgba(0, 49, 77, 0.8) 0%, rgba(0, 49, 77, 0.8) 100%), url("../../../assets/Slike/iot2.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding-top: 10%;
 }

@@ -5,11 +5,10 @@ import { NavbarService } from '../../services/navbar.service';
 import { FooterService } from '../../services/footer.service';
 import { AuthServiceService } from '../../services/auth-service.service';
 import { PrijavaService } from '../../services/prijava.service';
-import { VijestiService } from '../../services/vijesti.service';
 
-import { Vijest } from 'src/app/models/Vijest';
 import { Prijava } from '../../models/Prijava';
 import { User } from '../../models/User';
+import { ComfirmationDialogService } from '../confirmation-dialog/comfirmation-dialog.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -25,7 +24,7 @@ export class DashboardComponent implements OnInit {
   constructor(public nav: NavbarService,
               public footer: FooterService,
               private auth: AuthServiceService,
-              private router: Router,
+              private cds: ComfirmationDialogService,
               private prijavaService: PrijavaService) { }
 
   ngOnInit(): void {
@@ -46,13 +45,13 @@ export class DashboardComponent implements OnInit {
       }
     });
     if (!this.email) {
-      alert('Type in your email first');
+      this.cds.alert('', 'Unesite prvo Vaš email.');
     }
     this.auth.resetPasswordInit(this.email)
     .then(
-      () => alert('A password reset link has been sent to your email address'),
-      (rejectionReason) => alert(rejectionReason))
-    .catch(e => alert('An error occurred while attempting to reset your password'));
+      () => this.cds.alert('', 'Link za resetovanje pasvorda je poslan na Vašu email adresu.'),
+      (rejectionReason) => this.cds.alert('', rejectionReason))
+    .catch(e => this.cds.alert('', 'Desila se greška prilikom pokušaja resetovanja Vašeg pasvorda.'));
   }
   logout() {
     this.nav.show();

@@ -54,6 +54,7 @@ export class DogadjajComponent implements OnInit {
     });
     this.dogadjajiService.sviDogadjaji().subscribe(nedavno => {
       this.nedavno = nedavno;
+      console.log(this.nedavno);
     });
     this.dogadjajiService.sviDogadjaji().subscribe(slicno => {
       this.slicno = slicno;
@@ -62,6 +63,6 @@ export class DogadjajComponent implements OnInit {
         const ref = this.storage.ref(`Dogadjaji/${doc.Naslov}`);
         doc.Slika = ref.getDownloadURL();
       });
-    })
+    });
   }
 }

@@ -26,20 +26,22 @@ export class UkljuciSeComponent implements OnInit {
   ngOnInit() {
     this.kursService.getAktivni().subscribe(kursevi => {
       this.kursevi = kursevi;
-      console.log(kursevi);
       this.kursevi.forEach(doc => {
         const ref = this.storage.ref(`Kursevi/${doc.Naslov}`);
-        this.aktivni.push({Id: doc.Id, Naslov: doc.Naslov, Opis: doc.Opis, Slika: ref.getDownloadURL(), Vrsta: false});
+        this.aktivni.push({Id: doc.Id, Naslov: doc.Naslov, Opis: doc.Opis, Slika: ref.getDownloadURL(), Vrsta: false, Dugme: 'Prijavi se'});
       });
     });
     this.prakticneService.getAktivni().subscribe(obuke => {
       this.obuke = obuke;
-      console.log(obuke);
       this.obuke.forEach(doc => {
         const ref = this.storage.ref(`Obuke/${doc.Naslov}`);
-        this.aktivni.push({Id: doc.Id, Naslov: doc.Naslov, Opis: doc.Opis, Slika: ref.getDownloadURL(), Vrsta: true});
+        this.aktivni.push({Id: doc.Id, Naslov: doc.Naslov, Opis: doc.Opis, Slika: ref.getDownloadURL(), Vrsta: true, Dugme: 'Prijavi se'});
       });
     });
+    const slik = this.storage.ref(`Onama/onama.jpg`);
+    console.log(slik);
+    // tslint:disable-next-line: max-line-length
+    this.aktivni.push({Id: undefined, Naslov: 'Lokalno partnerstvo za obrazovanje odraslih', Opis: '', Slika: slik.getDownloadURL(), Vrsta: null, Dugme: 'O nama'});
   }
   getUrl(slika: Observable<string>) {
   }

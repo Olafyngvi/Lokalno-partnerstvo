@@ -13,7 +13,9 @@
           <div class="row">
               <div class="col-lg-2">
                   <div class="topsocial">
-                    <img src="../../../assets/Slike/logo.png" alt="">
+                    <a routerLink="">
+                      <img src="../../../assets/Slike/logo.png" alt="">
+                    </a>
                   </div><!-- end social -->
               </div><!-- end col -->
 
@@ -22,11 +24,12 @@
                     <div class="full_nav mt-5">
                       <div class="row" onmouseleave="closeNav_1(), closeNav_2(), closeNav_3()" >
                           <ul class="main_navigation_banner navigacija" role="banner">
-                              <li><a [routerLink]="['/']" routerLinkActive="router-link-active" ><span>Home</span></a></li>
+                              <!--<li><a [routerLink]="['/']" routerLinkActive="router-link-active" ><span>Home</span></a></li>-->
+                              <!--<a routerLink=""><i class="fa fa-2x fa-home"></i></a>-->
                               <li><a routerLink="/usluge"><span onmouseover="openNav_1()">Usluge</span></a></li>
                               <li><a [routerLink]="['/vijesti']" routerLinkActive="router-link-active" ><span onmouseover="openNav_2()">Vijesti</span></a></li>
                               <li><a routerLink="/oblasti"><span onmouseover="openNav_3()">Oblasti</span></a></li>
-                              <li><a routerLink="publikacije"><span onclick="openNav_4()" onmouseover="closeNav_1(), closeNav_2(), closeNav_3()">Publikacije i podaci</span></a></li>
+                              <li><a routerLink="/publikacije"><span onclick="openNav_4()" onmouseover="closeNav_1(), closeNav_2(), closeNav_3()">Publikacije i podaci</span></a></li>
                               <li><a routerLink="/o-nama"><span onclick="openNav_4()" onmouseover="closeNav_1(), closeNav_2(), closeNav_3()">O nama</span></a></li>
                               <li *ngIf="user === null"><a routerLink="/login">Login</a></li>
                               <li *ngIf="user !== null"><a routerLink="/login">Dashboard</a></li>
@@ -87,7 +90,7 @@
                                       <ul class="nav_con_left">
 
                                           <li id="nc_l-2-1"><a href="#" >Važne vijesti</a></li>
-                                          <li id="nc_l-2-2"><a href="#">Sve vijesti</a></li>
+                                          <li id="nc_l-2-2"><a routerLink="/vijesti">Sve vijesti</a></li>
                                       </ul>
                                   </div>
                                   <div class="sub_nav-r">
@@ -236,7 +239,7 @@
               <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12 pt-4 d-flex justify-content-center">
                   <div class="topsearch pull-right">
                     <form (ngSubmit)="onSubmit(rteForm)" #rteForm="ngForm" class="form-inline">
-                      <input required type="text" style="width: 100%;" name="pretraga" [(ngModel)]="pretraga" class="form-control mr-3 empty" placeholder="&#xF002;">
+                      <input required type="text" style="width: 100%; border: none;" name="pretraga" [(ngModel)]="pretraga" class="form-control mr-3 empty" placeholder="&#xF002;">
                       <!--<button type="submit" class="btn" style="position: absolute; right: 6%; display: none"><i class="fa fa-search"></i></button>-->
                     </form>
                       <a class="mobile-nav-icon pull-right">

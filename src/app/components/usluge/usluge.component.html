@@ -2,27 +2,50 @@
 
 </div>
 
-<div class="container-fluid">
+<div class="container">
   <div class="row pt-5">
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="border-right: 1px solid grey;">
       <a routerLink="/kursevi"><h3 class="text-center mb-5">Kursevi</h3></a>
         <div class="widget">
-            <div class="blog-list-widget">
-                <div class="list-group">
-                    <a *ngFor="let ned of kursevi" routerLink="/kurs/{{ned.Id}}/false" class="list-group-item list-group-item-action flex-column align-items-start mb-3">
+            <div>
+                    <!--<a *ngFor="let ned of kursevi" routerLink="/kurs/{{ned.Id}}/false" class="list-group-item list-group-item-action flex-column align-items-start mb-3">
                         <div class="w-100 justify-content-between">
                             <img [src]="ned.Slika | async" alt="" class="nedavne float-left">
                             <h5>{{ned.Naslov}}</h5>
                             <p>Početak: {{ned.DatumPocetka | date}}</p>
                         </div>
-                    </a>
-                </div>
+                    </a>-->
+                    <span *ngFor="let ned of kursevi" >
+                      <div class="card" style="width: 100%; margin-bottom: 50px">
+                        <a routerLink="/kurs/{{ned.Id}}/false"><img class="card-img-top" [src]="ned.Slika | async" alt=""></a>
+                        <div class="card-body">
+                          <a routerLink="/kurs/{{ned.Id}}/false"><h4 class="card-title">{{ned.Naslov}}</h4></a>
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <td>Cijena</td>
+                                <td>Trajanje</td>
+                                <td>Početak</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>{{ned.Cijena}} KM</td>
+                                <td>{{ned.Trajanje}} sedmice</td>
+                                <td>{{ned.DatumPocetka | date}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <a class="saznaj" routerLink="/kurs/{{ned.Id}}/false"><i style="font-size: 38px;" class="ion-ios-arrow-thin-right"></i></a>
+                        </div>
+                      </div>
+                    </span>
             </div><!-- end blog-list -->
         </div><!-- end widget -->
     </div>
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="border-right: 1px solid grey;">
       <a routerLink="/obuke"><h3 class="text-center plava mb-5">Praktične obuke</h3></a>
-      <div class="widget">
+      <!--<div class="widget">
         <div class="blog-list-widget">
             <div class="list-group">
                 <a *ngFor="let ned of obuke" routerLink="/kurs/{{ned.Id}}/true" class="list-group-item list-group-item-action flex-column align-items-start mb-3">
@@ -33,12 +56,41 @@
                     </div>
                 </a>
             </div>
-        </div><!-- end blog-list -->
-    </div><!-- end widget -->
+        </div>
+    </div>-->
+    <div class="widget">
+      <div>
+              <span *ngFor="let ned of obuke" >
+                <div class="card" style="width: 100%; margin-bottom: 50px">
+                  <a routerLink="/kurs/{{ned.Id}}/true"><img class="card-img-top" [src]="ned.Slika | async" alt=""></a>
+                  <div class="card-body">
+                    <a routerLink="/kurs/{{ned.Id}}/true"><h4 class="card-title">{{ned.Naslov}}</h4></a>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <td>Cijena</td>
+                          <td>Trajanje</td>
+                          <td>Početak</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>{{ned.Cijena}} KM</td>
+                          <td>{{ned.Trajanje}} sedmice</td>
+                          <td>{{ned.DatumPocetka | date}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <a class="saznaj" routerLink="/kurs/{{ned.Id}}/true"><i style="font-size: 38px;" class="ion-ios-arrow-thin-right"></i></a>
+                  </div>
+                </div>
+              </span>
+      </div><!-- end blog-list -->
+  </div><!-- end widget -->
     </div>
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
       <a routerLink="/dogadjaji"><h3 class="text-center mb-5">Događaji</h3></a>
-      <div class="widget">
+      <!--<div class="widget">
         <div class="blog-list-widget">
             <div class="list-group">
                 <a *ngFor="let ned of dogadjaji" routerLink="/dogadjaj/{{ned.Id}}" class="list-group-item list-group-item-action flex-column align-items-start mb-3">
@@ -49,8 +101,35 @@
                     </div>
                 </a>
             </div>
-        </div><!-- end blog-list -->
-    </div><!-- end widget -->
+        </div>
+    </div>-->
+    <div class="widget">
+      <div>
+              <span *ngFor="let ned of dogadjaji" >
+                <div class="card" style="width: 100%; margin-bottom: 50px">
+                  <a routerLink="/dogadjaj/{{ned.Id}}"><img class="card-img-top" [src]="ned.Slika | async" alt=""></a>
+                  <div class="card-body">
+                    <a routerLink="/dogadjaj/{{ned.Id}}"><h4 class="card-title">{{ned.Naslov}}</h4></a>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <td>Datum početka</td>
+                          <td>Vrijeme</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>{{ned.DatumPocetka | date}} KM</td>
+                          <td>{{ned.VrijemePocetka}} h</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <a class="saznaj" routerLink="/dogadjaj/{{ned.Id}}"><i style="font-size: 38px;" class="ion-ios-arrow-thin-right"></i></a>
+                  </div>
+                </div>
+              </span>
+      </div><!-- end blog-list -->
+  </div><!-- end widget -->
     </div>
   </div>
 </div>

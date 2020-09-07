@@ -36,7 +36,6 @@
   font-size: 30px;
 }
 .flip-card-back {
-  background-color:rgba(241, 238, 238, 0.541);
   color: white;
   transform: rotateY(180deg);
 
@@ -62,4 +61,7 @@
 }
 .btn-secondary{
   margin-top: 60px;
+}
+Button {
+  background-color: #7bb342 !important;
 }

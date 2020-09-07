@@ -7,7 +7,7 @@
                 <div class="list-group">
                     <a *ngFor="let ned of kursevi" routerLink="/kurs/{{ned.Id}}/false" class="list-group-item list-group-item-action flex-column align-items-start mb-3">
                         <div class="w-100 justify-content-between">
-                            <img [src]="ned.Slika | async" alt="" class="nedavne float-left">
+                          <img [src]="ned.Slika | async" alt="" class="nedavne float-left">
                             <h5>{{ned.Naslov}}</h5>
                             <p>Početak: {{ned.DatumPocetka | date}}</p>
                         </div>

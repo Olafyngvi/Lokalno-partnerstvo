@@ -5,4 +5,5 @@ export interface Aktivni {
   Opis?: string;
   Slika?: Observable<any>;
   Vrsta?: boolean;
+  Dugme?: string;
 }

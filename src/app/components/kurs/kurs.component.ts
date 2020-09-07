@@ -67,9 +67,11 @@ export class KursComponent implements OnInit {
             const ref = this.storage.ref(`Obuke/${doc.Naslov}`);
             doc.Slika = ref.getDownloadURL();
           });
+          this.slicno = this.slicno.filter(obj => obj.Id !== obuka.Id);
         });
         this.obukeService.sveObuke().subscribe(nedavno => {
           this.nedavno = nedavno;
+          this.nedavno = this.nedavno.filter(obj => obj.Id !== obuka.Id);
         });
       });
     } else {
@@ -97,9 +99,13 @@ export class KursComponent implements OnInit {
             const ref = this.storage.ref(`Kursevi/${doc.Naslov}`);
             doc.Slika = ref.getDownloadURL();
           });
+          this.slicno = this.slicno.filter(obj => obj.Id !== kurs.Id);
         });
         this.kursService.sviKursevi().subscribe(nedavno => {
           this.nedavno = nedavno;
+          console.log(this.nedavno);
+          this.nedavno = this.nedavno.filter(obj => obj.Id !== kurs.Id);
+          console.log(this.nedavno);
         });
       });
     }
