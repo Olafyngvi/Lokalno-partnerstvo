@@ -30,12 +30,17 @@ a {
   padding-left: 5% !important;
 }
 .vijestiBanner {
-  padding-top: 200px;
-  height: 600px;
-  background: linear-gradient(to bottom, rgba(0, 49, 77, 0.8) 0%, rgba(0, 49, 77, 0.8) 100%), url("../../../assets/Slike/iot2.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
+background-image:linear-gradient(rgba(22, 99, 214, 0.137), rgba(34, 104, 209, 0.144)), url(../../../assets/Slike/vestibaner.jpg);
+
   background-attachment: fixed;
   background-size: cover;
-  padding-top: 10%;
+  height: 500px;
+  background-position: center;
+  
+}
+.vijest{
+  padding-top: 150px;
+  padding-left: 360px;
+  font-size: 90px;
+  color:#fff;
 }

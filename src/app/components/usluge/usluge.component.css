@@ -1,7 +1,7 @@
 .usluge {
   padding-top: 200px;
   height: 600px;
-  background: linear-gradient(to bottom, rgba(0, 49, 77, 0.8) 0%, rgba(0, 49, 77, 0.8) 100%), url("../../../assets/Slike/iot2.jpg");
+  background: linear-gradient(rgba(46, 112, 211, 0), rgba(126, 163, 218, 0.473)), url("../../../assets/Slike/kursevibaner.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -36,4 +36,11 @@ img {
 }
 .card-body {
   padding: 0px !important;
+}
+.vijest{
+  padding-top: 150px;
+  padding-left: 1060px;
+  font-size: 90px;
+  color:#fff;
+  
 }

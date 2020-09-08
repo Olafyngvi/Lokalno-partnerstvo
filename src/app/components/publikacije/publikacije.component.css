@@ -19,7 +19,21 @@ button{
 .accordion .fa{
   margin-right: 0.5rem;
 }
-.publik {
-  padding-top: 150px;
-  height: 800px;
+
+.usluge {
+  padding-top: 200px;
+  height: 600px;
+  background: linear-gradient(rgba(46, 112, 211, 0), rgba(126, 163, 218, 0.473)), url("../../../assets/Slike/publikacijebaner.jpeg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding-top: 10%;
+}
+.vijest{
+  padding-top: 100px;
+  padding-left: 1460px;
+  font-size: 60px;
+  color:#fff;
+  
 }

@@ -1,12 +1,12 @@
 .aktSlika {
-  background: url('../../../assets/Slike/iot2.jpg');
+  background: url('../../../assets/Slike/iot2.jpeg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 
 }
 .row {
-  background-color: whitesmoke;
+  background-color: rgba(248, 248, 248, 0.877);
   height: 500px;
 }
 
