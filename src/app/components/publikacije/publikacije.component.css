@@ -28,7 +28,7 @@ button{
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  
+
 }
 .vijest{
   padding-top: 260px;
@@ -36,4 +36,7 @@ button{
   font-size: 55px;
   color:rgba(211, 211, 211, 0.801);
   letter-spacing: 8px;
+}
+.publik {
+  min-height: 500px;
 }

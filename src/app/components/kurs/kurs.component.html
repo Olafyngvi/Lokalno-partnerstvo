@@ -51,6 +51,22 @@
               <div class="blog-content">
                   <div class="pp" [innerHTML]="kurs.Opis">
                   </div><!-- end pp -->
+                  <table class="table mt-5">
+                    <thead>
+                      <tr>
+                        <th>Cijena</th>
+                        <th>Trajanje</th>
+                        <th>Početak</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{kurs.Cijena}} KM</td>
+                        <td>{{kurs.Trajanje}} sedmice</td>
+                        <td>{{kurs.DatumPocetka | date}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
                   <div *ngIf="datumKurs > datumDanas">
                     <button class=" btn btn-primary mb-4 mt-4" routerLink="/prijava/{{id}}/{{kurs.Naslov}}/{{bool}}">Prijavi se</button>
                   </div>
@@ -110,12 +126,12 @@
                   <hr>
                   <div class="">
                       <div class="">
-                          <a *ngFor="let ned of nedavno" routerLink="/kurs/{{ned.Id}}/{{bool}}" class=" list-group-item-action flex-column align-items-start">
+                          <a *ngFor="let index of [0,1,2,3,4,5,6,7,8,9]" routerLink="/kurs/{{nedavno[index].Id}}/{{bool}}" class=" list-group-item-action flex-column align-items-start">
                               <div class="w-100 justify-content-between lista">
-                                  <h5>{{ned.Naslov}}</h5>
-                                  <small>{{ned.DatumPocetka | date}}</small>
+                                  <h5>{{nedavno[index].Naslov}}</h5>
+                                  <small>{{nedavno[index].DatumPocetka | date}}</small>
                               </div>
-                              <hr>
+                              <hr *ngIf="nedavno[index] !== undefined">
                           </a>
                       </div>
                   </div><!-- end blog-list -->

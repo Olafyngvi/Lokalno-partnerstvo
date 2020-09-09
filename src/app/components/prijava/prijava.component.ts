@@ -79,15 +79,17 @@ export class PrijavaComponent implements OnInit {
     if (form.invalid) {
       this.cds.alert('Validacija', 'Popunite sva tražena polja');
     } else {
+      debugger;
       this.captchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
         size: 'invisible',
         callback: (response) => {
-          // reCAPTCHA solved, allow signInWithPhoneNumber.
+          console.log('okinuta', response);
           this.prijava.EventId = this.id;
           this.prijava.EventNaziv = this.naziv;
           this.prijava.Objava = this.objava;
           this.prijavaService.dodajPrijavu(this.prijava);
           this.router.navigate(['/hvala']);
+
         },
         'expired-callback': () => {
           console.log('expired');

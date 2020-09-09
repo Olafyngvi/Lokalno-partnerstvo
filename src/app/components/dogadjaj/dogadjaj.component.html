@@ -79,12 +79,12 @@
                       <hr>
                       <div class="">
                           <div class="">
-                              <a *ngFor="let ned of nedavno" routerLink="/dogadjaj/{{ned.Id}}" class="list-group-item-action flex-column align-items-start">
+                              <a *ngFor="let index of [0,1,2,3,4,5,6,7,8,9]" routerLink="/dogadjaj/{{nedavno[index].Id}}" class="list-group-item-action flex-column align-items-start">
                                   <div class="w-100 justify-content-between">
-                                      <h5>{{ned.Naslov}}</h5>
-                                      <small>{{ned.DatumPocetka | date}}</small>
+                                      <h5>{{nedavno[index].Naslov}}</h5>
+                                      <small>{{nedavno[index].DatumPocetka | date}}</small>
                                   </div>
-                                  <hr>
+                                  <hr *ngIf="nedavno[index] !== undefined">
                               </a>
                           </div>
                       </div><!-- end blog-list -->
