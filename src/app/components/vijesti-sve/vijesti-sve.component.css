@@ -30,8 +30,7 @@ a {
   padding-left: 5% !important;
 }
 .vijestiBanner {
-background-image:linear-gradient(rgba(22, 99, 214, 0.137), rgba(34, 104, 209, 0.144)), url(../../../assets/Slike/vestibaner.jpg);
-
+background-image: linear-gradient(to right, rgb(255, 255, 255) 16%,rgba(41, 96, 168, 0) 90%), url(../../../assets/Slike/vestibaner.jpg);
   background-attachment: fixed;
   background-size: cover;
   height: 500px;
@@ -39,8 +38,9 @@ background-image:linear-gradient(rgba(22, 99, 214, 0.137), rgba(34, 104, 209, 0.
   
 }
 .vijest{
-  padding-top: 150px;
-  padding-left: 360px;
-  font-size: 90px;
-  color:#fff;
+  padding-top: 260px;
+  padding-left: 130px;
+  font-size: 60px;
+  color:rgba(61, 140, 177, 0.637);
+  letter-spacing: 8px;
 }

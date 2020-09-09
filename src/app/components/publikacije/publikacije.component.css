@@ -21,19 +21,19 @@ button{
 }
 
 .usluge {
-  padding-top: 200px;
-  height: 600px;
-  background: linear-gradient(rgba(46, 112, 211, 0), rgba(126, 163, 218, 0.473)), url("../../../assets/Slike/publikacijebaner.jpeg");
+
+  height: 500px;
+  background: linear-gradient(to right, rgb(12, 8, 8) 5%,rgba(41, 96, 168, 0) 95%), url("../../../assets/Slike/publikacijebaner.jpeg");
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  padding-top: 10%;
+  
 }
 .vijest{
-  padding-top: 100px;
-  padding-left: 1460px;
-  font-size: 60px;
-  color:#fff;
-  
+  padding-top: 260px;
+  padding-left: 130px;
+  font-size: 55px;
+  color:rgba(211, 211, 211, 0.801);
+  letter-spacing: 8px;
 }
