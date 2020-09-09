@@ -23,7 +23,7 @@ export class DogadjajiService {
 
   sviDogadjaji(): Observable<Dogadjaj[]> {
     // tslint:disable-next-line: max-line-length
-    const collection: AngularFirestoreCollection<Dogadjaj> = this.afs.collection('dogadjaji', ref => ref.orderBy('DatumObjave', 'desc'));
+    const collection: AngularFirestoreCollection<Dogadjaj> = this.afs.collection('dogadjaji', ref => ref.orderBy('DatumPocetka', 'asc'));
     const collection$: Observable<Dogadjaj[]> = collection.snapshotChanges().pipe(
         map(actions => {
             return actions.map(action  => {

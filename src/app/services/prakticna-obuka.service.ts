@@ -22,7 +22,7 @@ export class PrakticnaObukaService {
               private auth: AngularFireAuth) { }
   sveObuke(): Observable<Prakticne[]> {
     // tslint:disable-next-line: max-line-length
-    const collection: AngularFirestoreCollection<Prakticne> = this.afs.collection('prakticneObuke', ref => ref.orderBy('DatumObjave', 'desc'));
+    const collection: AngularFirestoreCollection<Prakticne> = this.afs.collection('prakticneObuke', ref => ref.orderBy('DatumPocetka', 'asc'));
     const collection$: Observable<Prakticne[]> = collection.snapshotChanges().pipe(
         map(actions => {
             return actions.map(action  => {

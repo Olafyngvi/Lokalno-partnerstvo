@@ -23,7 +23,7 @@ export class KursService {
 
     sviKursevi(): Observable<Kurs[]> {
     // tslint:disable-next-line: max-line-length
-    const collection: AngularFirestoreCollection<Kurs> = this.afs.collection('kursevi', ref => ref.orderBy('DatumObjave', 'desc'));
+    const collection: AngularFirestoreCollection<Kurs> = this.afs.collection('kursevi', ref => ref.orderBy('DatumPocetka', 'asc'));
     const collection$: Observable<Kurs[]> = collection.snapshotChanges().pipe(
         map(actions => {
             return actions.map(action  => {
