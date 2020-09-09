@@ -17,12 +17,13 @@
 
 .text-center{
   display: block;
-  background-color: #7BB342;
-  padding: 20px;
+  background-color: #066399ab;
+  padding: 18px;
   color: #fff;
+  font-size: 22px;
 }
 .plava{
-  background-color: #007DC5;
+  background-color: #57832bc2;
 }
 a:hover {
   text-decoration: none;
