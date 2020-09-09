@@ -1,18 +1,5 @@
-.pozadina {
-  background:linear-gradient(rgba(22, 99, 214, 0.39), rgba(34, 104, 209, 0.582)), url("onama1.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
 
-}
 
-.onama{
-  height: 920px;
-  background-color: rgba(241, 240, 240, 0.096);
-  padding-top:110px;
-
-}
 
 .slikepartneri{
   display: block;
@@ -81,3 +68,18 @@ i{
   font-weight: 100;
   padding: 70px 0;
 }
+.vijestiBanner {
+  background-image: linear-gradient(to right, rgb(255, 255, 255) 16%,rgba(41, 96, 168, 0) 90%), url(../../../assets/Slike/onama.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    height: 500px;
+    background-position: center;
+    
+  }
+  .vijest{
+    padding-top: 260px;
+    padding-left: 130px;
+    font-size: 60px;
+    color:rgba(139, 96, 46, 0.637);
+    letter-spacing: 6px;
+  }

@@ -16,7 +16,7 @@ img {
 
 .carousel-caption button{
 
-    background-color: #7BB342;
+    background-color: #57832b;
       border: none;
       padding: 10px;
     width: 200px;
@@ -25,6 +25,7 @@ img {
     margin-top: 30px;
         margin-bottom: 30px;
     cursor: pointer;
+    letter-spacing: 2px;
     }
 
 
