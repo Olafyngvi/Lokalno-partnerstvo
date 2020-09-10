@@ -124,8 +124,8 @@ a{
 
 .main_navigation_banner { margin-left: 0px;  float: left; list-style: none;}
 .main_navigation_banner li { margin-left:35px; display: inline-block; }
-.main_navigation_banner li a:link, .main_navigation_banner li a:visited { color:#1c1c1c; font-size: 90%; font-weight: normal; text-decoration: none; padding: 5px 0; border-bottom: 4px solid transparent; transition: border-bottom 0.2s; }
-.main_navigation_banner li a:hover, .main_navigation_banner li a:active { padding-bottom: 10px; border-bottom: 4px solid #236d9d; }
+.main_navigation_banner li a:link, .main_navigation_banner li a:visited { color:#1c1c1c; font-size: 90%; font-weight: normal; text-decoration: none; padding: 5px 0; border-bottom: 2px solid transparent; transition: border-bottom 0.2s; }
+.main_navigation_banner li a:hover, .main_navigation_banner li a:active { padding-bottom: 5px; border-bottom: 2px solid #236d9d; }
 
 /*  ----------------------------  */
 /*        OVERLAY MENU            */

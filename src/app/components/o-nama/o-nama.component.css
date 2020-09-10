@@ -1,6 +1,5 @@
 
 
-
 .slikepartneri{
   display: block;
   margin: 0 auto;
@@ -20,7 +19,7 @@ a{
   display: block;
   text-align: center;
   text-decoration: none;
-  color: #0775cb;
+  color: #066399cc;
   margin-top: 25px;
   font-size: 14px;
 
@@ -44,7 +43,7 @@ a{
 }
 .plavi p{
   color: #fff;
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -52,21 +51,21 @@ a{
 
 i{
   display: block;
-  font-size: 75px;
+  font-size: 70px;
   text-align: center;
   color: #fff;
 
 }
 .podnaslov{
-  margin-top: 100px;
+  margin-top: 20px;
   display: block;
-  font-size: 30px;
-  color: #0775cb;
+  font-size: 27px;
+  color:rgba(31, 134, 134, 0.747);
   text-align: center;
-  width: 30%;
-  margin-left: 35%;
+  width: 40%;
+  margin-left: 30%;
   font-weight: 100;
-  padding: 70px 0;
+  padding: 50px 0;
 }
 .vijestiBanner {
   background-image: linear-gradient(to right, rgb(255, 255, 255) 16%,rgba(41, 96, 168, 0) 90%), url(../../../assets/Slike/onama.jpg);
@@ -80,6 +79,11 @@ i{
     padding-top: 260px;
     padding-left: 130px;
     font-size: 60px;
-    color:rgba(139, 96, 46, 0.637);
-    letter-spacing: 6px;
+    color:rgba(38, 151, 151, 0.671);
+    letter-spacing: 4px;
+  }
+  .opis{
+    text-align: justify;
+    width: 70%;
+    margin-left: 15%;
   }
