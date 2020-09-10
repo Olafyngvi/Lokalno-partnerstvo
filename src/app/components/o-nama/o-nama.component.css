@@ -44,7 +44,7 @@ a{
 }
 .plavi p{
   color: #fff;
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -52,7 +52,7 @@ a{
 
 i{
   display: block;
-  font-size: 75px;
+  font-size: 70px;
   text-align: center;
   color: #fff;
 
@@ -60,7 +60,7 @@ i{
 .podnaslov{
   margin-top: 20px;
   display: block;
-  font-size: 30px;
+  font-size: 25px;
   color: #0775cb;
   text-align: center;
   width: 40%;
@@ -72,7 +72,7 @@ i{
   background-image: linear-gradient(to right, rgb(255, 255, 255) 16%,rgba(41, 96, 168, 0) 90%), url(../../../assets/Slike/onama.jpg);
     background-attachment: fixed;
     background-size: cover;
-    height: 500px;
+    height: 400px;
     background-position: center;
     
   }
@@ -80,8 +80,8 @@ i{
     padding-top: 260px;
     padding-left: 130px;
     font-size: 60px;
-    color:rgba(139, 96, 46, 0.637);
-    letter-spacing: 6px;
+    color:rgba(38, 151, 151, 0.671);
+    letter-spacing: 4px;
   }
   .opis{
     text-align: justify;
