@@ -58,15 +58,15 @@ i{
 
 }
 .podnaslov{
-  margin-top: 100px;
+  margin-top: 20px;
   display: block;
   font-size: 30px;
   color: #0775cb;
   text-align: center;
-  width: 30%;
-  margin-left: 35%;
+  width: 40%;
+  margin-left: 30%;
   font-weight: 100;
-  padding: 70px 0;
+  padding: 50px 0;
 }
 .vijestiBanner {
   background-image: linear-gradient(to right, rgb(255, 255, 255) 16%,rgba(41, 96, 168, 0) 90%), url(../../../assets/Slike/onama.jpg);
@@ -82,4 +82,9 @@ i{
     font-size: 60px;
     color:rgba(139, 96, 46, 0.637);
     letter-spacing: 6px;
+  }
+  .opis{
+    text-align: justify;
+    width: 70%;
+    margin-left: 15%;
   }
