@@ -29,7 +29,7 @@ export class VijestiSveComponent implements OnInit {
         doc.Sadrzaj = jQuery(doc.Sadrzaj).text();
       });
       // tslint:disable-next-line: max-line-length
-      this.items = this.vijesti.map((x, i) => ({ id: (i + 1), Naslov: x.Naslov, Id: x.Id, Podnaslov: x.Podnaslov, Slika: x.Slika, Kategorija: x.Kategorija, Sadrzaj: x.Sadrzaj, Datum: x.Datum}));
+      this.items = this.vijesti.map((x, i) => ({ id: (i + 1), Naslov: x.Naslov, Id: x.Id, Podnaslov: x.Podnaslov, Slika: x.Slika, Kategorija: x.Kategorija, Sadrzaj: x.Sadrzaj, Datum: x.Datum, Objava: x.Objava}));
     });
   }
   onChangePage(pageOfItems: Array<any>) {
