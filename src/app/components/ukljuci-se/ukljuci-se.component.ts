@@ -28,14 +28,17 @@ export class UkljuciSeComponent implements OnInit {
       this.kursevi = kursevi;
       this.kursevi.forEach(doc => {
         const ref = this.storage.ref(`Kursevi/${doc.Naslov}`);
-        this.aktivni.push({Id: doc.Id, Naslov: doc.Naslov, Opis: doc.Opis, Slika: ref.getDownloadURL(), Vrsta: false, Dugme: 'Prijavi se'});
+        // tslint:disable-next-line: max-line-length
+        this.aktivni.push({Id: doc.Id, Naslov: doc.Naslov, Opis: jQuery.htmlPrefilter(doc.Opis).toString().substring(0, 200) + '...', Slika: ref.getDownloadURL(), Vrsta: false, Dugme: 'Prijavi se'});
+        console.log(this.aktivni);
       });
     });
     this.prakticneService.getAktivni().subscribe(obuke => {
       this.obuke = obuke;
       this.obuke.forEach(doc => {
         const ref = this.storage.ref(`Obuke/${doc.Naslov}`);
-        this.aktivni.push({Id: doc.Id, Naslov: doc.Naslov, Opis: doc.Opis, Slika: ref.getDownloadURL(), Vrsta: true, Dugme: 'Prijavi se'});
+        // tslint:disable-next-line: max-line-length
+        this.aktivni.push({Id: doc.Id, Naslov: doc.Naslov, Opis: jQuery.htmlPrefilter(doc.Opis).toString().substring(0, 200) + '...', Slika: ref.getDownloadURL(), Vrsta: true, Dugme: 'Prijavi se'});
       });
     });
     const slik = this.storage.ref(`Onama/onama.jpg`);

@@ -23,12 +23,12 @@
             <div class="mask rgba-black-light"></div>
           </div>
           <div class="carousel-caption">
-            <h3 class="h3-responsive">{{kurs.Naslov}}</h3>
-            <p [innerHTML]="kurs.Opis"></p>
+            <h3 class="ukljuciseNaslov">{{kurs.Naslov}}</h3>
+            <p class="ukljuciseOpis" [innerHTML]="kurs.Opis"></p>
             <br>
             <br>
-            <button *ngIf="kurs.Id !== undefined" routerLink="/prijava/{{kurs.Id}}/{{kurs.Naslov}}/{{kurs.Vrsta}}" class="btn prijava">{{kurs.Dugme}}</button>
-            <button *ngIf="kurs.Id === undefined" routerLink="/o-nama" class="btn prijava">{{kurs.Dugme}}</button>
+            <button *ngIf="kurs.Id !== undefined" routerLink="/prijava/{{kurs.Id}}/{{kurs.Naslov}}/{{kurs.Vrsta}}" class="btn prijava ukljuciseDugme">{{kurs.Dugme}}</button>
+            <button *ngIf="kurs.Id === undefined" routerLink="/o-nama" class="btn prijava ukljuciseDugme">{{kurs.Dugme}}</button>
           </div>
         </div>
       </div>

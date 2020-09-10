@@ -650,7 +650,9 @@ html{position:relative;min-height:100%}body{overflow-x:hidden}body.sticky-footer
 p{
   font-family: sans-serif;
 }
+.carousel-caption {
 
+}
 /**************************************
 
     File Name: responsive.css
@@ -723,6 +725,14 @@ p{
   .overlay {
     top: 180px;
   }
+  .carousel-caption {
+    width: 80% !important;
+    right: 10% !important;
+    left: 10% !important;
+  }
+  .ukljucise {
+    padding-top: 188px !important;
+  }
   .mobile-nav-icon i {
     color: black;
   }
@@ -735,9 +745,19 @@ p{
 }
 
 @media (max-width: 768px) {
-
   .post-sharing .btn {
       padding: 0.6rem !important;
+  }
+  .ukljuciseNaslov {
+    font-size: 30px !important;
+  }
+  .ukljuciseOpis {
+    font-size: 15px !important;
+  }
+  .ukljuciseDugme {
+    width: 100px !important;
+    margin-top: 0px!important;
+    margin-bottom: 0px!important;
   }
   .blog-custom-build .down-mobile,
   .blog-title-area .down-mobile {
@@ -786,6 +806,18 @@ p{
 @media (max-width: 590px) {
   .pozadina {
     top: 180px;
+  }
+  .carousel-caption {
+    padding-top: 30% !important;
+  }
+  .ukljuciseNaslov {
+    font-size: 25px !important;
+  }
+  .ukljuciseOpis {
+    font-size: 10px !important;
+  }
+  .ukljuciseDugme {
+    margin-bottom: 10px!important;
   }
   .comment-list .media {
       float: none !important;
