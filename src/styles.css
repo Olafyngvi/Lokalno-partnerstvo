@@ -338,7 +338,7 @@ footer {width: 100%;  margin: 0; padding: 0;  border-top: 1px solid #a3a2a2; bac
 footer ul {background: #e2e2e2;}
 
 .footer-top {height: 220px;  display: block; padding-top: 50px; clear: both}
-.footer-title {margin-left: 250px; margin-right: 250px; color: aliceblue;}
+.footer-title {margin-left: 25%; color: aliceblue;}
 .footer-title h5 {font-size: 150%; color: aliceblue; font-weight: 500; padding: 0px 0px 2px 0px;}
 .footer-title p {font-size: 90%; margin-bottom: 10px;}
 
@@ -370,12 +370,12 @@ footer ul li:hover {font-weight: 400}
 .sh-l {color: #007bb5; font-weight: 500}
 .sh-i {color: #8a3ab9;} */
 
-.footer-bottom {margin-left: 250px; margin-right: 250px; color: aliceblue;}
+.footer-bottom {margin-left: 25%; color: aliceblue;}
 .footer-bottom hr {
     margin-top: 20px;
 }
 .footer-bottom p {
-    width: 25%;
+    width: 60%;
     font-size: 80%;
     color: beige;
     padding-bottom:
@@ -580,6 +580,7 @@ html{position:relative;min-height:100%}body{overflow-x:hidden}body.sticky-footer
 
 .masonry-box {
   border: 1.5rem solid #fff;
+  border-bottom: none;
 
 }
 .clearfix {
@@ -1823,3 +1824,6 @@ hr.invis3 {
 
 }
 
+.pagination {
+  padding-left: 40% !important;
+}

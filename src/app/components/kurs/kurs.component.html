@@ -61,7 +61,8 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>{{kurs.Cijena}} KM</td>
+                        <td *ngIf="kurs.Cijena !== 0">{{kurs.Cijena}} KM</td>
+                        <td *ngIf="kurs.Cijena === 0">Besplatno</td>
                         <td>{{kurs.Trajanje}} sedmice</td>
                         <td>{{kurs.DatumPocetka | date}}</td>
                       </tr>

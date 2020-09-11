@@ -24,6 +24,8 @@ export class PrijavaComponent implements OnInit {
   captchaVerifier: firebase.auth.RecaptchaVerifier;
   bool: any;
   objava: string;
+  kurs: Kurs;
+  obuka: Prakticne;
   naziv: string;
   id: string;
   prijava: Prijava = {
@@ -54,11 +56,13 @@ export class PrijavaComponent implements OnInit {
     this.bool = this.route.snapshot.params.p;
     if (this.bool === 'true') {
       this.prakticneService.getObuka(this.id).subscribe(obuka => {
+        this.obuka = obuka;
         this.objava = obuka.Objava;
       });
     } else {
       this.kursService.getKurs(this.id).subscribe(kurs => {
         this.objava = kurs.Objava;
+        this.kurs = kurs;
       });
     }
     this.naziv = this.route.snapshot.params.naziv;

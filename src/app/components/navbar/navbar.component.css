@@ -29,3 +29,13 @@ hr {
 a:hover {
   text-decoration: none;
 }
+.topsocial {
+  padding-top: 8px;
+}
+.topsearch {
+  height: 30px;
+  padding-top: 15px;
+}
+.mobile-nav-icon {
+  padding-top: 0px !important;
+}
