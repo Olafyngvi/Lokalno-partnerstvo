@@ -6,7 +6,7 @@
 <div class="container pb-5">
   <div class="row pt-5 pb-5">
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="border-right: 1px solid grey;">
-      <a routerLink="/kursevi"><h3 class="text-center mb-5">Kursevi</h3></a>
+      <h3 class="text-center mb-5">Kursevi</h3>
         <div class="widget">
             <div>
                     <!--<a *ngFor="let ned of kursevi" routerLink="/kurs/{{ned.Id}}/false" class="list-group-item list-group-item-action flex-column align-items-start mb-3">
@@ -16,7 +16,7 @@
                             <p>Početak: {{ned.DatumPocetka | date}}</p>
                         </div>
                     </a>-->
-                    <span *ngFor="let ned of kursevi" >
+                    <span *ngFor="let ned of kursPet" >
                       <div class="card" style="width: 100%; margin-bottom: 50px">
                         <a routerLink="/kurs/{{ned.Id}}/false"><img class="card-img-top" [src]="ned.Slika | async" alt=""></a>
                         <div class="card-body">
@@ -31,7 +31,8 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td>{{ned.Cijena}} KM</td>
+                                <td *ngIf="ned.Cijena !== 0">{{ned.Cijena}} KM</td>
+                                <td *ngIf="ned.Cijena === 0">Besplatno</td>
                                 <td>{{ned.Trajanje}} sedmice</td>
                                 <td>{{ned.DatumPocetka | date}}</td>
                               </tr>
@@ -43,9 +44,10 @@
                     </span>
             </div><!-- end blog-list -->
         </div><!-- end widget -->
+        <a *ngIf="kursevi[0] !== undefined" class="saznaj" (click)="loadKurs()"><i style="font-size: 30px;" class="ion-ios-arrow-down"></i></a>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="border-right: 1px solid grey;">
-      <a routerLink="/obuke"><h3 class="text-center plava mb-5">Praktične obuke</h3></a>
+      <h3 class="text-center plava mb-5">Praktične obuke</h3>
       <!--<div class="widget">
         <div class="blog-list-widget">
             <div class="list-group">
@@ -76,7 +78,8 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td>{{ned.Cijena}} KM</td>
+                          <td *ngIf="ned.Cijena !== 0">{{ned.Cijena}} KM</td>
+                          <td *ngIf="ned.Cijena === 0">Besplatno</td>
                           <td>{{ned.Trajanje}} sedmice</td>
                           <td>{{ned.DatumPocetka | date}}</td>
                         </tr>
@@ -88,9 +91,10 @@
               </span>
       </div><!-- end blog-list -->
   </div><!-- end widget -->
+  <a *ngIf="kursevi[0] !== undefined" (click)="loadObuke()" class="saznaj" href="#"><i style="font-size: 30px;" class="ion-ios-arrow-down"></i></a>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-      <a routerLink="/dogadjaji"><h3 class="text-center mb-5">Događaji</h3></a>
+      <h3 class="text-center mb-5">Događaji</h3>
       <!--<div class="widget">
         <div class="blog-list-widget">
             <div class="list-group">
@@ -131,6 +135,7 @@
               </span>
       </div><!-- end blog-list -->
   </div><!-- end widget -->
+  <a *ngIf="kursevi[0] !== undefined" (click)="loadDogadjaji()" class="saznaj" href="#"><i style="font-size: 30px;" class="ion-ios-arrow-down"></i></a>
     </div>
   </div>
 </div>

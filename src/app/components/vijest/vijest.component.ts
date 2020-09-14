@@ -50,7 +50,7 @@ export class VijestComponent implements OnInit {
       this.storage.ref('Vijesti/' + this.vijest.Podnaslov).getDownloadURL().subscribe(slik => {
         this.meta.addTags([
           { property: 'og:image', content: slik},
-          { property: 'og:url', content: `http://localhost:4200/vijest/${this.vijest.Id}`},
+          { property: 'og:url', content: `https://angular.demo.ba/vijest/${this.vijest.Id}`},
           { property: 'og:type', content: 'website' },
           { property: 'og:title', content: this.vijest.Naslov},
           { property: 'og:description', content: jQuery(this.vijest.Sadrzaj).text()}

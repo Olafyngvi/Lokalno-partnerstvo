@@ -41,7 +41,7 @@ export class DogadjajComponent implements OnInit {
       this.storage.ref('Dogadjaji/' + this.dogadjaj.Naslov).getDownloadURL().subscribe(slik => {
         this.meta.addTags([
           { property: 'og:image', content: slik},
-          { property: 'og:url', content: `http://localhost:4200/dogadjaj/${this.dogadjaj.Id}`},
+          { property: 'og:url', content: `https://angular.demo.ba/dogadjaj/${this.dogadjaj.Id}`},
           { property: 'og:type', content: 'website' },
           { property: 'og:title', content: this.dogadjaj.Naslov},
           { property: 'og:description', content: jQuery(this.dogadjaj.Opis).text()}

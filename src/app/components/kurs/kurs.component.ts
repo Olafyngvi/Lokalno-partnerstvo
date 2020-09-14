@@ -54,7 +54,7 @@ export class KursComponent implements OnInit {
         this.storage.ref('Obuke/' + this.kurs.Naslov).getDownloadURL().subscribe( slik => {
           this.meta.addTags([
             {property: 'og:image', content: slik},
-            { property: 'og:url', content: `http://localhost:4200/kurs/${{[this.id]: this.id}}/${{[this.bool]: this.bool}}` },
+            { property: 'og:url', content: `https://angular.demo.ba/kurs/${{[this.id]: this.id}}/${{[this.bool]: this.bool}}` },
             { property: 'og:type', content: 'website' },
             { property: 'og:title', content: this.kurs.Naslov},
             { property: 'og:description', content: this.kurs.Opis}

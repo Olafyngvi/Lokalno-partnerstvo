@@ -56,7 +56,7 @@ export class PrijavaComponent implements OnInit {
     this.bool = this.route.snapshot.params.p;
     if (this.bool === 'true') {
       this.prakticneService.getObuka(this.id).subscribe(obuka => {
-        this.obuka = obuka;
+        this.kurs = obuka;
         this.objava = obuka.Objava;
       });
     } else {
@@ -83,23 +83,11 @@ export class PrijavaComponent implements OnInit {
     if (form.invalid) {
       this.cds.alert('Validacija', 'Popunite sva tražena polja');
     } else {
-      debugger;
-      this.captchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
-        size: 'invisible',
-        callback: (response) => {
-          console.log('okinuta', response);
-          this.prijava.EventId = this.id;
-          this.prijava.EventNaziv = this.naziv;
-          this.prijava.Objava = this.objava;
-          this.prijavaService.dodajPrijavu(this.prijava);
-          this.router.navigate(['/hvala']);
-
-        },
-        'expired-callback': () => {
-          console.log('expired');
-        }
-      },
-      this.auth.auth.app);
+      this.prijava.EventId = this.id;
+      this.prijava.EventNaziv = this.naziv;
+      this.prijava.Objava = this.objava;
+      this.prijavaService.dodajPrijavu(this.prijava);
+      this.router.navigate(['/hvala']);
     }
   }
   numberOnly(event): boolean {
