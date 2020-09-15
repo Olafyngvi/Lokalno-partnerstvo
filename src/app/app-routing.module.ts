@@ -45,7 +45,7 @@ import { PretragaComponent } from './components/pretraga/pretraga.component';
 import { HvalaComponent } from './components/hvala/hvala.component';
 
 const redirectLoggedIndashboard = () => redirectLoggedInTo(['dashboard']);
-const redirectUnauthorizedToLogin = redirectUnauthorizedTo(['login']);
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 
 const routes: Routes = [
 
