@@ -51,8 +51,8 @@
 }
 
 .plavi{
-  background:linear-gradient(rgba(22, 99, 214, 0.719), rgba(34, 104, 209, 0.712)), url("plavoslika1.jpg");
-  background-position:ctop;
+  background:linear-gradient(rgba(22, 99, 214, 0.719), rgba(34, 104, 209, 0.712)), url(../../../assets/Slike/plavoslika1.jpg);
+  background-position:top;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;

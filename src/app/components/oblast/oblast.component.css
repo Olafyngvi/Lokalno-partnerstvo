@@ -34,6 +34,13 @@
     background-size: cover;
   
   }
+  .aktSlika4 {
+    background: url('../../../assets/Slike/oblast4.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  }
   .row {
     background-color: rgba(248, 248, 248, 0.877);
     height: 500px;
