@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   firebase : {
     apiKey: 'AIzaSyBdzZWrnjOZKnM7rEhBKR1ugPFUTu9eL0M',
-    authDomain: 'angular.demo.ba/',
+    authDomain: 'https://angular.demo.ba/',
     databaseURL: 'https://obrazovanje-odraslih.firebaseio.com',
     projectId: 'obrazovanje-odraslih',
     storageBucket: 'obrazovanje-odraslih.appspot.com',

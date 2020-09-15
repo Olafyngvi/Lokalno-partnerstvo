@@ -234,6 +234,11 @@ jQuery(function($){
       $('.responsive-menu').toggleClass('expand')
   })
 });
+jQuery(function($){
+  $( '.menuItem' ).click(function(){
+      $('.responsive-menu').toggleClass('expand')
+  })
+});
 
 jQuery(function($){
   $( '.box25-m1' ).click(function(){

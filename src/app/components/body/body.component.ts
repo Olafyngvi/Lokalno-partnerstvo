@@ -26,7 +26,6 @@ export class BodyComponent implements OnInit {
 
   ngOnInit() {
     this.kursService.get5().subscribe(kursevi => {
-      debugger;
       this.kursevi = kursevi;
       this.kursevi.forEach(cur => {
         const ref = this.storage.ref(`Kursevi/${cur.Naslov}`);
