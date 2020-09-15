@@ -201,7 +201,7 @@ a{
 /*          MINI NAV              */
 /*  ----------------------------  */
 
-.responsive-menu-container { margin: 0; padding-top: 100px; width: 100%; background: #fff; float: left; }
+.responsive-menu-container { margin: 0; width: 100%; background: #fff; float: left; }
 .responsive-menu-container .row { margin-top: 40px; height: 40px;}
 .responsive-menu-container .row:hover { background: #2980b9; color: #fff;}
 
@@ -702,11 +702,11 @@ p{
     margin-right: auto;
     display: block;
   }
+  .aktSlika {
+    height: 400px;
+  }
   .full_nav {
     display: none;
-  }
-  .aktuelno {
-    height: 1000px !important;
   }
   .custombox .blog-list-widget,
   .custombox .blog-box {
