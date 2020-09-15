@@ -86,7 +86,7 @@ a{
 /*        TOP NAVIGATION          */
 /*  ----------------------------  */
 
-.top-navigation { position: fixed; width: 100%; height: auto; background: #fff; z-index: 4021}
+.top-navigation { position: fixed; width: 100%; height: 11vh; background: #fff; z-index: 4021}
 
 .top-navigation-bar img {margin-right: 20px;}
 .main_navigation_banner span {color: #000;}
@@ -726,13 +726,19 @@ p{
   .overlay {
     top: 180px;
   }
+  .pagination {
+    padding-left: 30% !important;
+  }
+  .navigacijaSrednja {
+    display: none;
+  }
+  .empty {
+    display: none !important;
+  }
   .carousel-caption {
     width: 80% !important;
     right: 10% !important;
     left: 10% !important;
-  }
-  .ukljucise {
-    padding-top: 188px !important;
   }
   .mobile-nav-icon i {
     color: black;
@@ -754,6 +760,9 @@ p{
   }
   .ukljuciseOpis {
     font-size: 15px !important;
+  }
+  .pagination {
+    padding-left: 25% !important;
   }
   .ukljuciseDugme {
     width: 100px !important;
@@ -808,8 +817,14 @@ p{
   .pozadina {
     top: 180px;
   }
+  .carousel-indicators {
+    height: 20px;
+  }
+  .pagination {
+    padding-left: 15% !important;
+  }
   .carousel-caption {
-    padding-top: 30% !important;
+    padding-top: 40% !important;
   }
   .ukljuciseNaslov {
     font-size: 25px !important;
@@ -881,6 +896,9 @@ p{
 @media (max-width: 410px) {
   .onama {
     height: 1800px !important;
+  }
+  .pagination {
+    padding-left: 0px !important;
   }
 }
 @media (max-width: 380px) {
@@ -1825,5 +1843,5 @@ hr.invis3 {
 }
 
 .pagination {
-  padding-left: 40% !important;
+  padding-left: 40%;
 }

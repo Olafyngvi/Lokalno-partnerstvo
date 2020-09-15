@@ -11,7 +11,7 @@
   <div class="topbar-section">
       <div class="container-fluid">
           <div class="row">
-              <div class="col-lg-2">
+              <div class="col-lg-2 col-md-6 col-sm-6 col-6">
                   <div class="topsocial">
                     <a routerLink="">
                       <img src="../../../assets/Slike/logonovi.png" alt="">
@@ -19,7 +19,7 @@
                   </div><!-- end social -->
               </div><!-- end col -->
 
-              <div class="col-lg-8">
+              <div class="col-lg-8 navigacijaSrednja">
                   <div class="">
                     <div class="full_nav mt-5">
                       <div class="row" onmouseleave="closeNav_1(), closeNav_2(), closeNav_3()" >
@@ -236,7 +236,7 @@
                   </div>
               </div>
 
-              <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12 pt-4 d-flex justify-content-center">
+              <div class="col-lg-2 col-md-6 col-sm-6 col-6 pt-4 d-flex justify-content-center">
                   <div class="topsearch pull-right">
                     <form (ngSubmit)="onSubmit(rteForm)" #rteForm="ngForm" class="form-inline">
                       <input required type="text" style="width: 100%; border: none;" name="pretraga" [(ngModel)]="pretraga" class="form-control mr-3 empty" placeholder="&#xF002;">
