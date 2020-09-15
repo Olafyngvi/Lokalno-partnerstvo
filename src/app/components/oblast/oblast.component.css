@@ -10,7 +10,7 @@
     padding-top: 260px;
     padding-left: 130px;
     font-size: 60px;
-    color:rgba(38, 151, 151, 0.671);
+    color:rgba(187, 53, 43, 0.671);
     letter-spacing: 4px;
   }
   .aktSlika1 {
@@ -29,6 +29,13 @@
   }
   .aktSlika3 {
     background: url('../../../assets/Slike/oblast3.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  }
+  .aktSlika4 {
+    background: url('../../../assets/Slike/oblast4.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
