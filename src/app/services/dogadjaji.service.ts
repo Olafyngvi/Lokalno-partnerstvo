@@ -34,11 +34,29 @@ export class DogadjajiService {
         })
       );
     return collection$;
-}
+  }
+  get5(): Observable<Dogadjaj[]> {
+    // tslint:disable-next-line: max-line-length
+    const collection: AngularFirestoreCollection<Dogadjaj> = this.afs.collection('dogadjaji', ref => ref.orderBy('DatumPocetka', 'asc').limit(5));
+    const collection$: Observable<Dogadjaj[]> = collection.snapshotChanges().pipe(
+        map(actions => {
+            return actions.map(action  => {
+        const data = action.payload.doc.data() as Dogadjaj;
+        data.Id = action.payload.doc.id;
+        return data;
+          });
+        })
+      );
+    return collection$;
+  }
   getDogadjaji(): Observable<Dogadjaj[]> {
     const user = this.auth.auth.currentUser.displayName;
-    // tslint:disable-next-line: max-line-length
-    const collection: AngularFirestoreCollection<Dogadjaj> = this.afs.collection('dogadjaji', ref => ref.orderBy('DatumObjave', 'desc').where('Objava', '==', user));
+    let collection: AngularFirestoreCollection<Dogadjaj>;
+    if (user === 'Rijad Dzanko') {
+      collection = this.afs.collection('dogadjaji', ref => ref.orderBy('DatumObjave', 'desc'));
+    } else {
+      collection = this.afs.collection('dogadjaji', ref => ref.orderBy('DatumObjave', 'desc').where('Objava', '==', user));
+    }
     const collection$: Observable<Dogadjaj[]> = collection.snapshotChanges().pipe(
         map(actions => {
             return actions.map(action  => {

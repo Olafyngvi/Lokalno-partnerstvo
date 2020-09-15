@@ -49,10 +49,28 @@ getAktivni(): Observable<Kurs[]> {
     );
   return collection$;
 }
+  get5(): Observable<Kurs[]> {
+    // tslint:disable-next-line: max-line-length
+    const collection: AngularFirestoreCollection<Kurs> = this.afs.collection('kursevi', ref => ref.orderBy('DatumPocetka', 'asc').limit(5));
+    const collection$: Observable<Kurs[]> = collection.snapshotChanges().pipe(
+    map(actions => {
+        return actions.map(action  => {
+    const data = action.payload.doc.data() as Kurs;
+    data.Id = action.payload.doc.id;
+    return data;
+      });
+    })
+  );
+    return collection$;
+  }
   getKursevi(): Observable<Kurs[]> {
     const user = this.auth.auth.currentUser.displayName;
-    // tslint:disable-next-line: max-line-length
-    const collection: AngularFirestoreCollection<Kurs> = this.afs.collection('kursevi', ref => ref.orderBy('DatumObjave', 'desc').where('Objava', '==', user));
+    let collection: AngularFirestoreCollection<Kurs>;
+    if ( user === 'Rijad Dzanko') {
+      collection = this.afs.collection('kursevi', ref => ref.orderBy('DatumObjave', 'desc'));
+    } else {
+      collection = this.afs.collection('kursevi', ref => ref.orderBy('DatumObjave', 'desc').where('Objava', '==', user));
+    }
     const collection$: Observable<Kurs[]> = collection.snapshotChanges().pipe(
         map(actions => {
             return actions.map(action  => {

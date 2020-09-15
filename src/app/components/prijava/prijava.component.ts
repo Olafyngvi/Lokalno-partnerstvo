@@ -24,6 +24,8 @@ export class PrijavaComponent implements OnInit {
   captchaVerifier: firebase.auth.RecaptchaVerifier;
   bool: any;
   objava: string;
+  kurs: Kurs;
+  obuka: Prakticne;
   naziv: string;
   id: string;
   prijava: Prijava = {
@@ -54,11 +56,13 @@ export class PrijavaComponent implements OnInit {
     this.bool = this.route.snapshot.params.p;
     if (this.bool === 'true') {
       this.prakticneService.getObuka(this.id).subscribe(obuka => {
+        this.kurs = obuka;
         this.objava = obuka.Objava;
       });
     } else {
       this.kursService.getKurs(this.id).subscribe(kurs => {
         this.objava = kurs.Objava;
+        this.kurs = kurs;
       });
     }
     this.naziv = this.route.snapshot.params.naziv;
@@ -79,23 +83,11 @@ export class PrijavaComponent implements OnInit {
     if (form.invalid) {
       this.cds.alert('Validacija', 'Popunite sva tražena polja');
     } else {
-      debugger;
-      this.captchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
-        size: 'invisible',
-        callback: (response) => {
-          console.log('okinuta', response);
-          this.prijava.EventId = this.id;
-          this.prijava.EventNaziv = this.naziv;
-          this.prijava.Objava = this.objava;
-          this.prijavaService.dodajPrijavu(this.prijava);
-          this.router.navigate(['/hvala']);
-
-        },
-        'expired-callback': () => {
-          console.log('expired');
-        }
-      },
-      this.auth.auth.app);
+      this.prijava.EventId = this.id;
+      this.prijava.EventNaziv = this.naziv;
+      this.prijava.Objava = this.objava;
+      this.prijavaService.dodajPrijavu(this.prijava);
+      this.router.navigate(['/hvala']);
     }
   }
   numberOnly(event): boolean {

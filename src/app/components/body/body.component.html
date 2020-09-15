@@ -1,10 +1,10 @@
 <div class="sadrzaj">
-  <div class="row pt-5">
+  <div class="row">
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="border-right: 1px solid grey;">
-      <a routerLink="/kursevi"><h3 class="text-center mb-5">Kursevi</h3></a>
+      <h3 class="text-center mb-5">Kursevi</h3>
         <div class="widget">
             <div class="blog-list-widget">
-                <div class="list-group">
+                <div  class="list-group">
                     <a *ngFor="let ned of kursevi" routerLink="/kurs/{{ned.Id}}/false" class="list-group-item list-group-item-action flex-column align-items-start mb-3">
                         <div class="w-100 justify-content-between">
                           <img [src]="ned.Slika | async" alt="" class="nedavne float-left">
@@ -17,7 +17,7 @@
         </div><!-- end widget -->
     </div>
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="border-right: 1px solid grey;">
-      <a routerLink="/obuke"><h3 class="text-center plava mb-5">Praktične obuke</h3></a>
+      <h3 class="text-center plava mb-5">Praktične obuke</h3>
       <div class="widget">
         <div class="blog-list-widget">
             <div class="list-group">
@@ -33,7 +33,7 @@
     </div><!-- end widget -->
     </div>
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-      <a routerLink="/dogadjaji"><h3 class="text-center mb-5">Događaji</h3></a>
+      <h3 class="text-center mb-5">Događaji</h3>
       <div class="widget">
         <div class="blog-list-widget">
             <div class="list-group">

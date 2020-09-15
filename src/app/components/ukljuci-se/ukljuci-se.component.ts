@@ -30,7 +30,6 @@ export class UkljuciSeComponent implements OnInit {
         const ref = this.storage.ref(`Kursevi/${doc.Naslov}`);
         // tslint:disable-next-line: max-line-length
         this.aktivni.push({Id: doc.Id, Naslov: doc.Naslov, Opis: jQuery.htmlPrefilter(doc.Opis).toString().substring(0, 200) + '...', Slika: ref.getDownloadURL(), Vrsta: false, Dugme: 'Prijavi se'});
-        console.log(this.aktivni);
       });
     });
     this.prakticneService.getAktivni().subscribe(obuke => {
@@ -45,7 +44,5 @@ export class UkljuciSeComponent implements OnInit {
     console.log(slik);
     // tslint:disable-next-line: max-line-length
     this.aktivni.push({Id: undefined, Naslov: 'Lokalno partnerstvo za obrazovanje odraslih', Opis: '', Slika: slik.getDownloadURL(), Vrsta: null, Dugme: 'O nama'});
-  }
-  getUrl(slika: Observable<string>) {
   }
 }

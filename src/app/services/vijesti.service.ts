@@ -51,8 +51,12 @@ export class VijestiService {
 }
   getProducts(): Observable<Vijest[]> {
       const user = this.auth.auth.currentUser.displayName;
-      // tslint:disable-next-line: max-line-length
-      const collection: AngularFirestoreCollection<Vijest> = this.afs.collection('vijesti', ref => ref.orderBy('Datum', 'desc').where('Objava', '==', user));
+      let collection: AngularFirestoreCollection<Vijest>;
+      if ( user === 'Rijad Dzanko') {
+        collection = this.afs.collection('vijesti', ref => ref.orderBy('Datum', 'desc'));
+      } else {
+        collection = this.afs.collection('vijesti', ref => ref.orderBy('Datum', 'desc').where('Objava', '==', user));
+      }
       const collection$: Observable<Vijest[]> = collection.snapshotChanges().pipe(
           map(actions => {
               return actions.map(action  => {

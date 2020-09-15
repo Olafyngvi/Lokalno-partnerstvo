@@ -25,21 +25,22 @@ export class BodyComponent implements OnInit {
               private storage: AngularFireStorage) { }
 
   ngOnInit() {
-    this.kursService.sviKursevi().subscribe(kursevi => {
+    this.kursService.get5().subscribe(kursevi => {
+      debugger;
       this.kursevi = kursevi;
       this.kursevi.forEach(cur => {
         const ref = this.storage.ref(`Kursevi/${cur.Naslov}`);
         cur.Slika = ref.getDownloadURL();
       });
     });
-    this.prakticneService.sveObuke().subscribe(obuke => {
+    this.prakticneService.get5().subscribe(obuke => {
       this.prakticne = obuke;
       this.prakticne.forEach(cur => {
         const ref = this.storage.ref(`Obuke/${cur.Naslov}`);
         cur.Slika = ref.getDownloadURL();
       });
     });
-    this.dogadjajiService.sviDogadjaji().subscribe(dogadjaji => {
+    this.dogadjajiService.get5().subscribe(dogadjaji => {
       this.dogadjaji = dogadjaji;
       this.dogadjaji.forEach(cur => {
         const ref = this.storage.ref(`Dogadjaji/${cur.Naslov}`);
