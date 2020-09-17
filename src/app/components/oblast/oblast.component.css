@@ -4,7 +4,7 @@
     background-size: cover;
     height: 500px;
     background-position: center center;
-    
+
   }
   .oblasti{
     padding-top: 260px;
@@ -18,30 +18,30 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-  
+
   }
   .aktSlika2 {
     background: url('../../../assets/Slike/oblast1.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-  
+
   }
   .aktSlika3 {
     background: url('../../../assets/Slike/oblast3.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-  
+
   }
   .aktSlika4 {
     background: url('../../../assets/Slike/oblast4.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-  
+
   }
   .row {
     background-color: rgba(248, 248, 248, 0.877);
-    height: 500px;
+    height: auto;
   }

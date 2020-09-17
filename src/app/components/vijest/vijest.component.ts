@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
+import { SeoService } from '../../services/seo.service';
 
 import { AngularFireStorage } from '@angular/fire/storage';
 import { ActivatedRoute, Router, NavigationStart} from '@angular/router';
@@ -26,7 +27,8 @@ export class VijestComponent implements OnInit {
               private activatedRoute: ActivatedRoute,
               private footer: FooterService,
               private navbar: NavbarService,
-              private router: Router) {
+              private router: Router,
+              private seo: SeoService) {
               }
 
   ngOnInit(): void {
@@ -37,6 +39,10 @@ export class VijestComponent implements OnInit {
     this.id = this.activatedRoute.snapshot.params.id;
     this.vijestiService.getVijest('vijesti', this.id).subscribe(vijest => {
       this.vijest = vijest;
+      // tslint:disable-next-line: max-line-length
+      document.getElementById('shareFB').setAttribute('data-href', encodeURIComponent(document.URL));
+      // tslint:disable-next-line: max-line-length
+      document.getElementById('shareFBLink').setAttribute('href', 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL));
       this.vijestiService.getByKategorija(vijest.Kategorija).subscribe(slicno => {
         this.slicno = slicno;
         this.slicno.forEach(doc => {
@@ -48,19 +54,14 @@ export class VijestComponent implements OnInit {
       const ref = this.storage.ref(`Vijesti/${this.vijest.Podnaslov}`);
       this.vijest.Slika = ref.getDownloadURL();
       this.storage.ref('Vijesti/' + this.vijest.Podnaslov).getDownloadURL().subscribe(slik => {
-        this.meta.addTags([
-          { property: 'og:image', content: slik},
-          { property: 'og:url', content: `https://angular.demo.ba/vijest/${this.vijest.Id}`},
-          { property: 'og:type', content: 'website' },
-          { property: 'og:title', content: this.vijest.Naslov},
-          { property: 'og:description', content: jQuery(this.vijest.Sadrzaj).text()}
-        ]);
+        this.seo.generateTags({
+          title: this.vijest.Naslov,
+          description: jQuery(this.vijest.Sadrzaj).text(),
+          image: slik,
+          slug: `vijest/${this.vijest.Id}`
+        });
       });
     });
-      // tslint:disable-next-line: max-line-length
-    document.getElementById('shareFB').setAttribute('data-href', encodeURIComponent(document.URL));
-      // tslint:disable-next-line: max-line-length
-    document.getElementById('shareFBLink').setAttribute('href', 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL));
     this.vijestiService.getVijesti().subscribe(nedavno => {
       this.nedavno = nedavno;
       this.nedavno.forEach(doc => {
@@ -69,8 +70,5 @@ export class VijestComponent implements OnInit {
         doc.Slika = ref.getDownloadURL();
       });
     });
-  }
-  loadOnce() {
-    window.location.reload();
   }
 }

@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Meta } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
@@ -81,6 +81,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SviKurseviComponent } from './components/svi-kursevi/svi-kursevi.component';
 import { SveObukeComponent } from './components/sve-obuke/sve-obuke.component';
 import { SviDogadjajiComponent } from './components/svi-dogadjaji/svi-dogadjaji.component';
+import { SeoService } from './services/seo.service';
 
 @NgModule({
   declarations: [
@@ -164,7 +165,7 @@ import { SviDogadjajiComponent } from './components/svi-dogadjaji/svi-dogadjaji.
     JwPaginationModule,
     BrowserAnimationsModule
   ],
-  providers: [AuthServiceService, AuthGuard, AngularFireAuthGuard],
+  providers: [AuthServiceService, AuthGuard, AngularFireAuthGuard, SeoService, Meta],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

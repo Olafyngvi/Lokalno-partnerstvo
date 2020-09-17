@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-o-nama',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ONamaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private meta: Meta) {
+    this.meta.addTags([
+      { property: 'og:url', content: `https://angular.demo.ba/vijesti`},
+      { property: 'og:type', content: 'website' },
+      { property: 'og:title', content: 'Test'},
+      { property: 'og:description', content: 'Test'}
+    ]);
+   }
 
   ngOnInit() {
   }
