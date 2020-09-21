@@ -64,12 +64,12 @@
                                   <div class="blog-meta">
                                       <h4><a routerLink="/vijest/{{slicno[0].Id}}" title="">{{slicno[0].Naslov}}</a></h4>
                                       <small><a title="">{{slicno[0].Kategorija}}</a></small>
-                                      <small><a title="">{{slicno[0].Datum.seconds*1000 | date}}</a></small>
+                                      <small><a title="">{{slicno[0].Datum | date}}</a></small>
                                   </div><!-- end meta -->
                               </div><!-- end blog-box -->
                           </div><!-- end col -->
 
-                          <div class="col-lg-6">
+                          <div *ngIf="slicno[1] !== undefined" class="col-lg-6">
                               <div class="blog-box">
                                   <div class="post-media">
                                       <a routerLink="/vijest/{{slicno[1].Id}}" title="">
@@ -82,7 +82,7 @@
                                   <div class="blog-meta">
                                       <h4><a routerLink="/vijest/{{slicno[1].Id}}" title="">{{slicno[1].Naslov}}</a></h4>
                                       <small><a title="">{{slicno[1].Kategorija}}</a></small>
-                                      <small><a title="">{{slicno[1].Datum.seconds*1000 | date}}</a></small>
+                                      <small><a title="">{{slicno[1].Datum | date}}</a></small>
                                   </div><!-- end meta -->
                               </div><!-- end blog-box -->
                           </div><!-- end col -->
@@ -103,7 +103,7 @@
                               <a *ngFor="let index of [0,1,2,3,4,5,6,7,8,9]" routerLink="/vijest/{{nedavno[index].Id}}" class=" list-group-item-action flex-column align-items-start">
                                   <div class="w-100 justify-content-between lista">
                                       <h5>{{nedavno[index].Naslov}}</h5>
-                                      <small>{{nedavno[index].Datum.seconds*1000 | date}}</small>
+                                      <small>{{nedavno[index].Datum | date}}</small>
                                   </div>
                                   <hr>
                               </a>

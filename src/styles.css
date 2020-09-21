@@ -202,7 +202,7 @@ a{
 /*  ----------------------------  */
 
 .responsive-menu-container { margin: 0; width: 100%; background: #fff; float: left; }
-.responsive-menu-container .row { margin-top: 40px; height: 40px;}
+.responsive-menu-container .row {height: 40px;}
 .responsive-menu-container .row:hover { background: #2980b9; color: #fff;}
 
 .mobile-nav-icon {padding-top: 10px;padding-right: 8px;margin: 0;float: right;cursor: pointer; display: block;}
@@ -762,6 +762,9 @@ p{
 @media (max-width: 768px) {
   .post-sharing .btn {
       padding: 0.6rem !important;
+  }
+  .slikaUkljuci {
+    height: 1000px !important;
   }
   .ukljuciseNaslov {
     font-size: 30px !important;
@@ -1853,3 +1856,4 @@ hr.invis3 {
 .pagination {
   padding-left: 40%;
 }
+.row:before, .row:after {display: none !important;}
