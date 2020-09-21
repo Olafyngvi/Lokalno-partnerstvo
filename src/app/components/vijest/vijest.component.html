@@ -30,7 +30,7 @@
                           <li class="breadcrumb-item"><a routerLink="/vijesti">Vijesti</a></li>
                           <li class="breadcrumb-item active">{{vijest.Naslov}}</li>
                       </ol>
-                      <div class="fb-share-button" id="shareFB" data-layout="button" data-size="large"><a target="_blank" id="shareFBLink" class="fb-xfbml-parse-ignore">Dijeli</a></div>
+                      <!--<div class="fb-share-button" id="shareFB" data-layout="button" data-size="large"><a target="_blank" id="shareFBLink" class="fb-xfbml-parse-ignore">Dijeli</a></div>-->
                       <h3>{{vijest.Naslov}}</h3>
                       <div class="post_commentbox"> <a><i class="fa fa-tags"></i>{{vijest.Kategorija}}</a> </div>
                       <div class="blog-meta big-meta">
@@ -54,7 +54,7 @@
                           <div class="col-lg-6">
                               <div class="blog-box">
                                   <div class="post-media">
-                                      <a href="single.html" title="">
+                                      <a routerLink="/vijest/{{slicno[0].Id}}" title="">
                                           <img [src]="slicno[0].Slika | async" alt="" class="slicno">
                                           <div class="hovereffect">
                                               <span class=""></span>
@@ -72,7 +72,7 @@
                           <div class="col-lg-6">
                               <div class="blog-box">
                                   <div class="post-media">
-                                      <a href="single.html" title="">
+                                      <a routerLink="/vijest/{{slicno[1].Id}}" title="">
                                           <img [src]="slicno[1].Slika | async" alt="" class="slicno">
                                           <div class="hovereffect">
                                               <span class=""></span>

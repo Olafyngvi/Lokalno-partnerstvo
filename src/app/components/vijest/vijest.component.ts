@@ -39,10 +39,12 @@ export class VijestComponent implements OnInit {
     this.id = this.activatedRoute.snapshot.params.id;
     this.vijestiService.getVijest('vijesti', this.id).subscribe(vijest => {
       this.vijest = vijest;
+      const ref = this.storage.ref(`Vijesti/${this.vijest.Podnaslov}`);
+      this.vijest.Slika = ref.getDownloadURL();
       // tslint:disable-next-line: max-line-length
-      document.getElementById('shareFB').setAttribute('data-href', encodeURIComponent(document.URL));
+      // document.getElementById('shareFB').setAttribute('data-href', encodeURIComponent(document.URL));
       // tslint:disable-next-line: max-line-length
-      document.getElementById('shareFBLink').setAttribute('href', 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL));
+      // document.getElementById('shareFBLink').setAttribute('href', 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL));
       this.vijestiService.getByKategorija(vijest.Kategorija).subscribe(slicno => {
         this.slicno = slicno;
         this.slicno.forEach(doc => {
@@ -51,8 +53,6 @@ export class VijestComponent implements OnInit {
           doc.Slika = ref.getDownloadURL();
         });
       });
-      const ref = this.storage.ref(`Vijesti/${this.vijest.Podnaslov}`);
-      this.vijest.Slika = ref.getDownloadURL();
       this.storage.ref('Vijesti/' + this.vijest.Podnaslov).getDownloadURL().subscribe(slik => {
         this.seo.generateTags({
           title: this.vijest.Naslov,

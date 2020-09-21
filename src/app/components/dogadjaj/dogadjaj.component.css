@@ -28,3 +28,6 @@ hr {
 .pp {
   padding-left: 0px;
 }
+a:hover {
+  cursor:pointer;
+ }
