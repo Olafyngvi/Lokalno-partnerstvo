@@ -236,7 +236,7 @@ jQuery(function($){
 });
 jQuery(function($){
   $( '.menuItem' ).click(function(){
-      $('.responsive-menu').toggleClass('expand')
+      $('.responsive-menu').removeClass('expand')
   })
 });
 

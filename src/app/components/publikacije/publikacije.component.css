@@ -40,3 +40,10 @@ button{
 .publik {
   min-height: 500px;
 }
+.btn-link {
+  color: rgba(153, 88, 45, 0.726);
+}
+.btn-secondary, .btn-primary {
+  background-color: rgba(153, 88, 45, 0.726) !important;
+  border-color: rgba(153, 88, 45, 0.726) !important;
+}

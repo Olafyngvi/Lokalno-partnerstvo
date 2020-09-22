@@ -53,7 +53,7 @@ h5 { margin-top: 0; color: #1c1c1c; font-family: sans-serif;}
 
 .link-arrow { padding: 20px 0px; text-decoration: none; font-size: 90%; color: darkblue; font-weight: normal; vertical-align: middle; float: left;}
 
-a span { text-decoration: none; font-size: 100%; color:darkblue; font-weight: normal; vertical-align: middle; font-family: sans-serif;}
+a span { text-decoration: none; font-size: 100%; font-weight: normal; vertical-align: middle; font-family: sans-serif;}
 a:hover span { padding-bottom: 1px; }
 
 .arrow-div { margin-top: 5px; display: inline-block; float: left; }
@@ -828,6 +828,9 @@ p{
   .pozadina {
     top: 180px;
   }
+  .naslovPublikacije {
+    padding-left: 50px !important;
+  }
   .carousel-indicators {
     height: 20px;
   }
@@ -904,6 +907,23 @@ p{
     grid-template-columns: repeat(1, 100%) !important;
   }
 }
+
+@media (max-width: 415px) {
+  .naslovBaner {
+    padding-left: 80px !important;
+  }
+  .naslovPublikacije {
+    padding-left: 0px !important;
+  }
+  .vijestiContainer {
+    padding: 0 0% !important;
+  }
+  .masonry-box {
+    border-left-width: 0px;
+    border-right-width: 0px;
+  }
+}
+
 @media (max-width: 410px) {
   .onama {
     height: 1800px !important;

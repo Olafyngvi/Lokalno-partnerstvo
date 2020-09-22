@@ -30,6 +30,7 @@ export class BodyComponent implements OnInit {
       this.kursevi.forEach(cur => {
         const ref = this.storage.ref(`Kursevi/${cur.Naslov}`);
         cur.Slika = ref.getDownloadURL();
+        cur.Opis = jQuery.htmlPrefilter(cur.Opis).toString().substring(0, 150) + '...';
       });
     });
     this.prakticneService.get5().subscribe(obuke => {

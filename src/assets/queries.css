@@ -164,14 +164,10 @@
   .section_bottom .box25 {width: 100%;font-size: 100%;}
   .section_bottom .box25 {height: auto;}
 
-  footer {height: 100px; background: #fff}
   footer ul li {width: 200px; display: block; float: none;}
   footer a {color: #000}
 
   .footer-eu {padding-right: 20px; background: #e2e2e2;display: block; padding-bottom: 20px; padding-top: 100px; clear: both}
-
-  .pg-1-EU {}
-
 }
 
 /*        Footer          */

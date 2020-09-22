@@ -15,6 +15,7 @@ import { Vijest } from 'src/app/models/Vijest';
 export class VijestiSveComponent implements OnInit {
   vijesti: Vijest[];
   pageOfItems: Array<any>;
+  pageSize = 12;
   items = [];
   constructor(private vijestiService: VijestiService,
               private storage: AngularFireStorage) { }

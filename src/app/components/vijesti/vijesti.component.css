@@ -1,8 +1,8 @@
 .vijesti {
   padding-top: 35px;
 }
-.container-fluid {
-  padding: 0 10% !important;
+.vijestiContainer {
+  padding: 0 10%;
 }
 .prviRed {
 height: 310px !important;
