@@ -16,7 +16,6 @@ export class SeoService {
       slug: '',
       ...config
     };
-    debugger;
     this.meta.addTag({ property: 'og:type', content: 'article' });
     this.meta.addTag({ property: 'og:site_name', content: 'Lokalno partnerstvo' });
     this.meta.addTag({ property: 'og:title', content: config.title });

@@ -30,3 +30,6 @@ hr {
 .lista {
   padding-top: 10px;
 }
+a:hover {
+  cursor:pointer;
+ }

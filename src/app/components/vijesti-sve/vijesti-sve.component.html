@@ -1,5 +1,5 @@
 <div class="vijestiBanner">
-  <p class="vijest">Vijesti</p>
+  <p class="vijest naslovBaner">Vijesti</p>
 
 
 </div>
@@ -40,7 +40,7 @@
             <span class="proba">
               <h4><a routerLink="/vijest/{{item.Id}}" title="">{{item.Naslov}}</a></h4>
 
-            <small>{{item.Kategorija}}, <b>{{item.Datum.seconds*1000 | date}}</b></small>
+            <small>{{item.Kategorija}}, <b>{{item.Datum | date}}</b></small>
             </span>
           </span>
         </div>
@@ -48,7 +48,7 @@
     </div>
   </div>
   <div class="pb-0 pt-3" style="margin-bottom: 100px;">
-    <jw-pagination [items]="items" (changePage)="onChangePage($event)"></jw-pagination>
+    <jw-pagination [pageSize]="pageSize" [items]="items" (changePage)="onChangePage($event)"></jw-pagination>
 </div>
 </div>
 <!--

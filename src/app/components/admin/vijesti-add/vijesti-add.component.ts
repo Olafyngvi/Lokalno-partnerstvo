@@ -67,8 +67,6 @@ export class VijestiAddComponent implements OnInit {
 
   onSubmit(form: NgForm): void {
       if (form.invalid || this.selectedObj === 'Odaberite kategoriju') {
-        console.log(form.invalid);
-        console.log(this.selectedObj);
         this.cds.alert('Validacija', 'Popunite sva tražena polja');
 
       } else {
