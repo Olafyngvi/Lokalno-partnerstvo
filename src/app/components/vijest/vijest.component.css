@@ -33,3 +33,6 @@ hr {
 a:hover {
   cursor:pointer;
  }
+a {
+  color: black !important;
+}

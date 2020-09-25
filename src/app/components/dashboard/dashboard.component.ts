@@ -49,7 +49,7 @@ export class DashboardComponent implements OnInit {
     }
     this.auth.resetPasswordInit(this.email)
     .then(
-      () => this.cds.alert('', 'Link za resetovanje pasvorda je poslan na Vašu email adresu.'),
+      () => this.cds.alert('', 'Link za resetovanje lozinke je poslan na Vašu email adresu.'),
       (rejectionReason) => this.cds.alert('', rejectionReason))
     .catch(e => this.cds.alert('', 'Desila se greška prilikom pokušaja resetovanja Vašeg pasvorda.'));
   }

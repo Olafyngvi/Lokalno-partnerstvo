@@ -82,6 +82,10 @@ import { SviKurseviComponent } from './components/svi-kursevi/svi-kursevi.compon
 import { SveObukeComponent } from './components/sve-obuke/sve-obuke.component';
 import { SviDogadjajiComponent } from './components/svi-dogadjaji/svi-dogadjaji.component';
 import { SeoService } from './services/seo.service';
+import { PruzaociUslugaComponent } from './components/pruzaoci-usluga/pruzaoci-usluga.component';
+import { RazvojKapacitetaComponent } from './components/razvoj-kapaciteta/razvoj-kapaciteta.component';
+import { KorisniciUslugaComponent } from './components/korisnici-usluga/korisnici-usluga.component';
+import { OkruzenjeZaObrazovanjeOdraslihComponent } from './components/okruzenje-za-obrazovanje-odraslih/okruzenje-za-obrazovanje-odraslih.component';
 
 @NgModule({
   declarations: [
@@ -146,7 +150,11 @@ import { SeoService } from './services/seo.service';
     AktuelnoComponent,
     SviKurseviComponent,
     SveObukeComponent,
-    SviDogadjajiComponent
+    SviDogadjajiComponent,
+    PruzaociUslugaComponent,
+    RazvojKapacitetaComponent,
+    KorisniciUslugaComponent,
+    OkruzenjeZaObrazovanjeOdraslihComponent
   ],
   imports: [
     BrowserModule,
