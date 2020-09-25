@@ -217,7 +217,7 @@ a{
 
 .expand1 {display: none !important;}
 
-.responsive-menu{ display: none; height: auto; background: rgba(0, 0, 0, 0.29);   position: fixed; top: 0px; padding-top: 50px; margin: 0; width: 100%; z-index: 10; border-top: 1px solid #bcbbbb; font-size: 90%; }
+.responsive-menu{ display: none; height: auto; background: rgba(0, 0, 0, 0.29);   position: fixed; top: 0px; padding-top: 78px; margin: 0; width: 100%; z-index: 10; border-top: 1px solid #bcbbbb; font-size: 90%; }
 
 .box25-m1, .box25-m2, .box25-m3, .box25-m4 { margin: 0; padding: 0; margin-top: 10px; display: block; cursor: pointer; font-size: 110%; }
 
@@ -694,6 +694,9 @@ p{
   .topbar-section .list-inline-item {
       padding: 0 0.2rem !important;
   }
+  .okruzenje {
+    padding-left: 50px !important;
+  }
 }
 
 @media (max-width: 991px) {
@@ -828,6 +831,10 @@ p{
   .pozadina {
     top: 180px;
   }
+  .okruzenje {
+    padding-top: 100px !important;
+    padding-left: 10px !important;
+  }
   .naslovPublikacije {
     padding-left: 50px !important;
   }
@@ -911,6 +918,9 @@ p{
 @media (max-width: 415px) {
   .naslovBaner {
     padding-left: 80px !important;
+  }
+  .okruzenje {
+    padding-left: 10px !important;
   }
   .naslovPublikacije {
     padding-left: 0px !important;

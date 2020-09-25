@@ -43,6 +43,10 @@ import { ONamaComponent } from './components/o-nama/o-nama.component';
 import { DogadjajComponent } from './components/dogadjaj/dogadjaj.component';
 import { PretragaComponent } from './components/pretraga/pretraga.component';
 import { HvalaComponent } from './components/hvala/hvala.component';
+import { PruzaociUslugaComponent } from './components/pruzaoci-usluga/pruzaoci-usluga.component';
+import { RazvojKapacitetaComponent } from './components/razvoj-kapaciteta/razvoj-kapaciteta.component';
+import { KorisniciUslugaComponent } from './components/korisnici-usluga/korisnici-usluga.component';
+import { OkruzenjeZaObrazovanjeOdraslihComponent } from './components/okruzenje-za-obrazovanje-odraslih/okruzenje-za-obrazovanje-odraslih.component';
 
 const redirectLoggedIndashboard = () => redirectLoggedInTo(['dashboard']);
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
@@ -53,6 +57,10 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent, canActivate: [AngularFireAuthGuard], data: {authGuardPipe: redirectLoggedIndashboard}},
   {path: 'vijesti', component: VijestiSveComponent},
   {path: 'usluge', component: UslugeComponent},
+  {path: 'pruzaoci-usluga', component: PruzaociUslugaComponent},
+  {path: 'razvoj-kapaciteta', component: RazvojKapacitetaComponent},
+  {path: 'korisnici-usluga', component: KorisniciUslugaComponent},
+  {path: 'okruzenje-za-obrazovanje-odraslih', component: OkruzenjeZaObrazovanjeOdraslihComponent},
   {path: 'oblasti', component: OblastComponent},
   {path: 'vijest/:id', component: VijestComponent},
   {path: 'dogadjaj/:id', component: DogadjajComponent},
