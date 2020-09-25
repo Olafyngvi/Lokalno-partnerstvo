@@ -45,15 +45,19 @@
 <body>
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/bs_BA/sdk.js#xfbml=1&version=v7.0" nonce="j0eiQ9iP"></script>
   <app-root></app-root>
-  <script src="https://web-chat.global.assistant.watson.cloud.ibm.com/loadWatsonAssistantChat.js"></script>
-<script>
-  window.loadWatsonAssistantChat({
-    integrationID: "96c9c073-60fe-486c-b89c-82f5234f6e25", // The ID of this integration.
-    region: "eu-gb" // The region your integration is hosted in.
-  }).then(function(instance){
-    instance.render();
-  });
-</script>
+  <script>
+    window.watsonAssistantChatOptions = {
+        integrationID: "01206b36-ea01-439e-940d-cfffe7de96ba", // The ID of this integration.
+        region: "eu-gb", // The region your integration is hosted in.
+        serviceInstanceID: "c6b8554c-806d-4045-9770-b9f689478916", // The ID of your service instance.
+        onLoad: function(instance) { instance.render(); }
+      };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+      document.head.appendChild(t);
+    });
+  </script>
   <a class="scroll-to-top" href="#top" onload="hide">
     <i class="fa fa-arrow-up"></i>
   </a>
