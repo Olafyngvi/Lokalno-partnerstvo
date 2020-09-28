@@ -700,6 +700,10 @@ p{
 }
 
 @media (max-width: 991px) {
+  .slikaaa {
+    margin-top: 30px;
+    height: 400px;
+  }
   .topsocial img {
     margin-right: auto;
     display: block;
@@ -808,7 +812,10 @@ p{
 }
 
 @media (max-width: 728px) {
-
+  .box1 {
+    padding-left: 100px !important;
+    padding-right: 100px !important;
+  }
   .universal-big,
   .universal,
   .center-side,
@@ -828,6 +835,10 @@ p{
 }
 
 @media (max-width: 590px) {
+  .box2 {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+  }
   .pozadina {
     top: 180px;
   }
@@ -905,6 +916,14 @@ p{
   }
 }
 @media (max-width: 440px) {
+  .box1 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .box1 {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+  }
   .onama {
     height: 1600px !important;
   }
