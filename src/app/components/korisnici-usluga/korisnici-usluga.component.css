@@ -1,16 +1,82 @@
 .korisniciUsluga {
-  background-image: linear-gradient(to right, rgb(255, 255, 255) 16%,rgba(41, 96, 168, 0) 90%), url(../../../assets/Slike/oblastibaner1.jpg);
+  background-image:  url(../../../assets/Slike/korisnici.jpeg);
     background-attachment: fixed;
     background-size: cover;
-    height: 500px;
+    height: 800px;
+    background-position: center -350px;
+
+  }
+.slikaKorisnici {
+  background-image: url(../../../assets/Slike/skok.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+  .korisnici{
+    padding-top: 460px;
+    padding-left: 130px;
+    font-size: 60px;
+    color:#066399ab;
+    letter-spacing: 4px;
+  }
+  .razvojPod {
+    width: 800px;
+    height: auto;
+    padding-left: 130px;
+    color:white;
+    letter-spacing: 1px;
+  }
+  .slikaaa {
+    background-image: url(../../../assets/Slike/strategy-vision-roadmap.img.jpg);
+    background-size: cover;
     background-position: center center;
 
   }
-
-  .korisnici{
-    padding-top: 260px;
-    padding-left: 130px;
-    font-size: 60px;
-    color:rgba(187, 53, 43, 0.671);
-    letter-spacing: 4px;
+    .pruzaoci{
+      padding-top: 260px;
+      padding-left: 130px;
+      font-size: 60px;
+      color:rgba(187, 53, 43, 0.671);
+      letter-spacing: 4px;
+    }
+  .dugme {
+    margin:0 auto;
+    display:block;
   }
+  .box1 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: whitesmoke;
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+  .box2 {
+    padding-top: 170px;
+    padding-bottom: 170px;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .pedinzi {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .donji {
+    padding-top: 50px;
+  }
+  .container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .zadnji {
+    margin-top: 50px;
+    min-height: 400px;
+    height: auto;
+    padding-bottom: 50px;
+  }
+  .predzadnji {
+    margin-top: 50px;
+    min-height: 300px;
+    height: auto;
+  }
+input {
+  width: 500px !important;
+}
