@@ -2,7 +2,7 @@
 .flip-card {
   background-color: transparent;
   width: 300px;
-  height: 300px;
+  height: 400px;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
@@ -36,8 +36,12 @@
   font-size: 30px;
 }
 .flip-card-back {
+  background-color: rgba(245, 245, 245, 0.363);
   color: white;
   transform: rotateY(180deg);
+  padding-top: 50px;
+  text-align: center;
+ 
 
 }
 
@@ -60,8 +64,10 @@
 
 }
 .btn-secondary{
-  margin-top: 60px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 Button {
   background-color: #7bb342 !important;
+
 }
