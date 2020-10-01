@@ -12,10 +12,10 @@
   background-position: center center;
 }
   .korisnici{
-    padding-top: 460px;
+    padding-top: 500px;
     padding-left: 130px;
     font-size: 60px;
-    color:#066399ab;
+    color:#ce9418ab;
     letter-spacing: 4px;
   }
   .razvojPod {
@@ -23,7 +23,7 @@
     height: auto;
     padding-left: 130px;
     color:white;
-    letter-spacing: 1px;
+   
   }
   .slikaaa {
     background-image: url(../../../assets/Slike/strategy-vision-roadmap.img.jpg);

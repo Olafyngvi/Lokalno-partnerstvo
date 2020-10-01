@@ -36,7 +36,7 @@
   font-size: 30px;
 }
 .flip-card-back {
-  background-color: rgba(245, 245, 245, 0.363);
+  background-color: rgba(20, 78, 95, 0.678);
   color: white;
   transform: rotateY(180deg);
   padding-top: 50px;
