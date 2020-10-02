@@ -25,7 +25,9 @@
   height: 100%;
   backface-visibility: hidden;
 }
-
+.flip-card-front{
+  padding-top: 50px;
+}
 .flip-card-front h4
  {
   color: rgb(255, 255, 255);
