@@ -12,9 +12,9 @@ export class HvalaComponent implements OnInit {
 
   ngOnInit(): void {
     window.scroll(0, 0);
-    //setTimeout(() => {
-      //this.router.navigate(['']);
-    //}, 5000);
+    setTimeout(() => {
+      this.router.navigate(['']);
+    }, 5000);
   }
 
 }
