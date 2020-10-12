@@ -1,8 +1,7 @@
 .korisniciUsluga {
   background-image:  url(../../../assets/Slike/korisnici.jpeg);
     background-attachment: fixed;
-    background-size: cover;
-    height: 800px;
+    height: 600px;
     background-position: center -350px;
 
   }
@@ -12,10 +11,10 @@
   background-position: center center;
 }
   .korisnici{
-    padding-top: 500px;
+    padding-top: 400px;
     padding-left: 130px;
     font-size: 60px;
-    color:#ce9418ab;
+    color:wheat;
     letter-spacing: 4px;
   }
   .razvojPod {
@@ -23,7 +22,7 @@
     height: auto;
     padding-left: 130px;
     color:white;
-   
+
   }
   .slikaaa {
     background-image: url(../../../assets/Slike/strategy-vision-roadmap.img.jpg);

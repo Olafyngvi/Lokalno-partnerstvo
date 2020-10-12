@@ -337,7 +337,7 @@ footer {width: 100%;  margin: 0; padding: 0;  border-top: 1px solid #a3a2a2; bac
 
 footer ul {background: #e2e2e2;}
 
-.footer-top {height: 220px;  display: block; padding-top: 50px; clear: both}
+.footer-top {height: auto;  display: block; padding-top: 50px; clear: both}
 .footer-title {margin-left: 25%; color: aliceblue;}
 .footer-title h5 {font-size: 150%; color: aliceblue; font-weight: 500; padding: 0px 0px 2px 0px;}
 .footer-title p {font-size: 90%; margin-bottom: 10px;}
@@ -667,14 +667,19 @@ p{
 /* RESPONSIVE
 **************************************/
 @media (max-width: 1280px) {
+  .logoLijevi {
+    width: 160px !important;
+    height: 80% !important;
+  }
+  .logoDesni {
+    width: 180px !important;
+    height: 80% !important;
+  }
   .overlay {
     top: 78px;
   }
   .mobile-nav-icon i {
     color: white;
-  }
-  .pozadina {
-    top: 100px;
   }
   .onama {
     height: 1400px !important;
@@ -700,6 +705,15 @@ p{
 }
 
 @media (max-width: 991px) {
+  .logoLijevi {
+    margin-left: 20%;
+  }
+  .razvojPod {
+    display: none;
+  }
+  .slikaKorisnici,.slikaRazvoj {
+    height: 400px;
+  }
   .slikaaa {
     margin-top: 30px;
     height: 400px;
@@ -712,9 +726,12 @@ p{
   .aktSlika4 {
     height: 400px;
   }
-  .aktSlika1,
-  .aktSlika3 {
+  .aktSlika1
+  {
     height: 0px;
+  }
+  .aktSlika3 {
+    height: 400px;
   }
   .aktSlika {
     height: 400px;
@@ -726,13 +743,7 @@ p{
   .custombox .blog-box {
       margin: 1rem 0;
   }
-  .sidebar,
-  .center-side,
-  .left-side,
-  .right-side {
-      float: left;
-      width: 50%;
-  }
+
   .universal {
    float: left;
    width: 50%;
@@ -812,6 +823,9 @@ p{
 }
 
 @media (max-width: 728px) {
+  .korisnici {
+    padding-top: 300px !important;
+  }
   .box1 {
     padding-left: 100px !important;
     padding-right: 100px !important;
@@ -835,12 +849,22 @@ p{
 }
 
 @media (max-width: 590px) {
+  .futer {
+    padding-bottom: 50px;
+  }
+  .razvoj, .razvojPod {
+    padding-left: 50px !important;
+  }
+  .para {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
   .box2 {
     padding-left: 50px !important;
     padding-right: 50px !important;
   }
-  .pozadina {
-    top: 180px;
+  .korisnici {
+    padding-left: 50px !important;
   }
   .okruzenje {
     padding-top: 100px !important;
@@ -916,6 +940,18 @@ p{
   }
 }
 @media (max-width: 440px) {
+  .logoLijevi {
+    width: 150px !important;
+    height: 70% !important;
+  }
+  .logoDesni {
+    width: 170px !important;
+    height: 70% !important;
+  }
+  .korisnici {
+    padding-top: 200px !important;
+    padding-left: 10px !important;
+  }
   .box1 {
     padding-left: 0px !important;
     padding-right: 0px !important;
@@ -954,6 +990,9 @@ p{
 }
 
 @media (max-width: 410px) {
+  .logoLijevi {
+    margin-left: 0px !important;
+  }
   .onama {
     height: 1800px !important;
   }
@@ -1906,3 +1945,6 @@ hr.invis3 {
   padding-left: 40%;
 }
 .row:before, .row:after {display: none !important;}
+.page-link {
+  font-size: 13px !important;
+}

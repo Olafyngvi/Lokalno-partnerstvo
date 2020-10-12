@@ -52,6 +52,7 @@ export class VijestComponent implements OnInit {
           const ref = this.storage.ref(`Vijesti/${doc.Podnaslov}`);
           doc.Slika = ref.getDownloadURL();
         });
+        this.slicno = this.slicno.filter(obj => obj.Id !== vijest.Id);
       });
       this.storage.ref('Vijesti/' + this.vijest.Podnaslov).getDownloadURL().subscribe(slik => {
         this.seo.generateTags({

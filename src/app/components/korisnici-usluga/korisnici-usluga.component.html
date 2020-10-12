@@ -59,20 +59,20 @@
     <h3>Šta želite da naučite ?</h3>
     <form (ngSubmit)="onSubmit(rteForm)" #rteForm="ngForm" class="form-inline">
       <input required type="text" style="width: 100%; border: none;" name="pretraga" [(ngModel)]="pretraga"
-        class="form-control mr-3 empty">
+        class="form-control mr-3">
       <button type="submit" class="btn"><i class="fa fa-search"></i></button>
     </form>
   </div>
 </div>
 <div class="row zadnji">
-  <div class="col-lg-6" style="padding-top: 60px; background-color: whitesmoke;">
+  <div class="col-lg-6" style="padding-top: 60px; padding-bottom: 60px; background-color: whitesmoke;">
     <h3 style="color: #066399ab;">Saznaj koje su trenutno obuke u toku</h3>
     <p class="">
       Pogledaj nove kurseve, praktične obuke i događaje koji ti mogu pomoći da razviješ svoja znanja i vještine.
     </p>
     <a routerLink="/usluge" class="btn btn-primary dugme" style="border-radius:5px; width: 180px">Saznaj više</a>
   </div>
-  <div data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" class="col-lg-6 slikaKorisnici ">
+  <div data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine" class="col-lg-6 slikaKorisnici ">
 
   </div>
 </div>
